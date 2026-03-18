@@ -1,5 +1,102 @@
-# Vue 3 + TypeScript + Vite
+# 🎨 davinci-ui
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> _Where art meets engineering._
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+A modern, accessible and lightweight Vue3 component library • built with TypeScript,
+Vite and Storybook. Inspired by Leonardo da Vinci's vision of merging art and precision.
+
+## Features
+
+- **Vue3** + **TypeScript** + **Vite**
+- **Design tokens** • colors, spacing, typography
+- **Accessible** • WCAG AA compliant (aria, keyboard nav, focus trap)
+- **Storybook** • fully documented components
+- **Dark / Light mode** • CSS custom properties based theming
+- **Tree-shakable** • import only what you need
+
+## Getting Started
+
+```bash
+pnpm install
+pnpm dev          # Dev mode
+pnpm storybook    # Launch Storybook
+pnpm build        # Build library
+```
+
+## Stack
+
+| Tool              | Role          |
+| ----------------- | ------------- |
+| Vue 3             | UI Framework  |
+| TypeScript        | Type safety   |
+| Vite              | Bundler       |
+| Storybook         | Documentation |
+| Vitest            | Unit testing  |
+| ESLint + Prettier | Code quality  |
+
+## Project Structure
+
+```bash
+src/
+├── components/     # UI Components
+├── tokens/         # Design tokens (colors, spacing, typo)
+├── composables/    # useToast, useTheme...
+└── index.ts        # Public exports
+```
+
+## Todo
+
+### Setup
+
+- [x] Init Vite + Vue3 + TypeScript
+- [x] Configure pnpm
+- [x] Init Storybook
+- [x] ESLint + Prettier
+- [x] Vitest setup
+- [ ] Chromatic deployment (Storybook hosting)
+
+### Design Tokens
+
+- [ ] Color palette (primary, neutral, semantic)
+- [ ] Spacing scale
+- [ ] Typography scale
+- [ ] CSS custom properties generation
+- [ ] Dark / Light theme switch
+
+### Components • Tier 1
+
+- [ ] Button • variants, sizes, loading, disabled
+- [ ] Badge / Tag • variants, slots
+- [ ] Input / TextField • label, error, helper, a11y
+- [ ] Typography • heading, body, caption components
+
+### Components • Tier 2
+
+- [ ] Modal / Dialog • focus trap, Escape, aria-modal
+- [ ] Toast • queue, auto-dismiss, useToast() composable
+- [ ] Dropdown / Select • keyboard nav, custom styling
+- [ ] Card • header, body, footer, image slots, skeleton
+
+### Components • Tier 3
+
+- [ ] Tabs • keyboard nav, router-link support
+- [ ] DataTable • sort, pagination, configurable columns
+
+### Documentation
+
+- [ ] Storybook stories for each component
+- [ ] README per component
+- [ ] Contribution guide
+- [ ] Changelog
+
+### Release
+
+- [ ] Deploy Storybook on Chromatic
+- [ ] GitHub Actions CI (lint + test + build)
+- [ ] Publish on npm
+
+## Author
+
+Benjamin Guerin • Tech Lead Frontend & UI/UX • [spateline.fr](https://spateline.fr) • [GitHub](https://github.com/BGuerin-coder)
+
+>_"Learning never exhausts the mind." — Leonardo da Vinci_
