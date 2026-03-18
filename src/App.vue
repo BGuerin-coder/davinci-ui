@@ -1,7 +1,6 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <HelloWorld />
+  <main class="app-shell">
+    <h1>DaVinci UI</h1>
+    <p>Projet initialisé, prêt à développer.</p>
+  </main>
 </template>
