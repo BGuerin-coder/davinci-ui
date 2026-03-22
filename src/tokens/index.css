@@ -4,6 +4,42 @@
    Safe to comment freely in development.
    ============================================================= */
 
+@font-face {
+  font-family: "Poiret One";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap; /* ← évite le FOIT (flash invisible text) */
+  src: url("../assets/fonts/poiret-one/poiret-one-v18-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/overpass/overpass-v19-latin-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/overpass/overpass-v19-latin-500.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Overpass";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/overpass/overpass-v19-latin-700.woff2")
+    format("woff2");
+}
+
 /* -------------------------------------------------------------
    PRIMITIVES
    Raw color values. Never reference these directly in components
