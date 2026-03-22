@@ -1,6 +1,18 @@
 import type { Preview } from '@storybook/vue3-vite'
+import { withThemeByDataAttribute } from '@storybook/addon-themes'
+import '../src/style.css';
 
 const preview: Preview = {
+  decorators: [
+    withThemeByDataAttribute({
+      themes: {
+        light: '',
+        dark: 'dark',
+      },
+      defaultTheme: 'light',
+      attributeName: 'data-theme',
+    }),
+  ],
   parameters: {
     controls: {
       matchers: {
