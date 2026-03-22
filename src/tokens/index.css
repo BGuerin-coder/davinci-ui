@@ -203,6 +203,50 @@
   --davinci-color-bg-danger: var(--davinci-primitive-danger-light);
   /* Background for error states, destructive alerts, delete zones.
      Use only when communicating failure or critical risk to the user. */
+
+   /* --- Shadow color ---
+     Single shadow color with variable opacity for all elevations.
+     Adjust opacity in semantic tokens to achieve appropriate depth. */
+     
+   --davinci-primitive-shadow-color: 20, 30%, 15%;
+   /* A warm, earthy shadow color with low saturation to complement the
+     brand palette. Use HSLA with alpha channel for flexible opacity
+     control across light and dark themes. */
+}
+
+:root {
+  --davinci-shadow-sm:
+    0 1px 2px hsla(var(--davinci-primitive-shadow-color), 0.06),
+    0 1px 3px hsla(var(--davinci-primitive-shadow-color), 0.1);
+  /* Subtle lift for cards, inputs on focus, small interactive elements.
+     Use when an element needs to feel slightly raised from bg-base. */
+
+  --davinci-shadow-md:
+    0 4px 6px hsla(var(--davinci-primitive-shadow-color), 0.07),
+    0 2px 4px hsla(var(--davinci-primitive-shadow-color), 0.06);
+  /* Standard elevation for dropdowns, select menus, tooltips.
+     The default for most floating components above bg-subtle. */
+
+  --davinci-shadow-lg:
+    0 10px 15px hsla(var(--davinci-primitive-shadow-color), 0.08),
+    0 4px 6px hsla(var(--davinci-primitive-shadow-color), 0.05);
+  /* Modals, popovers, command palettes.
+     Use for bg-elevated surfaces that must feel clearly lifted. */
+
+  --davinci-shadow-xl:
+    0 20px 25px hsla(var(--davinci-primitive-shadow-color), 0.1),
+    0 8px 10px hsla(var(--davinci-primitive-shadow-color), 0.06);
+  /* Maximum elevation: full-screen overlays, drawer panels.
+     Reserved for the highest z-index surfaces in the interface. */
+
+  --davinci-shadow-inner: inset 0 2px 4px
+    hsla(var(--davinci-primitive-shadow-color), 0.08);
+  /* Inset shadow for pressed button states, active inputs,
+     wells and recessed containers. Creates a "pushed in" feel. */
+
+  --davinci-shadow-none: none;
+  /* Explicit removal of shadow — useful in Storybook controls
+     or to override inherited shadow in specific contexts. */
 }
 
 /* -------------------------------------------------------------
@@ -236,6 +280,21 @@
   --davinci-color-bg-elevated: var(--davinci-primitive-neutral-800);
   --davinci-color-bg-brand: var(--davinci-primitive-brand-soft);
   --davinci-color-bg-danger: var(--davinci-primitive-danger-dark);
+
+  --davinci-shadow-sm:
+    0 1px 2px hsla(var(--davinci-primitive-shadow-color), 0.25),
+    0 1px 3px hsla(var(--davinci-primitive-shadow-color), 0.3);
+  --davinci-shadow-md:
+    0 4px 6px hsla(var(--davinci-primitive-shadow-color), 0.3),
+    0 2px 4px hsla(var(--davinci-primitive-shadow-color), 0.25);
+  --davinci-shadow-lg:
+    0 10px 15px hsla(var(--davinci-primitive-shadow-color), 0.35),
+    0 4px 6px hsla(var(--davinci-primitive-shadow-color), 0.28);
+  --davinci-shadow-xl:
+    0 20px 25px hsla(var(--davinci-primitive-shadow-color), 0.4),
+    0 8px 10px hsla(var(--davinci-primitive-shadow-color), 0.3);
+  --davinci-shadow-inner: inset 0 2px 4px
+    hsla(var(--davinci-primitive-shadow-color), 0.4);
 }
 
 /* -------------------------------------------------------------
