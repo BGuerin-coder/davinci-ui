@@ -1,0 +1,421 @@
+/* =============================================================
+   DAVINCI-UI - DESIGN TOKENS
+   All comments are stripped in production by Vite/esbuild.
+   Safe to comment freely in development.
+   ============================================================= */
+
+/* -------------------------------------------------------------
+   PRIMITIVES
+   Raw color values. Never reference these directly in components
+   or layouts. Use semantic tokens instead. These exist solely
+   to feed the semantic layer and must never change meaning.
+   ------------------------------------------------------------- */
+
+:root {
+  /* --- Brand primitives ---
+     Renaissance amber palette inspired by Da Vinci's use of
+     golden-earth pigments. Full range from lightest to darkest
+     to cover both light and dark theme semantic mappings. */
+  --davinci-primitive-brand-lightest: hsl(20, 80%, 96%);
+  --davinci-primitive-brand-lighter: hsl(20, 78%, 88%);
+  --davinci-primitive-brand-light: hsl(20, 75%, 72%);
+  --davinci-primitive-brand-soft: hsl(20, 68%, 58%);
+  --davinci-primitive-brand-base: hsl(
+    20,
+    63%,
+    48%
+  ); /* Terre de Sienne - core */
+  --davinci-primitive-brand-dark: hsl(20, 63%, 40%);
+  --davinci-primitive-brand-darker: hsl(20, 63%, 32%);
+  --davinci-primitive-brand-darkest: hsl(20, 60%, 14%);
+
+  /* --- Neutral primitives ---
+     Warm-tinted grays (hue 25) to stay harmonious with the
+     brand palette. Never use cold grays - they clash with
+     Terre de Sienne. Full scale for light and dark surfaces. */
+  --davinci-primitive-neutral-50: hsl(25, 15%, 97%);
+  --davinci-primitive-neutral-100: hsl(25, 12%, 92%);
+  --davinci-primitive-neutral-200: hsl(25, 10%, 82%);
+  --davinci-primitive-neutral-300: hsl(25, 9%, 70%);
+  --davinci-primitive-neutral-400: hsl(25, 8%, 58%);
+  --davinci-primitive-neutral-600: hsl(25, 8%, 38%);
+  --davinci-primitive-neutral-700: hsl(25, 9%, 28%);
+  --davinci-primitive-neutral-800: hsl(25, 10%, 18%);
+  --davinci-primitive-neutral-900: hsl(25, 12%, 10%);
+  --davinci-primitive-neutral-950: hsl(25, 15%, 6%);
+
+  /* --- Danger primitives ---
+     Red scale for error and destructive states only.
+     Never repurpose for decorative or non-critical use. */
+  --davinci-primitive-danger-light: hsl(0, 80%, 96%);
+  --davinci-primitive-danger-default: hsl(0, 72%, 38%);
+  --davinci-primitive-danger-dark: hsl(0, 60%, 16%);
+  --davinci-primitive-danger-text-dark: hsl(0, 80%, 72%);
+}
+
+/* -------------------------------------------------------------
+   SEMANTIC TOKENS - LIGHT MODE (default)
+   Use these exclusively in components and layouts.
+   Each token describes intent, not value.
+   ------------------------------------------------------------- */
+
+:root {
+  /* --- Brand colors ---
+     Use for interactive, brand-identified elements only.
+     Never apply brand color to decorative or structural elements. */
+
+  --davinci-color-brand-background: var(--davinci-primitive-brand-lightest);
+  /* Subtle brand-tinted surface. Use for hover backgrounds,
+     selected rows, active nav items, focused container highlights.
+     Never use as a primary page surface - too tinted for large areas. */
+
+  --davinci-color-brand-border: var(--davinci-primitive-brand-light);
+  /* Border on brand-related interactive elements: focused inputs,
+     active tabs, selected cards. Pair with stroke-strong for
+     higher visibility when accessibility demands it. */
+
+  --davinci-color-brand-default: var(--davinci-primitive-brand-base);
+  /* Primary action color. Apply to CTAs, primary buttons, links,
+     progress indicators, and active states. Only one prominent
+     element per visual group should use this color. */
+
+  --davinci-color-brand-hover: var(--davinci-primitive-brand-dark);
+  /* Darkened brand for :hover on brand-colored interactive elements.
+     Never use at rest - reserved exclusively for hover transitions. */
+
+  --davinci-color-brand-emphasis: var(--davinci-primitive-brand-darker);
+  /* Maximum contrast brand usage. Use for bold text on light
+     backgrounds, or when brand-default fails WCAG AA contrast.
+     Prefer this over brand-default for small text on white. */
+
+  /* --- Text colors ---
+     Always verify contrast ratio before use.
+     Minimum 4.5:1 for normal text, 3:1 for large text (WCAG AA). */
+
+  --davinci-color-text-default: var(--davinci-primitive-neutral-800);
+  /* Primary text color for all body copy, headings, labels, and
+     UI content. The baseline for readability across the interface. */
+
+  --davinci-color-text-muted: var(--davinci-primitive-neutral-600);
+  /* Secondary text for captions, helper text, placeholders,
+     metadata, and timestamps. Never use for critical information
+     or error messages - contrast may be insufficient alone. */
+
+  --davinci-color-text-on-brand: var(--davinci-primitive-neutral-50);
+  /* Text placed directly on brand-colored backgrounds (e.g. inside
+     primary buttons). Always near-white to ensure contrast.
+     Never use on light or neutral backgrounds. */
+
+  --davinci-color-text-danger: var(--davinci-primitive-danger-default);
+  /* Error messages, destructive action labels, validation feedback.
+     Use only to communicate failure or critical warnings.
+     Never use decoratively or for emphasis. */
+
+  /* --- Stroke colors ---
+     Use for borders and dividers. Match stroke weight to context:
+     subtle for decoration, strong for functional feedback. */
+
+  --davinci-color-stroke-subtle: var(--davinci-primitive-neutral-100);
+  /* Near-invisible dividers and section separators.
+     Use when structure is implied rather than explicit.
+     Ideal for table rows, list separators, ghost card borders. */
+
+  --davinci-color-stroke-default: var(--davinci-primitive-neutral-200);
+  /* Standard border for inputs, cards, and interactive containers.
+     The default choice for most bordered components at rest. */
+
+  --davinci-color-stroke-strong: var(--davinci-primitive-brand-base);
+  /* High-visibility borders for focus rings, active states,
+     and error outlines. Never use decoratively - this color
+     must retain its functional signal value. */
+
+  /* --- Icon colors --- */
+
+  --davinci-color-icon-default: var(--davinci-primitive-neutral-600);
+  /* Standard color for all interactive and informational icons.
+     Ensure minimum 3:1 contrast against background (WCAG AA for UI). */
+
+  --davinci-color-icon-muted: var(--davinci-primitive-neutral-400);
+  /* Decorative, disabled, or secondary icons with no critical meaning.
+     Do not use for interactive icons users must act on. */
+
+  --davinci-color-icon-on-brand: var(--davinci-primitive-neutral-50);
+  /* Icons on brand-colored surfaces (inside primary buttons, badges).
+     Always near-white to guarantee contrast on dark brand fills. */
+
+  /* --- Background colors ---
+     Follow elevation order: base → subtle → elevated.
+     Never skip levels - visual depth depends on consistent layering. */
+
+  --davinci-color-bg-base: var(--davinci-primitive-neutral-50);
+  /* Main page background. The lowest elevation layer.
+     Everything else in the UI sits on top of this surface. */
+
+  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-100);
+  /* Slightly raised surface for cards, sidebars, secondary panels,
+     and alternate table rows. One visual step above bg-base. */
+
+  --davinci-color-bg-elevated: hsl(0, 0%, 100%);
+  /* Pure white for floating elements: modals, tooltips, dropdowns.
+     The highest elevation layer - combine with shadow for depth.
+     Exception: only token allowed to use a raw value (pure white). */
+
+  --davinci-color-bg-brand: var(--davinci-primitive-brand-base);
+  /* Background for primary buttons and brand-filled components.
+     Never apply to large surface areas - use sparingly for impact. */
+
+  --davinci-color-bg-danger: var(--davinci-primitive-danger-light);
+  /* Background for error states, destructive alerts, delete zones.
+     Use only when communicating failure or critical risk to the user. */
+}
+
+/* -------------------------------------------------------------
+   SEMANTIC TOKENS - DARK MODE
+   Remaps semantic tokens to appropriate primitives for dark theme.
+   Component code never changes - only these mappings update.
+   ------------------------------------------------------------- */
+
+[data-theme="dark"] {
+  --davinci-color-brand-background: var(--davinci-primitive-brand-darkest);
+  --davinci-color-brand-border: var(--davinci-primitive-brand-darker);
+  --davinci-color-brand-default: var(--davinci-primitive-brand-soft);
+  --davinci-color-brand-hover: var(--davinci-primitive-brand-light);
+  --davinci-color-brand-emphasis: var(--davinci-primitive-brand-lighter);
+
+  --davinci-color-text-default: var(--davinci-primitive-neutral-100);
+  --davinci-color-text-muted: var(--davinci-primitive-neutral-400);
+  --davinci-color-text-on-brand: var(--davinci-primitive-neutral-50);
+  --davinci-color-text-danger: var(--davinci-primitive-danger-text-dark);
+
+  --davinci-color-stroke-subtle: var(--davinci-primitive-neutral-800);
+  --davinci-color-stroke-default: var(--davinci-primitive-neutral-700);
+  --davinci-color-stroke-strong: var(--davinci-primitive-brand-soft);
+
+  --davinci-color-icon-default: var(--davinci-primitive-neutral-200);
+  --davinci-color-icon-muted: var(--davinci-primitive-neutral-400);
+  --davinci-color-icon-on-brand: var(--davinci-primitive-neutral-50);
+
+  --davinci-color-bg-base: var(--davinci-primitive-neutral-950);
+  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-900);
+  --davinci-color-bg-elevated: var(--davinci-primitive-neutral-800);
+  --davinci-color-bg-brand: var(--davinci-primitive-brand-soft);
+  --davinci-color-bg-danger: var(--davinci-primitive-danger-dark);
+}
+
+/* -------------------------------------------------------------
+   LINE WEIGHT
+   Use semantic intent: thin for decoration, strong for interaction.
+   Never mix line weights within the same component family.
+   ------------------------------------------------------------- */
+
+:root {
+  --davinci-line-weight-thin: 1px;
+  /* Decorative separators, subtle dividers, table cell borders.
+     Use when structure must be present but not distracting. */
+
+  --davinci-line-weight-default: 1.5px;
+  /* Standard border for inputs, cards, and component outlines.
+     Balances visibility and elegance across light and dark themes. */
+
+  --davinci-line-weight-strong: 2px;
+  /* Focus rings, active borders, error outlines.
+     Functionally significant borders that demand user attention.
+     Never use decoratively - preserve its signal value. */
+}
+
+/* -------------------------------------------------------------
+   TYPOGRAPHY
+   Always combine font-family + size + weight + line-height
+   as a coherent set. Never mix title font with body weight scale.
+   ------------------------------------------------------------- */
+
+:root {
+  /* Letter spacing */
+  --davinci-text-letter-spacing-tight: -0.02em;
+  /* Large display titles (H1, hero) in Poiret One.
+     Tightening prevents visual gaps in large letterforms. */
+
+  --davinci-text-letter-spacing-normal: 0;
+  /* Default for all body text and most UI labels.
+     Only deviate when visually or functionally necessary. */
+
+  --davinci-text-letter-spacing-wide: 0.08em;
+  /* Uppercase labels, badges, captions, overline text.
+     Improves legibility of short uppercase strings at small sizes. */
+
+  /* Font families */
+  --davinci-text-font-title: "Poiret One", sans-serif;
+  /* Headings H1–H3, hero sections, display text only.
+     Geometric and refined - reserves visual hierarchy for key content.
+     Never use for body copy or interactive UI labels. */
+
+  --davinci-text-font-main: "Overpass", sans-serif;
+  /* All body copy, UI labels, inputs, buttons, and captions.
+     Humanist and highly legible at small sizes across all screens. */
+
+  /* Weight */
+  --davinci-text-weight-regular: 400;
+  /* Body text, descriptions, placeholder text, helper messages.
+     The default reading weight for anything longer than a label. */
+
+  --davinci-text-weight-medium: 500;
+  /* Labels, nav items, table headers, subtle emphasis.
+     Adds visual weight without the heaviness of bold. */
+
+  --davinci-text-weight-bold: 700;
+  /* Primary headings, strong emphasis, error messages, CTA labels.
+     Use intentionally - overuse flattens typographic hierarchy. */
+
+  /* Size */
+  --davinci-text-size-xs: 0.75rem;
+  /* Legal text, timestamps, metadata, helper text below inputs.
+     Never use for primary or critical content.
+     Ensure minimum 4.5:1 contrast (WCAG AA) at this size. */
+
+  --davinci-text-size-sm: 0.875rem;
+  /* Secondary labels, captions, badge text, dense table content.
+     Comfortable at 14px - preferred for data-heavy interfaces. */
+
+  --davinci-text-size-md: 1rem;
+  /* Base body text. Default for all paragraph and UI copy.
+     Inherits from html { font-size: 100% } to respect user
+     browser preferences - do not override on html element. */
+
+  --davinci-text-size-lg: 1.25rem;
+  /* Subheadings, section intros, emphasized body copy.
+     Creates a clear mid-level step between body and headings. */
+
+  --davinci-text-size-xl: 1.5rem;
+  /* H3 headings, card titles, modal headers, prominent labels.
+     Poiret One becomes expressive and readable at this size. */
+
+  --davinci-text-size-2xl: 2rem;
+  /* H2 headings, page section titles.
+     Pair with tight letter-spacing when using Poiret One. */
+
+  --davinci-text-size-3xl: 2.5rem;
+  /* H1, hero display text, landing page headlines.
+     Use sparingly - one instance per view maximum for strong hierarchy. */
+
+  /* Line height */
+  --davinci-text-line-spacing-tight: 1.2;
+  /* Display titles and headings only.
+     Tighter leading keeps multi-line titles visually cohesive. */
+
+  --davinci-text-line-spacing-normal: 1.5;
+  /* Universal default for body copy and UI text.
+     Optimized for comfortable reading at all viewport sizes. */
+
+  --davinci-text-line-spacing-loose: 1.8;
+  /* Long-form content and accessibility-enhanced contexts.
+     Improves readability for users with dyslexia or low vision. */
+}
+
+/* -------------------------------------------------------------
+   ANIMATION
+   Always provide @media (prefers-reduced-motion) alternatives.
+   Motion should enhance, never distract or cause discomfort.
+   ------------------------------------------------------------- */
+
+:root {
+  /* Duration */
+  --davinci-animation-duration-fast: 100ms;
+  /* Micro-interactions: checkbox toggle, tooltip appear, ripple.
+     Below 100ms feels instantaneous - ideal for tight UI feedback. */
+
+  --davinci-animation-duration-default: 200ms;
+  /* Standard UI transitions: button states, input focus, tab switch.
+     The safe default for most interactive component state changes. */
+
+  --davinci-animation-duration-slow: 400ms;
+  /* Large layout transitions: modal open/close, drawer slide, page fade.
+     Only for elements that travel significant visual distance. */
+
+  /* Easing */
+  --davinci-animation-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  /* General purpose easing (Material Design standard).
+     Smooth in and out - for elements that remain visible after transition. */
+
+  --davinci-animation-ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Playful overshoot for positive feedback: success toast, badge pop.
+     Use sparingly - excessive bounce feels unprofessional in dense UIs. */
+
+  --davinci-animation-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  /* Elements exiting the screen: modal close, toast dismiss, fade out.
+     Accelerates toward exit point - feels natural for disappearing elements. */
+}
+
+/* -------------------------------------------------------------
+   CORNER RADIUS
+   Consistent radius creates visual harmony across components.
+   Never mix radii from non-adjacent steps in the same component.
+   ------------------------------------------------------------- */
+
+:root {
+  --davinci-corner-radius-sm: 4px;
+  /* Small inline elements: badges, tags, code snippets, chips.
+     Softens sharp corners without appearing pill-like. */
+
+  --davinci-corner-radius-md: 8px;
+  /* Buttons, inputs, selects, small cards.
+     The most frequently used radius - professional and approachable. */
+
+  --davinci-corner-radius-lg: 12px;
+  /* Medium cards, panels, notification banners.
+     Creates a softer container feel for grouped content blocks. */
+
+  --davinci-corner-radius-xl: 16px;
+  /* Modals, large cards, bottom sheets, drawer panels.
+     Reserved for the largest elevated surfaces in the interface. */
+
+  --davinci-corner-radius-full: 9999px;
+  /* Pills, avatar circles, toggle switches, spinner tracks.
+     Guarantees fully rounded ends regardless of element height. */
+}
+
+/* -------------------------------------------------------------
+   SPACING
+   Use gap for flex/grid layout spacing between elements.
+   Use padding for internal component whitespace.
+   Never use margin tokens - spacing is managed via layout context.
+   ------------------------------------------------------------- */
+
+:root {
+  /* Gap - space between elements in a layout */
+  --davinci-spacing-gap-xs: 4px;
+  /* Tight groupings: icon + label pairs, inline tag lists,
+     stacked radio/checkbox buttons. */
+
+  --davinci-spacing-gap-sm: 8px;
+  /* Standard inline spacing: button icon gap, form field clusters,
+     list item internal groups. */
+
+  --davinci-spacing-gap-md: 16px;
+  /* Default spacing between items within a component
+     (e.g. card body rows, form sections). */
+
+  --davinci-spacing-gap-lg: 24px;
+  /* Spacing between distinct component groups or content blocks
+     within a layout section. */
+
+  --davinci-spacing-gap-xl: 40px;
+  /* Major layout section separation: hero to content, page-level
+     vertical rhythm, full-width section breaks. */
+
+  /* Padding - internal whitespace within a component */
+  --davinci-spacing-padding-xs: 4px 8px;
+  /* Compact components: small badges, dense table cells, tight chips.
+     Use when space is limited and hierarchy is clear from context. */
+
+  --davinci-spacing-padding-sm: 8px 12px;
+  /* Small buttons, secondary inputs, compact list items.
+     Comfortable without feeling cramped at small component sizes. */
+
+  --davinci-spacing-padding-md: 12px 16px;
+  /* Default button and input padding. The standard baseline
+     for most interactive components at normal density. */
+
+  --davinci-spacing-padding-lg: 16px 24px;
+  /* Large buttons, prominent CTAs, card bodies.
+     Use when the component needs breathing room to feel premium. */
+}
