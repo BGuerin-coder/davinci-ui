@@ -46,27 +46,27 @@ src/
 
 ## Todo
 
-### Setup
+### ✅ Setup
 
 - [x] Init Vite + Vue3 + TypeScript
 - [x] Configure pnpm
 - [x] Init Storybook
 - [x] ESLint + Prettier
 - [x] Vitest setup
-- [ ] Chromatic deployment (Storybook hosting)
+- [x] Chromatic deployment (Storybook hosting)
 
-### Design Tokens
+### ✅ Design Tokens
 
-- [ ] Color palette (primary, neutral, semantic)
-- [ ] Spacing scale
-- [ ] Typography scale
-- [ ] CSS custom properties generation
-- [ ] Dark / Light theme switch
+- [x] Color palette (primary, neutral, semantic)
+- [x] Spacing scale
+- [x] Typography scale
+- [x] CSS custom properties generation
+- [x] Dark / Light theme switch
 
 ### Components • Tier 1
 
-- [ ] Button • variants, sizes, loading, disabled
-- [ ] Badge / Tag • variants, slots
+- [x] Button • variants, sizes, loading, disabled
+- [ ] ➡️ Badge / Tag • variants, slots
 - [ ] Input / TextField • label, error, helper, a11y
 - [ ] Typography • heading, body, caption components
 
