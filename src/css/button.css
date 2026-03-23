@@ -1,0 +1,104 @@
+.davinci-btn {
+  --davinci-btn-bg-color: var(--davinci-color-brand-default);
+  --davinci-btn-text-color: var(--davinci-color-bg-subtle);
+  --davinci-btn-animation-duration: var(--davinci-animation-duration-default);
+  --davinci-btn-animation-ease: var(--davinci-animation-ease-default);
+  --davinci-btn-padding: var(--davinci-spacing-padding-sm);
+  --davinci-btn-border-radius: var(--davinci-corner-radius-md);
+  --davinci-btn-shadow: var(--davinci-shadow-none);
+  --davinci-btn-gap: var(--davinci-spacing-gap-xs);
+
+  padding: var(--davinci-btn-padding);
+  border-radius: var(--davinci-btn-border-radius);
+
+  background-color: var(--davinci-btn-bg-color);
+  color: var(--davinci-btn-text-color);
+
+  transition:
+    background-color var(--davinci-btn-animation-duration)
+      var(--davinci-btn-animation-ease),
+    color var(--davinci-btn-animation-duration)
+      var(--davinci-btn-animation-ease),
+    border-radius var(--davinci-btn-animation-duration)
+      var(--davinci-btn-animation-ease),
+    box-shadow var(--davinci-btn-animation-duration)
+      var(--davinci-btn-animation-ease);
+
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--davinci-btn-shadow);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--davinci-btn-gap);
+}
+
+.davinci-btn.primary {
+  --davinci-btn-bg-color: var(--davinci-color-brand-default);
+  --davinci-btn-text-color: var(--davinci-color-bg-subtle);
+}
+.davinci-btn.secondary {
+  --davinci-btn-bg-color: var(--davinci-color-bg-subtle);
+  --davinci-btn-text-color: var(--davinci-color-brand-default);
+}
+.davinci-btn.danger {
+  --davinci-btn-bg-color: var(--davinci-color-bg-danger);
+  --davinci-btn-text-color: var(--davinci-color-text-danger);
+}
+.davinci-btn.ghost {
+  --davinci-btn-bg-color: transparent;
+  --davinci-btn-text-color: var(--davinci-color-brand-default);
+}
+
+.davinci-btn.small {
+  --davinci-btn-padding: var(--davinci-spacing-padding-xs);
+}
+.davinci-btn.medium {
+  --davinci-btn-padding: var(--davinci-spacing-padding-sm);
+}
+.davinci-btn.large {
+  --davinci-btn-padding: var(--davinci-spacing-padding-md);
+}
+
+.davinci-btn:hover {
+  --davinci-btn-border-radius: var(--davinci-corner-radius-sm);
+  --davinci-btn-shadow: var(--davinci-shadow-sm);
+  filter: brightness(1.025);
+}
+.davinci-btn:active {
+  --davinci-btn-shadow: var(--davinci-shadow-inner);
+  --davinci-btn-animation-duration: var(--davinci-animation-duration-fast);
+  filter: brightness(0.95);
+}
+.davinci-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.davinci-btn:disabled:hover {
+  --davinci-btn-border-radius: var(--davinci-corner-radius-md);
+  --davinci-btn-shadow: var(--davinci-shadow-none);
+  filter: none;
+}
+
+.davinci-btn:focus {
+  outline: 2px solid var(--davinci-color-stroke-strong);
+  outline-offset: 2px;
+}
+.davinci-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.davinci-btn--icon.start {
+  margin-inline-end: var(--davinci-spacing-gap-xs);
+}
+.davinci-btn--icon.end {
+  margin-inline-start: var(--davinci-spacing-gap-xs);
+}
+.davinci-btn--icon-only .davinci-btn--icon {
+  margin: 0;
+}
+
+.davinci-btn--loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
