@@ -83,10 +83,12 @@
   /* --- Danger primitives ---
      Red scale for error and destructive states only.
      Never repurpose for decorative or non-critical use. */
-  --davinci-primitive-danger-light: hsl(0, 80%, 96%);
+  --davinci-primitive-danger-lighter: hsl(0, 80%, 96%);
+  --davinci-primitive-danger-light: hsl(0, 80%, 88%);
+  --davinci-primitive-danger-soft: hsl(0, 80%, 72%);
   --davinci-primitive-danger-default: hsl(0, 72%, 38%);
-  --davinci-primitive-danger-dark: hsl(0, 60%, 16%);
-  --davinci-primitive-danger-text-dark: hsl(0, 80%, 72%);
+  --davinci-primitive-danger-dark: hsl(0, 72%, 30%);
+  --davinci-primitive-danger-darker: hsl(0, 60%, 16%);
 }
 
 /* -------------------------------------------------------------
@@ -110,13 +112,13 @@
      active tabs, selected cards. Pair with stroke-strong for
      higher visibility when accessibility demands it. */
 
-  --davinci-color-brand-default: var(--davinci-primitive-brand-base);
+  --davinci-color-brand-default: var(--davinci-primitive-brand-dark);
   /* Primary action color. Apply to CTAs, primary buttons, links,
      progress indicators, and active states. Only one prominent
      element per visual group should use this color. */
 
-  --davinci-color-brand-hover: var(--davinci-primitive-brand-dark);
-  /* Darkened brand for :hover on brand-colored interactive elements.
+  --davinci-color-brand-hover: var(--davinci-primitive-brand-base);
+  /* Lightened brand for :hover on brand-colored interactive elements.
      Never use at rest - reserved exclusively for hover transitions. */
 
   --davinci-color-brand-emphasis: var(--davinci-primitive-brand-darker);
@@ -137,12 +139,12 @@
      metadata, and timestamps. Never use for critical information
      or error messages - contrast may be insufficient alone. */
 
-  --davinci-color-text-on-brand: var(--davinci-primitive-neutral-50);
+  --davinci-color-text-on-brand: var(--davinci-primitive-brand-lightest);
   /* Text placed directly on brand-colored backgrounds (e.g. inside
      primary buttons). Always near-white to ensure contrast.
      Never use on light or neutral backgrounds. */
 
-  --davinci-color-text-danger: var(--davinci-primitive-danger-default);
+  --davinci-color-text-danger: var(--davinci-primitive-danger-dark);
   /* Error messages, destructive action labels, validation feedback.
      Use only to communicate failure or critical warnings.
      Never use decoratively or for emphasis. */
@@ -187,7 +189,7 @@
   /* Main page background. The lowest elevation layer.
      Everything else in the UI sits on top of this surface. */
 
-  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-100);
+  --davinci-color-bg-subtle: var(--davinci-primitive-brand-lighter);
   /* Slightly raised surface for cards, sidebars, secondary panels,
      and alternate table rows. One visual step above bg-base. */
 
@@ -204,12 +206,16 @@
   /* Background for error states, destructive alerts, delete zones.
      Use only when communicating failure or critical risk to the user. */
 
-   /* --- Shadow color ---
+  --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-soft);
+  /* Hover state for danger backgrounds (e.g. delete button hover).
+     Never use at rest - reserved exclusively for hover transitions. */
+
+  /* --- Shadow color ---
      Single shadow color with variable opacity for all elevations.
      Adjust opacity in semantic tokens to achieve appropriate depth. */
-     
-   --davinci-primitive-shadow-color: 20, 30%, 15%;
-   /* A warm, earthy shadow color with low saturation to complement the
+
+  --davinci-primitive-shadow-color: 20, 30%, 15%;
+  /* A warm, earthy shadow color with low saturation to complement the
      brand palette. Use HSLA with alpha channel for flexible opacity
      control across light and dark themes. */
 }
@@ -258,14 +264,14 @@
 [data-theme="dark"] {
   --davinci-color-brand-background: var(--davinci-primitive-brand-darkest);
   --davinci-color-brand-border: var(--davinci-primitive-brand-darker);
-  --davinci-color-brand-default: var(--davinci-primitive-brand-soft);
-  --davinci-color-brand-hover: var(--davinci-primitive-brand-light);
+  --davinci-color-brand-default: var(--davinci-primitive-brand-dark);
+  --davinci-color-brand-hover: var(--davinci-primitive-brand-base);
   --davinci-color-brand-emphasis: var(--davinci-primitive-brand-lighter);
 
   --davinci-color-text-default: var(--davinci-primitive-neutral-100);
   --davinci-color-text-muted: var(--davinci-primitive-neutral-400);
   --davinci-color-text-on-brand: var(--davinci-primitive-neutral-50);
-  --davinci-color-text-danger: var(--davinci-primitive-danger-text-dark);
+  --davinci-color-text-danger: var(--davinci-primitive-danger-light);
 
   --davinci-color-stroke-subtle: var(--davinci-primitive-neutral-800);
   --davinci-color-stroke-default: var(--davinci-primitive-neutral-700);
@@ -276,10 +282,11 @@
   --davinci-color-icon-on-brand: var(--davinci-primitive-neutral-50);
 
   --davinci-color-bg-base: var(--davinci-primitive-neutral-950);
-  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-900);
+  --davinci-color-bg-subtle: var(--davinci-primitive-brand-darker);
   --davinci-color-bg-elevated: var(--davinci-primitive-neutral-800);
   --davinci-color-bg-brand: var(--davinci-primitive-brand-soft);
   --davinci-color-bg-danger: var(--davinci-primitive-danger-dark);
+  --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-default);
 
   --davinci-shadow-sm:
     0 1px 2px hsla(var(--davinci-primitive-shadow-color), 0.25),
