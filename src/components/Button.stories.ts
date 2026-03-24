@@ -154,8 +154,8 @@ export const WithIcons: Story = {
         story: `
 | Usage | Recommendation |
 |---|---|
-| **Icon left** | Actions with a starting point (e.g. "← Back", "+ Add"). The icon precedes and signals the intent. |
-| **Icon right** | Actions with a direction or continuation (e.g. "Continue →", "Open ↗"). The icon confirms the progression. |
+| **Icon start** | Actions with a starting point (e.g. "← Back", "+ Add"). The icon precedes and signals the intent. Renders on the left in LTR, right in RTL. |
+| **Icon end** | Actions with a direction or continuation (e.g. "Continue →", "Open ↗"). The icon confirms the progression. Renders on the right in LTR, left in RTL. |
 | **Icon only** | Very constrained spaces (toolbars, tables). Always provide a \`label\` for the screen reader and a visible tooltip. |
         `.trim(),
       },
