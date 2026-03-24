@@ -88,6 +88,9 @@
   outline: none;
 }
 
+.davinci-btn--icon {
+ min-height: 1.5em;
+}
 .davinci-btn--icon.start {
   margin-inline-end: var(--davinci-spacing-gap-xs);
 }
