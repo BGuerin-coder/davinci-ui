@@ -112,7 +112,7 @@ export const AllStates: Story = {
         story: `
 | State | When to use |
 |---|---|
-| **Default** | Idle state — the action is available and expected. |
+| **Default** | Idle state, the action is available and expected. |
 | **Disabled** | The action is temporarily unavailable (missing permissions, invalid form). Always explain why via a tooltip or contextual message. |
 | **Loading** | Visual feedback during an async operation (form submit, upload, API request). Block the button while loading to prevent double submissions. |
         `.trim(),
