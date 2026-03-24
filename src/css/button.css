@@ -1,10 +1,10 @@
 .davinci-btn {
   --davinci-btn-bg-color: var(--davinci-color-brand-default);
-  --davinci-btn-text-color: var(--davinci-color-bg-subtle);
+  --davinci-btn-text-color: var(--davinci-color-text-on-brand);
   --davinci-btn-animation-duration: var(--davinci-animation-duration-default);
   --davinci-btn-animation-ease: var(--davinci-animation-ease-default);
   --davinci-btn-padding: var(--davinci-spacing-padding-sm);
-  --davinci-btn-border-radius: var(--davinci-corner-radius-md);
+  --davinci-btn-border-radius: var(--davinci-corner-radius-sm);
   --davinci-btn-shadow: var(--davinci-shadow-none);
   --davinci-btn-gap: var(--davinci-spacing-gap-xs);
 
@@ -18,8 +18,6 @@
     background-color var(--davinci-btn-animation-duration)
       var(--davinci-btn-animation-ease),
     color var(--davinci-btn-animation-duration)
-      var(--davinci-btn-animation-ease),
-    border-radius var(--davinci-btn-animation-duration)
       var(--davinci-btn-animation-ease),
     box-shadow var(--davinci-btn-animation-duration)
       var(--davinci-btn-animation-ease);
@@ -35,19 +33,30 @@
 
 .davinci-btn.primary {
   --davinci-btn-bg-color: var(--davinci-color-brand-default);
-  --davinci-btn-text-color: var(--davinci-color-bg-subtle);
+  --davinci-btn-text-color: var(--davinci-color-text-on-brand);
 }
-.davinci-btn.secondary {
-  --davinci-btn-bg-color: var(--davinci-color-bg-subtle);
-  --davinci-btn-text-color: var(--davinci-color-brand-default);
+.davinci-btn.secondary,
+.davinci-btn.ghost {
+  --davinci-btn-text-color: var(--davinci-color-brand-emphasis);
 }
 .davinci-btn.danger {
   --davinci-btn-bg-color: var(--davinci-color-bg-danger);
   --davinci-btn-text-color: var(--davinci-color-text-danger);
 }
+.davinci-btn.secondary {
+  --davinci-btn-bg-color: var(--davinci-color-bg-subtle);
+}
 .davinci-btn.ghost {
   --davinci-btn-bg-color: transparent;
-  --davinci-btn-text-color: var(--davinci-color-brand-default);
+}
+
+.davinci-btn:not(:disabled):not(.davinci-btn--loading):hover {
+  --davinci-btn-bg-color: var(--davinci-color-brand-hover);
+  --davinci-btn-text-color: var(--davinci-color-text-on-brand);
+}
+.davinci-btn.danger:not(:disabled):not(.davinci-btn--loading):hover {
+  --davinci-btn-bg-color: var(--davinci-color-bg-danger-hover);
+  --davinci-btn-text-color: var(--davinci-color-text-hover);
 }
 
 .davinci-btn.small {
@@ -60,12 +69,10 @@
   --davinci-btn-padding: var(--davinci-spacing-padding-md);
 }
 
-.davinci-btn:hover {
-  --davinci-btn-border-radius: var(--davinci-corner-radius-sm);
+.davinci-btn:not(:disabled):not(.davinci-btn--loading):hover {
   --davinci-btn-shadow: var(--davinci-shadow-sm);
-  filter: brightness(1.025);
 }
-.davinci-btn:active {
+.davinci-btn:not(:disabled):not(.davinci-btn--loading):active {
   --davinci-btn-shadow: var(--davinci-shadow-inner);
   --davinci-btn-animation-duration: var(--davinci-animation-duration-fast);
   filter: brightness(0.95);
@@ -73,11 +80,6 @@
 .davinci-btn:disabled {
   cursor: not-allowed;
   opacity: 0.6;
-}
-.davinci-btn:disabled:hover {
-  --davinci-btn-border-radius: var(--davinci-corner-radius-md);
-  --davinci-btn-shadow: var(--davinci-shadow-none);
-  filter: none;
 }
 
 .davinci-btn:focus {
@@ -89,7 +91,7 @@
 }
 
 .davinci-btn--icon {
- min-height: 1.5em;
+  min-height: 1.5em;
 }
 .davinci-btn--icon.start {
   margin-inline-end: var(--davinci-spacing-gap-xs);
@@ -102,6 +104,6 @@
 }
 
 .davinci-btn--loading {
-  pointer-events: none;
+  cursor: wait;
   opacity: 0.8;
 }
