@@ -13,84 +13,130 @@ const meta = {
     loading: false,
     iconOnly: false,
   },
+  argTypes: {
+    variant: {
+      control: "select",
+      options: ["primary", "secondary", "danger", "ghost"],
+    },
+    size: {
+      control: "select",
+      options: ["small", "medium", "large"],
+    },
+    iconPosition: {
+      control: "select",
+      options: ["start", "end"],
+    },
+    disabled: { control: "boolean" },
+    loading: { control: "boolean" },
+    iconOnly: { control: "boolean" },
+    label: { control: "text" },
+    icon: { control: "text" },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {
-    variant: "primary",
+export const AllVariants: Story = {
+  name: "All Variants",
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
   },
+  render: () => ({
+    components: { Button },
+    template: `
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <Button variant="primary" label="Primary" />
+          <Button variant="secondary" label="Secondary" />
+          <Button variant="danger" label="Danger" />
+          <Button variant="ghost" label="Ghost" />
+        </div>
+      </div>
+    `,
+  }),
 };
 
-export const Secondary: Story = {
-  args: {
-    variant: "secondary",
+export const AllSizes: Story = {
+  name: "All Sizes",
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
   },
+  render: () => ({
+    components: { Button },
+    template: `
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <Button variant="primary" size="small" label="Small" />
+        <Button variant="primary" size="medium" label="Medium" />
+        <Button variant="primary" size="large" label="Large" />
+      </div>
+    `,
+  }),
 };
 
-export const Danger: Story = {
-  args: {
-    variant: "danger",
+export const AllStates: Story = {
+  name: "All States",
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
   },
+  render: () => ({
+    components: { Button },
+    template: `
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <Button variant="primary" label="Default" />
+        <Button variant="primary" label="Disabled" :disabled="true" />
+        <Button variant="primary" label="Loading" :loading="true" />
+      </div>
+    `,
+  }),
 };
 
-export const Ghost: Story = {
-  args: {
-    variant: "ghost",
+export const DarkMode: Story = {
+  name: "Dark Mode",
+  globals: { theme: "dark" },
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
   },
+  render: () => ({
+    components: { Button },
+    template: `
+      <div style="display: flex; flex-direction: column; gap: 16px; background-color: var(--davinci-color-bg-base); padding: 16px" data-theme="dark">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <Button variant="primary" label="Primary" />
+          <Button variant="secondary" label="Secondary" />
+          <Button variant="danger" label="Danger" />
+          <Button variant="ghost" label="Ghost" />
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+          <Button variant="primary" label="Disabled" :disabled="true" />
+          <Button variant="primary" label="Loading" :loading="true" />
+          <Button variant="primary" label="With icon" icon="arrow-right" iconPosition="end" />
+          <Button variant="primary" icon="settings" :iconOnly="true" label="Settings" />
+        </div>
+      </div>
+    `,
+  }),
 };
 
-export const IconEnd: Story = {
-  args: {
-    icon: "arrow-right",
-    iconPosition: "end",
+export const WithIcons: Story = {
+  name: "With icons",
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
   },
-};
-
-export const IconStart: Story = {
-  args: {
-    icon: "arrow-left",
-    iconPosition: "start",
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: "small",
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    size: "medium",
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: "large",
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-  },
-};
-
-export const Loading: Story = {
-  args: {
-    loading: true,
-  },
-};
-
-export const IconOnly: Story = {
-  args: {
-    icon: "settings",
-    iconOnly: true,
-    label: "Settings",
-  },
+  render: () => ({
+    components: { Button },
+    template: `
+      <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+        <Button variant="primary" label="Icon left" icon="arrow-left" iconPosition="start" />
+        <Button variant="primary" label="Icon right" icon="arrow-right" iconPosition="end" />
+        <Button variant="primary" icon="settings" :iconOnly="true" label="Settings" />
+      </div>
+    `,
+  }),
 };
