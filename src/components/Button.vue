@@ -12,64 +12,29 @@
   </button>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import { Icon } from "@iconify/vue";
-
 import "../css/button.css";
 
-
-export type ButtonVariant = "primary" | "secondary" | "danger" | "ghost";
-export type ButtonSize = "small" | "medium" | "large";
-export type ButtonIconPosition = "start" | "end";
-
-export type ButtonProps = {
+export interface ButtonProps {
   icon?: string;
-  iconPosition?: ButtonIconPosition;
+  iconPosition?: "start" | "end";
   label?: string;
-  size?: ButtonSize;
-  variant?: ButtonVariant;
+  size?: "small" | "medium" | "large";
+  variant?: "primary" | "secondary" | "danger" | "ghost";
   iconOnly?: boolean;
   disabled?: boolean;
   loading?: boolean;
-};
+}
 
-export default defineComponent({
-  name: 'Button',
-  components: { Icon },
-  props: {
-    label: {
-      type: String,
-      default: 'Button',
-    },
-    variant: {
-      type: String as () => ButtonVariant,
-      default: 'primary',
-    },
-    icon: {
-      type: String,
-      default: '',
-    },
-    iconPosition: {
-      type: String as () => ButtonIconPosition,
-      default: 'start',
-    },
-    size: {
-      type: String as () => ButtonSize,
-      default: 'medium',
-    },
-    iconOnly: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-  }
+withDefaults(defineProps<ButtonProps>(), {
+  label: 'Button',
+  variant: 'primary',
+  icon: '',
+  iconPosition: 'start',
+  size: 'medium',
+  iconOnly: false,
+  disabled: false,
+  loading: false,
 });
 </script>
