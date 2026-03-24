@@ -1,10 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Button from "./Button.vue";
-import type {
-  ButtonVariant,
-  ButtonIconPosition,
-  ButtonSize,
-} from "./Button.vue";
 
 const meta = {
   title: "Components/Button",
@@ -17,29 +12,6 @@ const meta = {
     disabled: false,
     loading: false,
     iconOnly: false,
-  },
-  argTypes: {
-    variant: {
-      control: { type: "select" },
-      options: ["primary", "secondary", "danger", "ghost"] as ButtonVariant[],
-    },
-    iconPosition: {
-      control: { type: "select" },
-      options: ["start", "end"] as ButtonIconPosition[],
-    },
-    size: {
-      control: { type: "select" },
-      options: ["small", "medium", "large"] as ButtonSize[],
-    },
-    disabled: {
-      control: { type: "boolean" },
-    },
-    loading: {
-      control: { type: "boolean" },
-    },
-    iconOnly: {
-      control: { type: "boolean" },
-    },
   },
 } satisfies Meta<typeof Button>;
 
