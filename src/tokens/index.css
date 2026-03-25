@@ -50,45 +50,42 @@
 :root {
   /* --- Brand primitives ---
      Renaissance amber palette inspired by Da Vinci's use of
-     golden-earth pigments. Full range from lightest to darkest
-     to cover both light and dark theme semantic mappings. */
-  --davinci-primitive-brand-lightest: hsl(20, 80%, 96%);
-  --davinci-primitive-brand-lighter: hsl(20, 78%, 88%);
-  --davinci-primitive-brand-light: hsl(20, 75%, 72%);
-  --davinci-primitive-brand-soft: hsl(20, 68%, 58%);
-  --davinci-primitive-brand-base: hsl(
-    20,
-    63%,
-    48%
-  ); /* Terre de Sienne - core */
-  --davinci-primitive-brand-dark: hsl(20, 63%, 40%);
-  --davinci-primitive-brand-darker: hsl(20, 63%, 32%);
-  --davinci-primitive-brand-darkest: hsl(20, 60%, 14%);
+     golden-earth pigments. Derived from the base via color-mix()
+     in oklch for perceptually uniform lightness steps.
+     Only the base (Terre de Sienne) is hand-authored. */
+  --davinci-primitive-brand-base: hsl(20, 63%, 48%); /* Terre de Sienne - core */
+  --davinci-primitive-brand-lightest: color-mix(in oklch, var(--davinci-primitive-brand-base), white 88%);
+  --davinci-primitive-brand-lighter:  color-mix(in oklch, var(--davinci-primitive-brand-base), white 73%);
+  --davinci-primitive-brand-light:    color-mix(in oklch, var(--davinci-primitive-brand-base), white 50%);
+  --davinci-primitive-brand-soft:     color-mix(in oklch, var(--davinci-primitive-brand-base), white 22%);
+  --davinci-primitive-brand-dark:     color-mix(in oklch, var(--davinci-primitive-brand-base), black 18%);
+  --davinci-primitive-brand-darker:   color-mix(in oklch, var(--davinci-primitive-brand-base), black 34%);
+  --davinci-primitive-brand-darkest:  color-mix(in oklch, var(--davinci-primitive-brand-base), black 68%);
 
   /* --- Neutral primitives ---
-     Warm-tinted grays (hue 25) to stay harmonious with the
-     brand palette. Never use cold grays - they clash with
-     Terre de Sienne. Full scale for light and dark surfaces. */
-  --davinci-primitive-neutral-50: hsl(25, 15%, 97%);
-  --davinci-primitive-neutral-100: hsl(25, 12%, 92%);
-  --davinci-primitive-neutral-200: hsl(25, 10%, 82%);
-  --davinci-primitive-neutral-300: hsl(25, 9%, 70%);
-  --davinci-primitive-neutral-400: hsl(25, 8%, 58%);
-  --davinci-primitive-neutral-600: hsl(25, 8%, 38%);
-  --davinci-primitive-neutral-700: hsl(25, 9%, 28%);
-  --davinci-primitive-neutral-800: hsl(25, 10%, 18%);
-  --davinci-primitive-neutral-900: hsl(25, 12%, 10%);
-  --davinci-primitive-neutral-950: hsl(25, 15%, 6%);
+     Warm-tinted grays derived from the mid-point anchor (400).
+     Never use cold grays - they clash with Terre de Sienne.
+     Full scale for light and dark surfaces. */
+  --davinci-primitive-neutral-400: hsl(25, 8%, 58%); /* warm gray anchor */
+  --davinci-primitive-neutral-50:  color-mix(in oklch, var(--davinci-primitive-neutral-400), white 90%);
+  --davinci-primitive-neutral-100: color-mix(in oklch, var(--davinci-primitive-neutral-400), white 79%);
+  --davinci-primitive-neutral-200: color-mix(in oklch, var(--davinci-primitive-neutral-400), white 55%);
+  --davinci-primitive-neutral-300: color-mix(in oklch, var(--davinci-primitive-neutral-400), white 22%);
+  --davinci-primitive-neutral-600: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 48%);
+  --davinci-primitive-neutral-700: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 62%);
+  --davinci-primitive-neutral-800: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 76%);
+  --davinci-primitive-neutral-900: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 86%);
+  --davinci-primitive-neutral-950: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 91%);
 
   /* --- Danger primitives ---
      Red scale for error and destructive states only.
      Never repurpose for decorative or non-critical use. */
-  --davinci-primitive-danger-lighter: hsl(0, 80%, 96%);
-  --davinci-primitive-danger-light: hsl(0, 80%, 88%);
-  --davinci-primitive-danger-soft: hsl(0, 80%, 72%);
-  --davinci-primitive-danger-default: hsl(0, 72%, 38%);
-  --davinci-primitive-danger-dark: hsl(0, 72%, 30%);
-  --davinci-primitive-danger-darker: hsl(0, 60%, 16%);
+  --davinci-primitive-danger-default: hsl(0, 72%, 38%); /* danger anchor */
+  --davinci-primitive-danger-lighter: color-mix(in oklch, var(--davinci-primitive-danger-default), white 86%);
+  --davinci-primitive-danger-light:   color-mix(in oklch, var(--davinci-primitive-danger-default), white 71%);
+  --davinci-primitive-danger-soft:    color-mix(in oklch, var(--davinci-primitive-danger-default), white 42%);
+  --davinci-primitive-danger-dark:    color-mix(in oklch, var(--davinci-primitive-danger-default), black 24%);
+  --davinci-primitive-danger-darker:  color-mix(in oklch, var(--davinci-primitive-danger-default), black 58%);
 }
 
 /* -------------------------------------------------------------
