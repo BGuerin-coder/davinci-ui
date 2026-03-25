@@ -17,24 +17,26 @@ import { Icon } from "@iconify/vue";
 import "../css/button.css";
 
 export interface ButtonProps {
+  disabled?: boolean;
   icon?: string;
+  iconOnly?: boolean;
   iconPosition?: "start" | "end";
   label?: string;
-  size?: "small" | "medium" | "large";
-  variant?: "primary" | "secondary" | "danger" | "ghost";
-  iconOnly?: boolean;
-  disabled?: boolean;
   loading?: boolean;
+  size?: "small" | "medium" | "large";
+  type?: 'button' | 'submit' | 'reset'
+  variant?: "primary" | "secondary" | "danger" | "ghost";
 }
 
 withDefaults(defineProps<ButtonProps>(), {
-  label: 'Button',
-  variant: 'primary',
-  icon: '',
-  iconPosition: 'start',
-  size: 'medium',
-  iconOnly: false,
   disabled: false,
+  icon: '',
+  iconOnly: false,
+  iconPosition: 'start',
+  label: 'Button',
   loading: false,
+  size: 'medium',
+  type: 'button',
+  variant: 'primary'
 });
 </script>

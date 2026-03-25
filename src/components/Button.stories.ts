@@ -6,6 +6,7 @@ import ButtonAllSizes from "./stories/ButtonAllSizes.vue";
 import ButtonAllStates from "./stories/ButtonAllStates.vue";
 import ButtonDarkMode from "./stories/ButtonDarkMode.vue";
 import ButtonWithIcons from "./stories/ButtonWithIcons.vue";
+import ButtonTypes from "./stories/ButtonTypes.vue";
 
 const meta = {
   title: "Components/Button",
@@ -164,5 +165,27 @@ export const WithIcons: Story = {
   render: () => ({
     components: { ButtonWithIcons },
     template: "<ButtonWithIcons />",
+  }),
+};
+
+export const Types: Story = {
+  name: "Types",
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
+    docs: {
+      description: {
+        story: `| Type | When to use |
+|---|---|
+| **Button** | Default type. Use for general actions that do not submit a form. |
+| **Submit** | Use for buttons that submit a form. Triggers form validation and submission. |
+| **Reset** | Use for buttons that reset form fields to their initial values. Clears user input. |
+        `.trim(),
+      },
+    },
+  },
+  render: () => ({
+    components: { ButtonTypes },
+    template: "<ButtonTypes />",
   }),
 };
