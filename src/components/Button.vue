@@ -1,7 +1,7 @@
 <template>
 
   <button type="button" class="davinci-btn"
-    :class="[variant, size, { 'davinci-btn--loading': loading, 'davinci-btn--icon-only': iconOnly }]"
+    :class="[variant, size, { 'davinci-btn--loading': loading, 'davinci-btn--icon-only': iconOnly, [`icon--${iconPosition}`]: icon && !loading }]"
     :aria-label="`${iconOnly ? label : ''}`" :disabled="disabled" :aria-disabled="disabled" :aria-busy="loading">
     <Icon v-if="icon && iconPosition === 'start' && !loading" :icon="`feather:${icon}`" class="davinci-btn--icon"
       :class="iconPosition" />
