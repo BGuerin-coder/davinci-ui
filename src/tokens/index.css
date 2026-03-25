@@ -48,45 +48,46 @@
    ------------------------------------------------------------- */
 
 :root {
+     /* --- Neutral primitives ---
+     Warm-tinted grays derived from the mid-point anchor (400).
+     Never use cold grays - they clash with Terre de Sienne.
+     Full scale for light and dark surfaces. */
+  --davinci-primitive-neutral-400: hsl(25, 8%, 58%); /* warm gray anchor */
+  --davinci-primitive-neutral-50:  color-mix(in oklch, var(--davinci-primitive-neutral-400), white 90%);
+  --davinci-primitive-neutral-100: color-mix(in oklch, var(--davinci-primitive-neutral-400), white 79%);
+  --davinci-primitive-neutral-200: color-mix(in oklch, var(--davinci-primitive-neutral-400), white 55%);
+  --davinci-primitive-neutral-300: color-mix(in oklch, var(--davinci-primitive-neutral-400), white 22%);
+  --davinci-primitive-neutral-600: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 48%);
+  --davinci-primitive-neutral-700: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 62%);
+  --davinci-primitive-neutral-800: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 76%);
+  --davinci-primitive-neutral-900: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 86%);
+  --davinci-primitive-neutral-950: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 91%);
+
   /* --- Brand primitives ---
      Renaissance amber palette inspired by Da Vinci's use of
-     golden-earth pigments. Full range from lightest to darkest
-     to cover both light and dark theme semantic mappings. */
-  --davinci-primitive-brand-lightest: hsl(20, 80%, 96%);
-  --davinci-primitive-brand-lighter: hsl(20, 78%, 88%);
-  --davinci-primitive-brand-light: hsl(20, 75%, 72%);
-  --davinci-primitive-brand-soft: hsl(20, 68%, 58%);
-  --davinci-primitive-brand-base: hsl(
-    20,
-    63%,
-    48%
-  ); /* Terre de Sienne - core */
-  --davinci-primitive-brand-dark: hsl(20, 63%, 40%);
-  --davinci-primitive-brand-darker: hsl(20, 63%, 32%);
-  --davinci-primitive-brand-darkest: hsl(20, 60%, 14%);
+     golden-earth pigments. Derived from the base via color-mix()
+     in oklch for perceptually uniform lightness steps.
+     Only the base (Terre de Sienne) is hand-authored. */
+  --davinci-primitive-brand-base: hsl(20, 63%, 48%); /* Terre de Sienne - core */
+  --davinci-primitive-brand-lightest: color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-50) 88%);
+  --davinci-primitive-brand-lighter:  color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-50) 73%);
+  --davinci-primitive-brand-light:    color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-50) 50%);
+  --davinci-primitive-brand-soft:     color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-50) 22%);
+  --davinci-primitive-brand-softdark: color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-950) 18%);
+  --davinci-primitive-brand-dark:     color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-950) 48%);
+   --davinci-primitive-brand-darker:  color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-950) 70%);
+   --davinci-primitive-brand-darkest: color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-950) 85%);
 
-  /* --- Neutral primitives ---
-     Warm-tinted grays (hue 25) to stay harmonious with the
-     brand palette. Never use cold grays - they clash with
-     Terre de Sienne. Full scale for light and dark surfaces. */
-  --davinci-primitive-neutral-50: hsl(25, 15%, 97%);
-  --davinci-primitive-neutral-100: hsl(25, 12%, 92%);
-  --davinci-primitive-neutral-200: hsl(25, 10%, 82%);
-  --davinci-primitive-neutral-300: hsl(25, 9%, 70%);
-  --davinci-primitive-neutral-400: hsl(25, 8%, 58%);
-  --davinci-primitive-neutral-600: hsl(25, 8%, 38%);
-  --davinci-primitive-neutral-700: hsl(25, 9%, 28%);
-  --davinci-primitive-neutral-800: hsl(25, 10%, 18%);
-  --davinci-primitive-neutral-900: hsl(25, 12%, 10%);
-  --davinci-primitive-neutral-950: hsl(25, 15%, 6%);
 
   /* --- Danger primitives ---
      Red scale for error and destructive states only.
      Never repurpose for decorative or non-critical use. */
-  --davinci-primitive-danger-light: hsl(0, 80%, 96%);
-  --davinci-primitive-danger-default: hsl(0, 72%, 38%);
-  --davinci-primitive-danger-dark: hsl(0, 60%, 16%);
-  --davinci-primitive-danger-text-dark: hsl(0, 80%, 72%);
+  --davinci-primitive-danger-default: hsl(0, 72%, 38%); /* danger anchor */
+  --davinci-primitive-danger-lighter: color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-50) 86%);
+  --davinci-primitive-danger-light:   color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-50) 71%);
+  --davinci-primitive-danger-soft:    color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-50) 42%);
+  --davinci-primitive-danger-dark:    color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-950) 24%);
+  --davinci-primitive-danger-darker:  color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-950) 58%);
 }
 
 /* -------------------------------------------------------------
@@ -110,16 +111,16 @@
      active tabs, selected cards. Pair with stroke-strong for
      higher visibility when accessibility demands it. */
 
-  --davinci-color-brand-default: var(--davinci-primitive-brand-base);
+  --davinci-color-brand-default: var(--davinci-primitive-brand-softdark);
   /* Primary action color. Apply to CTAs, primary buttons, links,
      progress indicators, and active states. Only one prominent
      element per visual group should use this color. */
 
-  --davinci-color-brand-hover: var(--davinci-primitive-brand-dark);
-  /* Darkened brand for :hover on brand-colored interactive elements.
+  --davinci-color-brand-hover: var(--davinci-primitive-brand-base);
+  /* Lightened brand for :hover on brand-colored interactive elements.
      Never use at rest - reserved exclusively for hover transitions. */
 
-  --davinci-color-brand-emphasis: var(--davinci-primitive-brand-darker);
+  --davinci-color-brand-emphasis: var(--davinci-primitive-brand-dark);
   /* Maximum contrast brand usage. Use for bold text on light
      backgrounds, or when brand-default fails WCAG AA contrast.
      Prefer this over brand-default for small text on white. */
@@ -137,12 +138,12 @@
      metadata, and timestamps. Never use for critical information
      or error messages - contrast may be insufficient alone. */
 
-  --davinci-color-text-on-brand: var(--davinci-primitive-neutral-50);
+  --davinci-color-text-on-brand: var(--davinci-primitive-brand-lightest);
   /* Text placed directly on brand-colored backgrounds (e.g. inside
      primary buttons). Always near-white to ensure contrast.
      Never use on light or neutral backgrounds. */
 
-  --davinci-color-text-danger: var(--davinci-primitive-danger-default);
+  --davinci-color-text-danger: var(--davinci-primitive-danger-darker);
   /* Error messages, destructive action labels, validation feedback.
      Use only to communicate failure or critical warnings.
      Never use decoratively or for emphasis. */
@@ -187,7 +188,7 @@
   /* Main page background. The lowest elevation layer.
      Everything else in the UI sits on top of this surface. */
 
-  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-100);
+  --davinci-color-bg-subtle: var(--davinci-primitive-brand-lighter);
   /* Slightly raised surface for cards, sidebars, secondary panels,
      and alternate table rows. One visual step above bg-base. */
 
@@ -200,9 +201,57 @@
   /* Background for primary buttons and brand-filled components.
      Never apply to large surface areas - use sparingly for impact. */
 
-  --davinci-color-bg-danger: var(--davinci-primitive-danger-light);
+  --davinci-color-bg-danger: var(--davinci-primitive-danger-soft);
   /* Background for error states, destructive alerts, delete zones.
      Use only when communicating failure or critical risk to the user. */
+
+  --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-default);
+  /* Hover state for danger backgrounds (e.g. delete button hover).
+     Never use at rest - reserved exclusively for hover transitions. */
+
+  /* --- Shadow color ---
+     Single shadow color with variable opacity for all elevations.
+     Adjust opacity in semantic tokens to achieve appropriate depth. */
+
+  --davinci-primitive-shadow-color: 20, 30%, 15%;
+  /* A warm, earthy shadow color with low saturation to complement the
+     brand palette. Use HSLA with alpha channel for flexible opacity
+     control across light and dark themes. */
+}
+
+:root {
+  --davinci-shadow-sm:
+    0 1px 2px hsla(var(--davinci-primitive-shadow-color), 0.06),
+    0 1px 3px hsla(var(--davinci-primitive-shadow-color), 0.1);
+  /* Subtle lift for cards, inputs on focus, small interactive elements.
+     Use when an element needs to feel slightly raised from bg-base. */
+
+  --davinci-shadow-md:
+    0 4px 6px hsla(var(--davinci-primitive-shadow-color), 0.07),
+    0 2px 4px hsla(var(--davinci-primitive-shadow-color), 0.06);
+  /* Standard elevation for dropdowns, select menus, tooltips.
+     The default for most floating components above bg-subtle. */
+
+  --davinci-shadow-lg:
+    0 10px 15px hsla(var(--davinci-primitive-shadow-color), 0.08),
+    0 4px 6px hsla(var(--davinci-primitive-shadow-color), 0.05);
+  /* Modals, popovers, command palettes.
+     Use for bg-elevated surfaces that must feel clearly lifted. */
+
+  --davinci-shadow-xl:
+    0 20px 25px hsla(var(--davinci-primitive-shadow-color), 0.1),
+    0 8px 10px hsla(var(--davinci-primitive-shadow-color), 0.06);
+  /* Maximum elevation: full-screen overlays, drawer panels.
+     Reserved for the highest z-index surfaces in the interface. */
+
+  --davinci-shadow-inner: inset 0 2px 4px
+    hsla(var(--davinci-primitive-shadow-color), 0.08);
+  /* Inset shadow for pressed button states, active inputs,
+     wells and recessed containers. Creates a "pushed in" feel. */
+
+  --davinci-shadow-none: none;
+  /* Explicit removal of shadow — useful in Storybook controls
+     or to override inherited shadow in specific contexts. */
 }
 
 /* -------------------------------------------------------------
@@ -214,14 +263,14 @@
 [data-theme="dark"] {
   --davinci-color-brand-background: var(--davinci-primitive-brand-darkest);
   --davinci-color-brand-border: var(--davinci-primitive-brand-darker);
-  --davinci-color-brand-default: var(--davinci-primitive-brand-soft);
-  --davinci-color-brand-hover: var(--davinci-primitive-brand-light);
+  --davinci-color-brand-default: var(--davinci-primitive-brand-dark);
+  --davinci-color-brand-hover: var(--davinci-primitive-brand-softdark);
   --davinci-color-brand-emphasis: var(--davinci-primitive-brand-lighter);
 
   --davinci-color-text-default: var(--davinci-primitive-neutral-100);
   --davinci-color-text-muted: var(--davinci-primitive-neutral-400);
   --davinci-color-text-on-brand: var(--davinci-primitive-neutral-50);
-  --davinci-color-text-danger: var(--davinci-primitive-danger-text-dark);
+  --davinci-color-text-danger: var(--davinci-primitive-danger-light);
 
   --davinci-color-stroke-subtle: var(--davinci-primitive-neutral-800);
   --davinci-color-stroke-default: var(--davinci-primitive-neutral-700);
@@ -232,10 +281,26 @@
   --davinci-color-icon-on-brand: var(--davinci-primitive-neutral-50);
 
   --davinci-color-bg-base: var(--davinci-primitive-neutral-950);
-  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-900);
+  --davinci-color-bg-subtle: var(--davinci-primitive-brand-darker);
   --davinci-color-bg-elevated: var(--davinci-primitive-neutral-800);
   --davinci-color-bg-brand: var(--davinci-primitive-brand-soft);
   --davinci-color-bg-danger: var(--davinci-primitive-danger-dark);
+  --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-default);
+
+  --davinci-shadow-sm:
+    0 1px 2px hsla(var(--davinci-primitive-shadow-color), 0.25),
+    0 1px 3px hsla(var(--davinci-primitive-shadow-color), 0.3);
+  --davinci-shadow-md:
+    0 4px 6px hsla(var(--davinci-primitive-shadow-color), 0.3),
+    0 2px 4px hsla(var(--davinci-primitive-shadow-color), 0.25);
+  --davinci-shadow-lg:
+    0 10px 15px hsla(var(--davinci-primitive-shadow-color), 0.35),
+    0 4px 6px hsla(var(--davinci-primitive-shadow-color), 0.28);
+  --davinci-shadow-xl:
+    0 20px 25px hsla(var(--davinci-primitive-shadow-color), 0.4),
+    0 8px 10px hsla(var(--davinci-primitive-shadow-color), 0.3);
+  --davinci-shadow-inner: inset 0 2px 4px
+    hsla(var(--davinci-primitive-shadow-color), 0.4);
 }
 
 /* -------------------------------------------------------------
