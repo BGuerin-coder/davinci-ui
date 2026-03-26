@@ -3,6 +3,7 @@ import Tag from "./Tag.vue";
 
 import TagAllVariants from "./stories/TagAllVariants.vue";
 import TagAllSizes from "./stories/TagAllSizes.vue";
+import TagAllAppearance from "./stories/TagAllAppearance.vue";
 
 const meta = {
   title: "Components/Tag",
@@ -22,6 +23,7 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
   args: {
     variant: "neutral",
     size: "medium",
+    appearance: "outline",
   },
   argTypes: {
     variant: {
@@ -31,6 +33,10 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
     size: {
       control: "select",
       options: ["small", "medium"],
+    },
+    appearance: {
+      control: "select",
+      options: ["outline", "subtle"],
     },
   },
 } satisfies Meta<typeof Tag>;
@@ -83,5 +89,27 @@ export const AllSizes: Story = {
   render: () => ({
     components: { TagAllSizes },
     template: "<TagAllSizes />",
+  }),
+};
+
+export const AllAppearances: Story = {
+  name: "All Appearances",
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
+    docs: {
+      description: {
+        story: `
+| Appearance | When to use |
+|---|---|
+| **Outline** | Use for a bordered tag with no background. |
+| **Filled** | Use for a tag with a solid background. |
+        `.trim(),
+      },
+    },
+  },
+  render: () => ({
+    components: { TagAllAppearance },
+    template: "<TagAllAppearance />",
   }),
 };
