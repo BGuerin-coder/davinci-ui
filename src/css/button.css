@@ -43,7 +43,7 @@
 }
 .davinci-btn.danger {
   --davinci-btn-bg-color: var(--davinci-color-bg-danger);
-  --davinci-btn-text-color: var(--davinci-color-text-danger);
+  --davinci-btn-text-color: var(--davinci-color-text-on-danger);
 }
 .davinci-btn.secondary {
   --davinci-btn-bg-color: var(--davinci-color-bg-subtle);
