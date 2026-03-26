@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Tag from "./Tag.vue";
 
 import TagAllVariants from "./stories/TagAllVariants.vue";
+import TagAllSizes from "./stories/TagAllSizes.vue";
 
 const meta = {
   title: "Components/Tag",
@@ -20,11 +21,16 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
   },
   args: {
     variant: "neutral",
+    size: "medium",
   },
   argTypes: {
     variant: {
       control: "select",
       options: ["brand", "success", "error", "warning", "neutral"],
+    },
+    size: {
+      control: "select",
+      options: ["small", "medium"],
     },
   },
 } satisfies Meta<typeof Tag>;
@@ -55,5 +61,27 @@ export const AllVariants: Story = {
   render: () => ({
     components: { TagAllVariants },
     template: "<TagAllVariants />",
+  }),
+};
+
+export const AllSizes: Story = {
+  name: "All Sizes",
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
+    docs: {
+      description: {
+        story: `
+| Size | When to use |
+|---|---|
+| **Small** | Use for compact spaces or when you need a less prominent tag. |
+| **Medium** | Use for standard spacing and visibility. |
+        `.trim(),
+      },
+    },
+  },
+  render: () => ({
+    components: { TagAllSizes },
+    template: "<TagAllSizes />",
   }),
 };
