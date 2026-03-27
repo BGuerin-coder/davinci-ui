@@ -177,7 +177,7 @@
   --davinci-primitive-danger-darker: color-mix(
     in oklch,
     var(--davinci-primitive-danger-default),
-    var(--davinci-primitive-neutral-950) 58%
+    var(--davinci-primitive-neutral-950) 42%
   );
 
   /* --- Warning primitives ---
@@ -207,7 +207,7 @@
   --davinci-primitive-warning-darker: color-mix(
     in oklch,
     var(--davinci-primitive-warning-default),
-    var(--davinci-primitive-neutral-950) 58%
+    var(--davinci-primitive-neutral-950) 42%
   );
 
   /* --- Success primitives ---
@@ -237,7 +237,7 @@
   --davinci-primitive-success-darker: color-mix(
     in oklch,
     var(--davinci-primitive-success-default),
-    var(--davinci-primitive-neutral-950) 58%
+    var(--davinci-primitive-neutral-950) 42%
   );
 }
 
@@ -324,7 +324,7 @@
        Use only to communicate failure or risk. Never use for
        decorative purposes or non-critical emphasis. */
 
-  --davinci-color-text-warning: var(--davinci-primitive-warning-default);
+  --davinci-color-text-warning: var(--davinci-primitive-warning-dark);
   /* Yellow text for cautionary messages, important notes, risk.
        Use only to communicate warnings or important information.
        Never use decoratively or for emphasis. */
@@ -489,11 +489,11 @@
   --davinci-color-text-on-warning: var(--davinci-primitive-warning-lighter);
   --davinci-color-text-on-success: var(--davinci-primitive-success-lighter);
   --davinci-color-text-on-neutral: var(--davinci-primitive-neutral-200);
-  --davinci-color-text-brand: var(--davinci-primitive-brand-light);
-  --davinci-color-text-danger: var(--davinci-primitive-danger-light);
-  --davinci-color-text-warning: var(--davinci-primitive-warning-light);
-  --davinci-color-text-success: var(--davinci-primitive-success-light);
-  --davinci-color-text-neutral: var(--davinci-primitive-neutral-400);
+  --davinci-color-text-brand: var(--davinci-primitive-brand-soft);
+  --davinci-color-text-danger: var(--davinci-primitive-danger-soft);
+  --davinci-color-text-warning: var(--davinci-primitive-warning-soft);
+  --davinci-color-text-success: var(--davinci-primitive-success-soft);
+  --davinci-color-text-neutral: var(--davinci-primitive-neutral-200);
 
   --davinci-color-stroke-subtle: var(--davinci-primitive-neutral-800);
   --davinci-color-stroke-default: var(--davinci-primitive-neutral-700);
@@ -504,14 +504,14 @@
   --davinci-color-icon-on-brand: var(--davinci-primitive-neutral-50);
 
   --davinci-color-bg-base: var(--davinci-primitive-neutral-950);
-  --davinci-color-bg-subtle: var(--davinci-primitive-brand-darker);
+  --davinci-color-bg-subtle: var(--davinci-primitive-brand-dark);
   --davinci-color-bg-elevated: var(--davinci-primitive-neutral-800);
   --davinci-color-bg-brand: var(--davinci-primitive-brand-soft);
-  --davinci-color-bg-danger: var(--davinci-primitive-danger-dark);
+  --davinci-color-bg-danger: var(--davinci-primitive-danger-darker);
   --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-default);
-  --davinci-color-bg-warning: var(--davinci-primitive-warning-dark);
+  --davinci-color-bg-warning: var(--davinci-primitive-warning-darker);
   --davinci-color-bg-warning-hover: var(--davinci-primitive-warning-default);
-  --davinci-color-bg-success: var(--davinci-primitive-success-dark);
+  --davinci-color-bg-success: var(--davinci-primitive-success-darker);
   --davinci-color-bg-success-hover: var(--davinci-primitive-success-default);
   --davinci-color-bg-neutral: var(--davinci-primitive-neutral-600);
   --davinci-color-bg-neutral-hover: var(--davinci-primitive-neutral-500);
