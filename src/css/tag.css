@@ -1,0 +1,99 @@
+.davinci-tag {
+  --davinci-tag-bg-color: transparent;
+  --davinci-tag-text-color: var(--davinci-primitive-brand-base);
+  --davinci-tag-padding: var(--davinci-spacing-padding-sm);
+  --davinci-tag-border-radius: var(--davinci-corner-radius-full);
+  --davinci-tag-font-size: 0.8rem;
+  --davinci-tag-border-color: transparent;
+  --davinci-tag-gap: var(--davinci-spacing-gap-xs);
+
+  display: inline-flex;
+  align-items: center;
+  gap: var(--davinci-tag-gap);
+
+  background-color: var(--davinci-tag-bg-color);
+  color: var(--davinci-tag-text-color);
+
+  padding: var(--davinci-tag-padding);
+
+  border-radius: var(--davinci-tag-border-radius);
+  border: 1px solid var(--davinci-tag-border-color);
+
+  text-transform: lowercase;
+  font-size: var(--davinci-tag-font-size);
+}
+
+.davinci-tag--label {
+  line-height: 1;
+  text-box: trim-both cap alphabetic;
+}
+
+.davinci-tag--dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  margin: -0.25rem; /* Increase clickable area */
+  cursor: pointer;
+  color: inherit;
+  line-height: 0;
+  border-radius: var(--davinci-corner-radius-full);
+}
+
+.davinci-tag--icon {
+  font-size: 0.8rem;
+}
+
+.davinci-tag.brand {
+  --davinci-tag-bg-color: var(--davinci-color-bg-subtle);
+  --davinci-tag-text-color: var(--davinci-color-brand-emphasis);
+}
+.davinci-tag.danger {
+  --davinci-tag-bg-color: var(--davinci-color-bg-danger);
+  --davinci-tag-text-color: var(--davinci-color-text-on-danger);
+}
+.davinci-tag.warning {
+  --davinci-tag-bg-color: var(--davinci-color-bg-warning);
+  --davinci-tag-text-color: var(--davinci-color-text-on-warning);
+}
+.davinci-tag.success {
+  --davinci-tag-bg-color: var(--davinci-color-bg-success);
+  --davinci-tag-text-color: var(--davinci-color-text-on-success);
+}
+.davinci-tag.neutral {
+  --davinci-tag-bg-color: var(--davinci-color-bg-neutral);
+  --davinci-tag-text-color: var(--davinci-color-text-on-neutral);
+}
+
+.davinci-tag.small {
+  --davinci-tag-font-size: 0.7rem;
+}
+.davinci-tag.medium {
+  --davinci-tag-font-size: 0.8rem;
+}
+
+.davinci-tag.outline {
+  --davinci-tag-bg-color: transparent;
+}
+.davinci-tag.outline.brand {
+  --davinci-tag-border-color: var(--davinci-color-text-brand);
+  --davinci-tag-text-color: var(--davinci-color-text-brand);
+}
+.davinci-tag.outline.danger {
+  --davinci-tag-border-color: var(--davinci-color-text-danger);
+  --davinci-tag-text-color: var(--davinci-color-text-danger);
+}
+.davinci-tag.outline.warning {
+  --davinci-tag-border-color: var(--davinci-color-text-warning);
+  --davinci-tag-text-color: var(--davinci-color-text-warning);
+}
+.davinci-tag.outline.success {
+  --davinci-tag-border-color: var(--davinci-color-text-success);
+  --davinci-tag-text-color: var(--davinci-color-text-success);
+}
+.davinci-tag.outline.neutral {
+  --davinci-tag-border-color: var(--davinci-color-text-neutral);
+  --davinci-tag-text-color: var(--davinci-color-text-neutral);
+}

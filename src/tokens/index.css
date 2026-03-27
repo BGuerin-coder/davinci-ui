@@ -48,46 +48,197 @@
    ------------------------------------------------------------- */
 
 :root {
-     /* --- Neutral primitives ---
+  /* --- Neutral primitives ---
      Warm-tinted grays derived from the mid-point anchor (400).
      Never use cold grays - they clash with Terre de Sienne.
      Full scale for light and dark surfaces. */
   --davinci-primitive-neutral-400: hsl(25, 8%, 58%); /* warm gray anchor */
-  --davinci-primitive-neutral-50:  color-mix(in oklch, var(--davinci-primitive-neutral-400), white 90%);
-  --davinci-primitive-neutral-100: color-mix(in oklch, var(--davinci-primitive-neutral-400), white 79%);
-  --davinci-primitive-neutral-200: color-mix(in oklch, var(--davinci-primitive-neutral-400), white 55%);
-  --davinci-primitive-neutral-300: color-mix(in oklch, var(--davinci-primitive-neutral-400), white 22%);
-  --davinci-primitive-neutral-600: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 48%);
-  --davinci-primitive-neutral-700: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 62%);
-  --davinci-primitive-neutral-800: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 76%);
-  --davinci-primitive-neutral-900: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 86%);
-  --davinci-primitive-neutral-950: color-mix(in oklch, var(--davinci-primitive-neutral-400), black 91%);
+  --davinci-primitive-neutral-50: color-mix(
+    in oklch,
+    var(--davinci-primitive-neutral-400),
+    white 90%
+  );
+  --davinci-primitive-neutral-100: color-mix(
+    in oklch,
+    var(--davinci-primitive-neutral-400),
+    white 79%
+  );
+  --davinci-primitive-neutral-200: color-mix(
+    in oklch,
+    var(--davinci-primitive-neutral-400),
+    white 55%
+  );
+  --davinci-primitive-neutral-300: color-mix(
+    in oklch,
+    var(--davinci-primitive-neutral-400),
+    white 22%
+  );
+  --davinci-primitive-neutral-600: color-mix(
+    in oklch,
+    var(--davinci-primitive-neutral-400),
+    black 48%
+  );
+  --davinci-primitive-neutral-700: color-mix(
+    in oklch,
+    var(--davinci-primitive-neutral-400),
+    black 62%
+  );
+  --davinci-primitive-neutral-800: color-mix(
+    in oklch,
+    var(--davinci-primitive-neutral-400),
+    black 76%
+  );
+  --davinci-primitive-neutral-900: color-mix(
+    in oklch,
+    var(--davinci-primitive-neutral-400),
+    black 86%
+  );
+  --davinci-primitive-neutral-950: color-mix(
+    in oklch,
+    var(--davinci-primitive-neutral-400),
+    black 91%
+  );
 
   /* --- Brand primitives ---
      Renaissance amber palette inspired by Da Vinci's use of
      golden-earth pigments. Derived from the base via color-mix()
      in oklch for perceptually uniform lightness steps.
      Only the base (Terre de Sienne) is hand-authored. */
-  --davinci-primitive-brand-base: hsl(20, 63%, 48%); /* Terre de Sienne - core */
-  --davinci-primitive-brand-lightest: color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-50) 88%);
-  --davinci-primitive-brand-lighter:  color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-50) 73%);
-  --davinci-primitive-brand-light:    color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-50) 50%);
-  --davinci-primitive-brand-soft:     color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-50) 22%);
-  --davinci-primitive-brand-softdark: color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-950) 18%);
-  --davinci-primitive-brand-dark:     color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-950) 48%);
-   --davinci-primitive-brand-darker:  color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-950) 70%);
-   --davinci-primitive-brand-darkest: color-mix(in oklch, var(--davinci-primitive-brand-base), var(--davinci-primitive-neutral-950) 85%);
-
+  --davinci-primitive-brand-base: hsl(
+    20,
+    63%,
+    48%
+  ); /* Terre de Sienne - core */
+  --davinci-primitive-brand-lightest: color-mix(
+    in oklch,
+    var(--davinci-primitive-brand-base),
+    var(--davinci-primitive-neutral-50) 88%
+  );
+  --davinci-primitive-brand-lighter: color-mix(
+    in oklch,
+    var(--davinci-primitive-brand-base),
+    var(--davinci-primitive-neutral-50) 73%
+  );
+  --davinci-primitive-brand-light: color-mix(
+    in oklch,
+    var(--davinci-primitive-brand-base),
+    var(--davinci-primitive-neutral-50) 50%
+  );
+  --davinci-primitive-brand-soft: color-mix(
+    in oklch,
+    var(--davinci-primitive-brand-base),
+    var(--davinci-primitive-neutral-50) 22%
+  );
+  --davinci-primitive-brand-softdark: color-mix(
+    in oklch,
+    var(--davinci-primitive-brand-base),
+    var(--davinci-primitive-neutral-950) 18%
+  );
+  --davinci-primitive-brand-dark: color-mix(
+    in oklch,
+    var(--davinci-primitive-brand-base),
+    var(--davinci-primitive-neutral-950) 48%
+  );
+  --davinci-primitive-brand-darker: color-mix(
+    in oklch,
+    var(--davinci-primitive-brand-base),
+    var(--davinci-primitive-neutral-950) 70%
+  );
+  --davinci-primitive-brand-darkest: color-mix(
+    in oklch,
+    var(--davinci-primitive-brand-base),
+    var(--davinci-primitive-neutral-950) 85%
+  );
 
   /* --- Danger primitives ---
      Red scale for error and destructive states only.
      Never repurpose for decorative or non-critical use. */
   --davinci-primitive-danger-default: hsl(0, 72%, 38%); /* danger anchor */
-  --davinci-primitive-danger-lighter: color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-50) 86%);
-  --davinci-primitive-danger-light:   color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-50) 71%);
-  --davinci-primitive-danger-soft:    color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-50) 42%);
-  --davinci-primitive-danger-dark:    color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-950) 24%);
-  --davinci-primitive-danger-darker:  color-mix(in oklch, var(--davinci-primitive-danger-default), var(--davinci-primitive-neutral-950) 58%);
+  --davinci-primitive-danger-lighter: color-mix(
+    in oklch,
+    var(--davinci-primitive-danger-default),
+    var(--davinci-primitive-neutral-50) 86%
+  );
+  --davinci-primitive-danger-light: color-mix(
+    in oklch,
+    var(--davinci-primitive-danger-default),
+    var(--davinci-primitive-neutral-50) 71%
+  );
+  --davinci-primitive-danger-soft: color-mix(
+    in oklch,
+    var(--davinci-primitive-danger-default),
+    var(--davinci-primitive-neutral-50) 42%
+  );
+  --davinci-primitive-danger-dark: color-mix(
+    in oklch,
+    var(--davinci-primitive-danger-default),
+    var(--davinci-primitive-neutral-950) 24%
+  );
+  --davinci-primitive-danger-darker: color-mix(
+    in oklch,
+    var(--davinci-primitive-danger-default),
+    var(--davinci-primitive-neutral-950) 42%
+  );
+
+  /* --- Warning primitives ---
+     Yellow scale for cautionary states and warnings.
+     Use only to communicate non-critical risk or important notes. */
+  --davinci-primitive-warning-default: hsl(45, 100%, 50%);
+  --davinci-primitive-warning-lighter: color-mix(
+    in oklch,
+    var(--davinci-primitive-warning-default),
+    var(--davinci-primitive-neutral-50) 86%
+  );
+  --davinci-primitive-warning-light: color-mix(
+    in oklch,
+    var(--davinci-primitive-warning-default),
+    var(--davinci-primitive-neutral-50) 71%
+  );
+  --davinci-primitive-warning-soft: color-mix(
+    in oklch,
+    var(--davinci-primitive-warning-default),
+    var(--davinci-primitive-neutral-50) 42%
+  );
+  --davinci-primitive-warning-dark: color-mix(
+    in oklch,
+    var(--davinci-primitive-warning-default),
+    var(--davinci-primitive-neutral-950) 24%
+  );
+  --davinci-primitive-warning-darker: color-mix(
+    in oklch,
+    var(--davinci-primitive-warning-default),
+    var(--davinci-primitive-neutral-950) 42%
+  );
+
+  /* --- Success primitives ---
+     Green scale for success states and positive feedback.
+     Use only to communicate successful outcomes or confirmations. */
+  --davinci-primitive-success-default: hsl(120, 60%, 40%);
+  --davinci-primitive-success-lighter: color-mix(
+    in oklch,
+    var(--davinci-primitive-success-default),
+    var(--davinci-primitive-neutral-50) 86%
+  );
+  --davinci-primitive-success-light: color-mix(
+    in oklch,
+    var(--davinci-primitive-success-default),
+    var(--davinci-primitive-neutral-50) 71%
+  );
+  --davinci-primitive-success-soft: color-mix(
+    in oklch,
+    var(--davinci-primitive-success-default),
+    var(--davinci-primitive-neutral-50) 42%
+  );
+  --davinci-primitive-success-dark: color-mix(
+    in oklch,
+    var(--davinci-primitive-success-default),
+    var(--davinci-primitive-neutral-950) 24%
+  );
+  --davinci-primitive-success-darker: color-mix(
+    in oklch,
+    var(--davinci-primitive-success-default),
+    var(--davinci-primitive-neutral-950) 42%
+  );
 }
 
 /* -------------------------------------------------------------
@@ -143,10 +294,50 @@
      primary buttons). Always near-white to ensure contrast.
      Never use on light or neutral backgrounds. */
 
-  --davinci-color-text-danger: var(--davinci-primitive-danger-darker);
+  --davinci-color-text-on-danger: var(--davinci-primitive-danger-darker);
   /* Error messages, destructive action labels, validation feedback.
      Use only to communicate failure or critical warnings.
      Never use decoratively or for emphasis. */
+
+  --davinci-color-text-on-warning: var(--davinci-primitive-warning-darker);
+  /* Cautionary messages, important notes, non-critical risk.
+      Use only to communicate warnings or important information.
+      Never use decoratively or for emphasis. */
+
+  --davinci-color-text-on-success: var(--davinci-primitive-success-darker);
+  /* Success messages, confirmations, positive feedback.
+      Use only to communicate successful outcomes or confirmations.
+      Never use decoratively or for emphasis. */
+
+  --davinci-color-text-on-neutral: var(--davinci-primitive-neutral-600);
+  /* Decorative or non-critical text that doesn't require strong
+     contrast. Use for purely ornamental elements, or when text is
+     not essential for understanding (e.g. "New" badge on a card). */
+
+  --davinci-color-text-brand: var(--davinci-primitive-brand-base);
+  /* Brand-colored text for emphasis or decorative use.
+       Use sparingly to highlight key words, links, or accents.
+       Always verify contrast against background before use. */
+
+  --davinci-color-text-danger: var(--davinci-primitive-danger-default);
+  /* Red text for error states, destructive actions, critical info.
+       Use only to communicate failure or risk. Never use for
+       decorative purposes or non-critical emphasis. */
+
+  --davinci-color-text-warning: var(--davinci-primitive-warning-dark);
+  /* Yellow text for cautionary messages, important notes, risk.
+       Use only to communicate warnings or important information.
+       Never use decoratively or for emphasis. */
+
+  --davinci-color-text-success: var(--davinci-primitive-success-default);
+  /* Green text for success states, confirmations, positive feedback.
+       Use only to communicate successful outcomes or confirmations.
+       Never use decoratively or for emphasis. */
+
+  --davinci-color-text-neutral: var(--davinci-primitive-neutral-400);
+  /* Neutral text for decorative or non-critical content that doesn't
+       require strong contrast. Use for purely ornamental elements, or
+       when text is not essential for understanding (e.g. "New" badge). */
 
   /* --- Stroke colors ---
      Use for borders and dividers. Match stroke weight to context:
@@ -209,6 +400,30 @@
   /* Hover state for danger backgrounds (e.g. delete button hover).
      Never use at rest - reserved exclusively for hover transitions. */
 
+  --davinci-color-bg-warning: var(--davinci-primitive-warning-soft);
+  /* Background for cautionary states, warning alerts, risk zones.
+      Use only when communicating warnings or important information to the user. */
+
+  --davinci-color-bg-warning-hover: var(--davinci-primitive-warning-default);
+  /* Hover state for warning backgrounds.
+      Never use at rest - reserved exclusively for hover transitions. */
+
+  --davinci-color-bg-success: var(--davinci-primitive-success-soft);
+  /* Background for success states, confirmation messages, safe zones.
+      Use only when communicating successful outcomes or confirmations. */
+
+  --davinci-color-bg-success-hover: var(--davinci-primitive-success-default);
+  /* Hover state for success backgrounds.
+      Never use at rest - reserved exclusively for hover transitions. */
+
+  --davinci-color-bg-neutral: var(--davinci-primitive-neutral-100);
+  /* Neutral background for decorative surfaces, non-critical UI elements,
+     or when a tinted alternative is needed without semantic meaning. */
+
+  --davinci-color-bg-neutral-hover: var(--davinci-primitive-neutral-200);
+  /* Hover state for neutral backgrounds.
+     Use for non-semantic interactive elements that require hover feedback. */
+
   /* --- Shadow color ---
      Single shadow color with variable opacity for all elevations.
      Adjust opacity in semantic tokens to achieve appropriate depth. */
@@ -269,8 +484,16 @@
 
   --davinci-color-text-default: var(--davinci-primitive-neutral-100);
   --davinci-color-text-muted: var(--davinci-primitive-neutral-400);
-  --davinci-color-text-on-brand: var(--davinci-primitive-neutral-50);
-  --davinci-color-text-danger: var(--davinci-primitive-danger-light);
+  --davinci-color-text-on-brand: var(--davinci-primitive-brand-lighter);
+  --davinci-color-text-on-danger: var(--davinci-primitive-danger-lighter);
+  --davinci-color-text-on-warning: var(--davinci-primitive-warning-lighter);
+  --davinci-color-text-on-success: var(--davinci-primitive-success-lighter);
+  --davinci-color-text-on-neutral: var(--davinci-primitive-neutral-200);
+  --davinci-color-text-brand: var(--davinci-primitive-brand-soft);
+  --davinci-color-text-danger: var(--davinci-primitive-danger-soft);
+  --davinci-color-text-warning: var(--davinci-primitive-warning-soft);
+  --davinci-color-text-success: var(--davinci-primitive-success-soft);
+  --davinci-color-text-neutral: var(--davinci-primitive-neutral-200);
 
   --davinci-color-stroke-subtle: var(--davinci-primitive-neutral-800);
   --davinci-color-stroke-default: var(--davinci-primitive-neutral-700);
@@ -281,11 +504,17 @@
   --davinci-color-icon-on-brand: var(--davinci-primitive-neutral-50);
 
   --davinci-color-bg-base: var(--davinci-primitive-neutral-950);
-  --davinci-color-bg-subtle: var(--davinci-primitive-brand-darker);
+  --davinci-color-bg-subtle: var(--davinci-primitive-brand-dark);
   --davinci-color-bg-elevated: var(--davinci-primitive-neutral-800);
   --davinci-color-bg-brand: var(--davinci-primitive-brand-soft);
-  --davinci-color-bg-danger: var(--davinci-primitive-danger-dark);
+  --davinci-color-bg-danger: var(--davinci-primitive-danger-darker);
   --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-default);
+  --davinci-color-bg-warning: var(--davinci-primitive-warning-darker);
+  --davinci-color-bg-warning-hover: var(--davinci-primitive-warning-default);
+  --davinci-color-bg-success: var(--davinci-primitive-success-darker);
+  --davinci-color-bg-success-hover: var(--davinci-primitive-success-default);
+  --davinci-color-bg-neutral: var(--davinci-primitive-neutral-600);
+  --davinci-color-bg-neutral-hover: var(--davinci-primitive-neutral-500);
 
   --davinci-shadow-sm:
     0 1px 2px hsla(var(--davinci-primitive-shadow-color), 0.25),
