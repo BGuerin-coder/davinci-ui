@@ -28,8 +28,18 @@
   text-box: trim-both cap alphabetic;
 }
 
-.davinci-tag--dismissible {
+.davinci-tag--dismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  margin: -0.25rem; /* Increase clickable area */
   cursor: pointer;
+  color: inherit;
+  line-height: 0;
+  border-radius: var(--davinci-corner-radius-full);
 }
 
 .davinci-tag--icon {

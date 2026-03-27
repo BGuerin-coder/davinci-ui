@@ -1,9 +1,13 @@
 <template>
-  <span class="davinci-tag" :class="`${variant} ${size} ${appearance} ${dismissible ? 'davinci-tag--dismissible' : ''}`"
-    @on-click="$emit('dismiss')">
+  <span class="davinci-tag"
+    :class="`${variant} ${size} ${appearance} ${dismissible ? 'davinci-tag--dismissible' : ''}`">
     <Icon v-if="icon" :icon="`feather:${icon}`" class="davinci-tag--icon" />
-    <span class="davinci-tag--label"><slot /></span>
-    <Icon v-if="dismissible" icon="feather:x" class="davinci-tag--icon davinci-tag--dismiss-icon" />
+    <span class="davinci-tag--label">
+      <slot />
+    </span>
+    <button v-if="dismissible" class="davinci-tag--dismiss" aria-label="Remove tag" @click="$emit('dismiss')">
+      <Icon icon="feather:x" class="davinci-tag--icon" />
+    </button>
   </span>
 </template>
 
