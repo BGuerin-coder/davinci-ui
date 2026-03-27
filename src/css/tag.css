@@ -1,7 +1,7 @@
 .davinci-tag {
   --davinci-tag-bg-color: transparent;
   --davinci-tag-text-color: var(--davinci-primitive-brand-base);
-  --davinci-tag-padding: var(--davinci-spacing-padding-xs);
+  --davinci-tag-padding: var(--davinci-spacing-padding-sm);
   --davinci-tag-border-radius: var(--davinci-corner-radius-full);
   --davinci-tag-font-size: 0.8rem;
   --davinci-tag-border-color: transparent;
@@ -21,15 +21,19 @@
 
   text-transform: lowercase;
   font-size: var(--davinci-tag-font-size);
-  line-height: normal;
+}
+
+.davinci-tag--label {
+  line-height: 1;
+  text-box: trim-both cap alphabetic;
 }
 
 .davinci-tag--dismissible {
   cursor: pointer;
 }
 
-.davinci-tag--dismiss-icon {
-  font-size: 0.7rem;
+.davinci-tag--icon {
+  font-size: 0.8rem;
 }
 
 .davinci-tag.brand {
