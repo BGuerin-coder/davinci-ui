@@ -5,7 +5,8 @@
     <span class="davinci-tag--label">
       <slot />
     </span>
-    <button v-if="dismissible" class="davinci-tag--dismiss" aria-label="Remove tag" @click="$emit('dismiss')">
+    <button v-if="dismissible" class="davinci-tag--dismiss" role="button" aria-label="Remove tag"
+      @click="handleDismiss">
       <Icon icon="feather:x" class="davinci-tag--icon" />
     </button>
   </span>
@@ -23,11 +24,22 @@ export interface TagProps {
   icon?: string;
 }
 
-withDefaults(defineProps<TagProps>(), {
+const props = withDefaults(defineProps<TagProps>(), {
   variant: "neutral",
   size: "medium",
   appearance: "filled",
   dismissible: false,
   icon: '',
 });
+
+const emit = defineEmits<{
+  /** Emitted when the user clicks the dismiss button. Use this to remove the tag from the list. */
+  dismiss: [];
+}>();
+
+function handleDismiss() {
+  if (props.dismissible) {
+    emit('dismiss');
+  }
+}
 </script>

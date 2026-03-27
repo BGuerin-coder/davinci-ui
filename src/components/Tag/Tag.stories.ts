@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
+import { expect, fn, userEvent, within } from "@storybook/test";
 import Tag from "./Tag.vue";
 
 import TagAllVariants from "./stories/TagAllVariants.vue";
@@ -29,6 +30,7 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
     appearance: "outline",
     dismissible: false,
     icon: "",
+    onDismiss: fn(),
   },
   argTypes: {
     variant: {
@@ -48,6 +50,11 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
     },
     icon: {
       control: "text",
+    },
+    onDismiss: {
+      action: "dismiss",
+      description:
+        "Emitted when the user clicks the dismiss button. Use this to remove the tag from the list.",
     },
   },
 } satisfies Meta<typeof Tag>;
@@ -140,6 +147,26 @@ export const Dismissible: Story = {
     components: { TagDismissable },
     template: "<TagDismissable />",
   }),
+};
+
+export const DismissEmitsEvent: Story = {
+  name: "Dismiss: emits event on click",
+  args: {
+    dismissible: true,
+    variant: "brand",
+    appearance: "outline",
+  },
+  render: (args) => ({
+    components: { Tag },
+    setup: () => ({ args }),
+    template: `<Tag v-bind="args" @dismiss="args.onDismiss">Feature</Tag>`,
+  }),
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const dismissBtn = canvas.getByRole("button", { name: /Remove tag/i });
+    await userEvent.click(dismissBtn);
+    expect(args.onDismiss).toHaveBeenCalledOnce();
+  },
 };
 
 export const WithIcon: Story = {
