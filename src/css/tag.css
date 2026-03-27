@@ -2,7 +2,7 @@
   --davinci-tag-bg-color: transparent;
   --davinci-tag-text-color: var(--davinci-primitive-brand-base);
   --davinci-tag-padding: var(--davinci-spacing-padding-xs);
-  --davinci-tag-border-radius: var(--davinci-corner-radius-sm);
+  --davinci-tag-border-radius: var(--davinci-corner-radius-full);
   --davinci-tag-font-size: 0.8rem;
   --davinci-tag-border-color: transparent;
 
@@ -10,12 +10,15 @@
 
   background-color: var(--davinci-tag-bg-color);
   color: var(--davinci-tag-text-color);
+  
   padding: var(--davinci-tag-padding);
-  border-radius: var(--davinci-tag-border-radius);
 
+  border-radius: var(--davinci-tag-border-radius);
+  border: 1px solid var(--davinci-tag-border-color);
+  
   text-transform: lowercase;
   font-size: var(--davinci-tag-font-size);
-  border: 1px solid var(--davinci-tag-border-color);
+  line-height: normal;
 }
 
 .davinci-tag.brand {
