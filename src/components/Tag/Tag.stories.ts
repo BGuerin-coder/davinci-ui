@@ -5,6 +5,7 @@ import TagAllVariants from "./stories/TagAllVariants.vue";
 import TagAllSizes from "./stories/TagAllSizes.vue";
 import TagAllAppearance from "./stories/TagAllAppearance.vue";
 import TagDismissable from "./stories/TagDismissable.vue";
+import TagWithIcon from "./stories/TagWithIcon.vue";
 
 const meta = {
   title: "Components/Tag",
@@ -25,6 +26,8 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
     variant: "neutral",
     size: "medium",
     appearance: "outline",
+    dismissible: false,
+    icon: "",
   },
   argTypes: {
     variant: {
@@ -41,6 +44,9 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
     },
     dismissible: {
       control: "boolean",
+    },
+    icon: {
+      control: "text",
     },
   },
 } satisfies Meta<typeof Tag>;
@@ -132,5 +138,22 @@ export const Dismissible: Story = {
   render: () => ({
     components: { TagDismissable },
     template: "<TagDismissable />",
+  }),
+};
+
+export const WithIcon: Story = {
+  name: "With Icon",
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
+    docs: {
+      description: {
+        story: `The tag with an icon includes a visual indicator to represent the tag's purpose or category. Use icons to enhance the meaning of the tag and provide additional context.`,
+      },
+    },
+  },
+  render: () => ({
+    components: { TagWithIcon },
+    template: "<TagWithIcon />",
   }),
 };
