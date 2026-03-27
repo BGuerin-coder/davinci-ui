@@ -3,7 +3,7 @@
     <Tag variant="neutral">Neutral</Tag>
     <Tag variant="brand">Brand</Tag>
     <Tag variant="success">Success</Tag>
-    <Tag variant="error">Error</Tag>
+    <Tag variant="danger">Danger</Tag>
     <Tag variant="warning">Warning</Tag>
   </div>
 </template>

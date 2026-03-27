@@ -9,8 +9,8 @@
       <Tag appearance="filled" variant="success">filled</Tag>
     </div>
     <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-      <Tag appearance="outline" variant="error">outline</Tag>
-      <Tag appearance="filled" variant="error">filled</Tag>
+      <Tag appearance="outline" variant="danger">outline</Tag>
+      <Tag appearance="filled" variant="danger">filled</Tag>
     </div>
     <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
       <Tag appearance="outline" variant="warning">outline</Tag>

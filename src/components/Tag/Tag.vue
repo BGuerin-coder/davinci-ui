@@ -17,7 +17,7 @@ import { Icon } from "@iconify/vue";
 import "../../css/tag.css";
 
 export interface TagProps {
-  variant?: "brand" | "success" | "error" | "warning" | "neutral";
+  variant?: "brand" | "success" | "danger" | "warning" | "neutral";
   size?: "small" | "medium";
   appearance?: "outline" | "filled";
   dismissible?: boolean;

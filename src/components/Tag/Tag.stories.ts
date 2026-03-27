@@ -35,7 +35,7 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
   argTypes: {
     variant: {
       control: "select",
-      options: ["brand", "success", "error", "warning", "neutral"],
+      options: ["brand", "success", "danger", "warning", "neutral"],
     },
     size: {
       control: "select",
@@ -76,7 +76,7 @@ export const AllVariants: Story = {
 | **Neutral** | The default tag style for general use. |
 | **Brand** | Used to represent brand-specific tags or labels. |
 | **Success** | Indicates a successful or positive action or state. |
-| **Error** | Indicates an error or negative action or state. |
+| **Danger** | Indicates an error or negative action or state. |
 | **Warning** | Indicates a warning or cautionary action or state. |
         `.trim(),
       },

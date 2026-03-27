@@ -50,7 +50,7 @@
   --davinci-tag-bg-color: var(--davinci-color-bg-subtle);
   --davinci-tag-text-color: var(--davinci-color-brand-emphasis);
 }
-.davinci-tag.error {
+.davinci-tag.danger {
   --davinci-tag-bg-color: var(--davinci-color-bg-danger);
   --davinci-tag-text-color: var(--davinci-color-text-on-danger);
 }
@@ -81,7 +81,7 @@
   --davinci-tag-border-color: var(--davinci-color-text-brand);
   --davinci-tag-text-color: var(--davinci-color-text-brand);
 }
-.davinci-tag.outline.error {
+.davinci-tag.outline.danger {
   --davinci-tag-border-color: var(--davinci-color-text-danger);
   --davinci-tag-text-color: var(--davinci-color-text-danger);
 }
