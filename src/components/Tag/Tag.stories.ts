@@ -6,6 +6,7 @@ import TagAllSizes from "./stories/TagAllSizes.vue";
 import TagAllAppearance from "./stories/TagAllAppearance.vue";
 import TagDismissable from "./stories/TagDismissable.vue";
 import TagWithIcon from "./stories/TagWithIcon.vue";
+import TagDarkMode from "./stories/TagDarkMode.vue";
 
 const meta = {
   title: "Components/Tag",
@@ -155,5 +156,22 @@ export const WithIcon: Story = {
   render: () => ({
     components: { TagWithIcon },
     template: "<TagWithIcon />",
+  }),
+};
+
+export const DarkMode: Story = {
+  name: "Dark Mode",
+  parameters: {
+    controls: { disable: true },
+    docs: {
+      description: {
+        story:
+          'All variants rendered in dark theme (`data-theme="dark"`). Verify that WCAG AA contrast ratios are maintained for each variant.',
+      },
+    },
+  },
+  render: () => ({
+    components: { TagDarkMode },
+    template: "<TagDarkMode />",
   }),
 };
