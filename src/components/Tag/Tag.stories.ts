@@ -4,6 +4,7 @@ import Tag from "./Tag.vue";
 import TagAllVariants from "./stories/TagAllVariants.vue";
 import TagAllSizes from "./stories/TagAllSizes.vue";
 import TagAllAppearance from "./stories/TagAllAppearance.vue";
+import TagDismissable from "./stories/TagDismissable.vue";
 
 const meta = {
   title: "Components/Tag",
@@ -37,6 +38,9 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
     appearance: {
       control: "select",
       options: ["outline", "subtle"],
+    },
+    dismissible: {
+      control: "boolean",
     },
   },
 } satisfies Meta<typeof Tag>;
@@ -111,5 +115,22 @@ export const AllAppearances: Story = {
   render: () => ({
     components: { TagAllAppearance },
     template: "<TagAllAppearance />",
+  }),
+};
+
+export const Dismissible: Story = {
+  name: "Dismissible",
+  parameters: {
+    layout: "padded",
+    controls: { disable: true },
+    docs: {
+      description: {
+        story: `The dismissible tag includes a close icon that allows users to remove the tag from view. Use dismissible tags for temporary labels or when users may want to hide certain tags without affecting the underlying data. Avoid using dismissible tags for critical information that should always be visible.`,
+      },
+    },
+  },
+  render: () => ({
+    components: { TagDismissable },
+    template: "<TagDismissable />",
   }),
 };
