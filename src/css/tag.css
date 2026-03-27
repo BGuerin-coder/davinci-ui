@@ -5,20 +5,31 @@
   --davinci-tag-border-radius: var(--davinci-corner-radius-full);
   --davinci-tag-font-size: 0.8rem;
   --davinci-tag-border-color: transparent;
+  --davinci-tag-gap: var(--davinci-spacing-gap-xs);
 
   display: inline-flex;
+  align-items: center;
+  gap: var(--davinci-tag-gap);
 
   background-color: var(--davinci-tag-bg-color);
   color: var(--davinci-tag-text-color);
-  
+
   padding: var(--davinci-tag-padding);
 
   border-radius: var(--davinci-tag-border-radius);
   border: 1px solid var(--davinci-tag-border-color);
-  
+
   text-transform: lowercase;
   font-size: var(--davinci-tag-font-size);
   line-height: normal;
+}
+
+.davinci-tag--dismissible {
+  cursor: pointer;
+}
+
+.davinci-tag--dismiss-icon {
+  font-size: 0.7rem;
 }
 
 .davinci-tag.brand {
