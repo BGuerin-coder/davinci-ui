@@ -1,7 +1,7 @@
 <template>
   <div class="davinci-input" :class="`davinci-input--${type}`">
-    <label :for="computedId">{{ label }}</label>
-    <input :type="type" placeholder="Enter text" :id="computedId" />
+    <label class="davinci-input__label" :for="computedId">{{ label }}</label>
+    <input class="davinci-input__field" :type="type" placeholder="Enter text" :id="computedId" />
   </div>
 </template>
 
