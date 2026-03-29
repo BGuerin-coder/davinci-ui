@@ -4,6 +4,7 @@
   --davinci-input-border-radius: var(--davinci-corner-radius-sm);
   --davinci-input-border-color: transparent;
   --davinci-input-bg-color: var(--davinci-color-bg-base);
+  --davinci-input-color: var(--davinci-color-brand-emphasis);
 
   --davinci-input-label-size: var(--davinci-text-size-sm);
   --davinci-input-label-weight: var(--davinci-font-weight-medium);
@@ -22,7 +23,7 @@
   padding: var(--davinci-input-padding);
   border: 1px solid var(--davinci-input-border-color);
   border-radius: var(--davinci-input-border-radius);
-  color: var(--davinci-color-text-primary);
+  color: var(--davinci-input-color);
   background-color: var(--davinci-input-bg-color);
 }
 
