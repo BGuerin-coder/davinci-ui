@@ -1,9 +1,33 @@
 .davinci-input {
   --davinci-input-gap: var(--davinci-spacing-gap-xs);
+  --davinci-input-padding: var(--davinci-spacing-padding-sm);
+  --davinci-input-border-radius: var(--davinci-corner-radius-sm);
+  --davinci-input-border-color: transparent;
+  --davinci-input-bg-color: var(--davinci-color-bg-base);
+
+  --davinci-input-label-size: var(--davinci-text-size-sm);
+  --davinci-input-label-weight: var(--davinci-font-weight-medium);
 
   display: inline-flex;
   width: 100%;
   flex-direction: column;
-  
-  gap: var(--davinci-input-gap);
+}
+
+.davinci-input__label {
+  color: var(--davinci-color-brand-default);
+  font-size: var(--davinci-input-label-size);
+}
+
+.davinci-input__field {
+  padding: var(--davinci-input-padding);
+  border: 1px solid var(--davinci-input-border-color);
+  border-radius: var(--davinci-input-border-radius);
+  color: var(--davinci-color-text-primary);
+  background-color: var(--davinci-input-bg-color);
+}
+
+.davinci-input__field:focus {
+  outline: none;
+  border-color: var(--davinci-color-brand-default);
+  box-shadow: 0 0 0 2px var(--davinci-color-brand-light);
 }
