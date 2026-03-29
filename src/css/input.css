@@ -1,0 +1,9 @@
+.davinci-input {
+  --davinci-input-gap: var(--davinci-spacing-gap-xs);
+
+  display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+  
+  gap: var(--davinci-input-gap);
+}
