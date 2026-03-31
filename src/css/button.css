@@ -46,7 +46,7 @@
   --davinci-btn-text-color: var(--davinci-color-text-on-danger);
 }
 .davinci-btn.secondary {
-  --davinci-btn-bg-color: var(--davinci-color-bg-subtle);
+  --davinci-btn-bg-color: var(--davinci-color-brand-background);
 }
 .davinci-btn.ghost {
   --davinci-btn-bg-color: transparent;

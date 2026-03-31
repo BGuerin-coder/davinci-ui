@@ -142,12 +142,12 @@
   --davinci-primitive-brand-darker: color-mix(
     in oklch,
     var(--davinci-primitive-brand-base),
-    var(--davinci-primitive-neutral-950) 70%
+    var(--davinci-primitive-neutral-950) 60%
   );
   --davinci-primitive-brand-darkest: color-mix(
     in oklch,
     var(--davinci-primitive-brand-base),
-    var(--davinci-primitive-neutral-950) 85%
+    var(--davinci-primitive-neutral-950) 70%
   );
 
   /* --- Danger primitives ---
@@ -379,7 +379,7 @@
   /* Main page background. The lowest elevation layer.
      Everything else in the UI sits on top of this surface. */
 
-  --davinci-color-bg-subtle: var(--davinci-primitive-brand-lighter);
+  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-200);
   /* Slightly raised surface for cards, sidebars, secondary panels,
      and alternate table rows. One visual step above bg-base. */
 
@@ -504,7 +504,7 @@
   --davinci-color-icon-on-brand: var(--davinci-primitive-neutral-50);
 
   --davinci-color-bg-base: var(--davinci-primitive-neutral-950);
-  --davinci-color-bg-subtle: var(--davinci-primitive-brand-dark);
+  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-900);
   --davinci-color-bg-elevated: var(--davinci-primitive-neutral-800);
   --davinci-color-bg-brand: var(--davinci-primitive-brand-soft);
   --davinci-color-bg-danger: var(--davinci-primitive-danger-darker);

@@ -47,7 +47,7 @@
 }
 
 .davinci-tag.brand {
-  --davinci-tag-bg-color: var(--davinci-color-bg-subtle);
+  --davinci-tag-bg-color: var(--davinci-color-brand-background);
   --davinci-tag-text-color: var(--davinci-color-brand-emphasis);
 }
 .davinci-tag.danger {
