@@ -23,7 +23,7 @@ const meta = {
   argTypes: {
     type: {
       control: "select",
-      options: ["text", "password", "email", "number", "search", "tel", "url"],
+      options: ["text", "password", "email", "search", "tel", "url"],
     },
   },
 } satisfies Meta<typeof Input>;
