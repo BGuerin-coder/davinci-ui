@@ -18,6 +18,13 @@
   color: var(--davinci-color-brand-default);
   font-size: var(--davinci-input-label-size);
 }
+.davinci-input:has(.davinci-input__field--invalid) .davinci-input__field {
+  border-width: 2px;
+}
+.davinci-input:has(.davinci-input__field--invalid) .davinci-input__label {
+  color: var(--davinci-color-text-danger);
+  --davinci-input-label-weight: var(--davinci-font-weight-bold);
+}
 
 .davinci-input__field {
   padding: var(--davinci-input-padding);
@@ -29,6 +36,35 @@
 
 .davinci-input__field:focus {
   outline: none;
-  border-color: var(--davinci-color-brand-default);
+  --davinci-input-border-color: var(--davinci-color-brand-default);
   box-shadow: 0 0 0 2px var(--davinci-color-brand-light);
+}
+.davinci-input__field:invalid {
+  --davinci-input-border-color: var(--davinci-color-bg-danger);
+}
+.davinci-input__field:disabled {
+  background-color: var(--davinci-color-bg-subtle);
+  color: var(--davinci-color-brand-emphasis);
+  cursor: not-allowed;
+}
+
+.davinci-input__error-message,
+.davinci-input__hint-message {
+  display: inline-flex;
+  align-items: center;
+  padding-block-start: var(--davinci-input-gap);
+  gap: var(--davinci-input-gap);
+  font-size: var(--davinci-text-size-sm);
+}
+.davinci-input__error-message span,
+.davinci-input__hint-message span {
+  line-height: 1;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+.davinci-input__error-message {
+  color: var(--davinci-color-text-danger);
+}
+.davinci-input__hint-message {
+  color: var(--davinci-color-text-muted);
 }
