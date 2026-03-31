@@ -3,7 +3,6 @@
     <Input type="text" label="Text" aria-label="Text input" />
     <Input type="email" label="Email" aria-label="Email input" />
     <Input type="password" label="Password" aria-label="Password input" />
-    <Input type="number" label="Number" aria-label="Number input" />
     <Input type="search" label="Search" aria-label="Search input" />
     <Input type="tel" label="Tel" aria-label="Tel input" />
     <Input type="url" label="URL" aria-label="URL input" />
