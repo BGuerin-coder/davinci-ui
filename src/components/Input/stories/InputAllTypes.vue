@@ -1,5 +1,5 @@
 <template>
-  <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+  <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background-color: white; padding: 16px;">
     <Input type="text" label="Text" aria-label="Text input" />
     <Input type="email" label="Email" aria-label="Email input" />
     <Input type="password" label="Password" aria-label="Password input" />
