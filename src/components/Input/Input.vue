@@ -55,6 +55,7 @@ const addStateClasses = (attrs: Attrs) => {
   return {
     'davinci-input__field--invalid': isInvalid.value || props.error,
     'davinci-input__field--success': props.success,
+    'davinci-input__field--error': props.error,
     'davinci-input__field--readonly': hasAttributes(attrs, ['readonly']),
     'davinci-input__field--disabled': hasAttributes(attrs, ['disabled']),
   };

@@ -79,6 +79,10 @@
   --davinci-input-border-color: var(--davinci-color-bg-success);
   --davinci-input-color: var(--davinci-color-text-on-success);
 }
+.davinci-input__field--error {
+  --davinci-input-border-color: var(--davinci-color-bg-danger);
+  --davinci-input-color: var(--davinci-color-text-on-danger);
+}
 
 /*----------------------------------------------------
     Error & Hint Messages
