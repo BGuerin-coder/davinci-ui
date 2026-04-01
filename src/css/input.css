@@ -1,4 +1,8 @@
+/*----------------------------------------------------
+    Common Styles
+    --------------------------------------------- */
 .davinci-input {
+  /* Input */
   --davinci-input-gap: var(--davinci-spacing-gap-xs);
   --davinci-input-padding: var(--davinci-spacing-padding-sm);
   --davinci-input-border-radius: var(--davinci-corner-radius-sm);
@@ -6,8 +10,11 @@
   --davinci-input-bg-color: var(--davinci-color-bg-base);
   --davinci-input-color: var(--davinci-color-brand-emphasis);
 
+  /* Label */
   --davinci-input-label-size: var(--davinci-text-size-sm);
   --davinci-input-label-weight: var(--davinci-font-weight-medium);
+  --davinci-input-label-color: var(--davinci-color-brand-default);
+  --davinci-input-label-gap: var(--davinci-spacing-gap-md);
 
   display: inline-flex;
   width: 100%;
@@ -15,15 +22,9 @@
 }
 
 .davinci-input__label {
-  color: var(--davinci-color-brand-default);
+  color: var(--davinci-input-label-color);
   font-size: var(--davinci-input-label-size);
-}
-.davinci-input:has(.davinci-input__field--invalid) .davinci-input__field {
-  border-width: 2px;
-}
-.davinci-input:has(.davinci-input__field--invalid) .davinci-input__label {
-  color: var(--davinci-color-text-danger);
-  --davinci-input-label-weight: var(--davinci-font-weight-bold);
+  padding-inline-start: var(--davinci-input-label-gap);
 }
 
 .davinci-input__field {
@@ -34,6 +35,25 @@
   background-color: var(--davinci-input-bg-color);
 }
 
+/*----------------------------------------------------
+    Input States (Parent State)
+    --------------------------------------------- */
+.davinci-input:has(.davinci-input__field--invalid) .davinci-input__field,
+.davinci-input:has(.davinci-input__field--success) .davinci-input__field {
+  border-width: 2px;
+}
+.davinci-input:has(.davinci-input__field--invalid) .davinci-input__label {
+  --davinci-input-label-color: var(--davinci-color-text-danger);
+  --davinci-input-label-weight: var(--davinci-font-weight-bold);
+}
+.davinci-input:has(.davinci-input__field--success) .davinci-input__label {
+  --davinci-input-label-color: var(--davinci-color-text-success);
+  --davinci-input-label-weight: var(--davinci-font-weight-bold);
+}
+
+/*----------------------------------------------------
+    Input States (Field State)
+    --------------------------------------------- */
 .davinci-input__field:focus {
   outline: none;
   --davinci-input-border-color: var(--davinci-color-brand-default);
@@ -42,12 +62,27 @@
 .davinci-input__field:invalid {
   --davinci-input-border-color: var(--davinci-color-bg-danger);
 }
-.davinci-input__field:disabled {
-  background-color: var(--davinci-color-bg-subtle);
-  color: var(--davinci-color-brand-emphasis);
+.davinci-input__field--readonly {
+  --davinci-input-bg-color: transparent;
+  --davinci-input-color: var(--davinci-color-brand-emphasis);
+}
+.davinci-input__field--disabled {
+  --davinci-input-border-color: var(--davinci-color-bg-muted);
   cursor: not-allowed;
+  opacity: 0.7;
+}
+.davinci-input__field--readonly:focus,
+.davinci-input__field--disabled:focus {
+  --davinci-input-border-color: transparent;
+}
+.davinci-input__field--success {
+  --davinci-input-border-color: var(--davinci-color-bg-success);
+  --davinci-input-color: var(--davinci-color-text-on-success);
 }
 
+/*----------------------------------------------------
+    Error & Hint Messages
+    --------------------------------------------- */
 .davinci-input__error-message,
 .davinci-input__hint-message {
   display: inline-flex;
@@ -55,6 +90,16 @@
   padding-block-start: var(--davinci-input-gap);
   gap: var(--davinci-input-gap);
   font-size: var(--davinci-text-size-sm);
+  padding-inline-start: var(--davinci-input-label-gap);
+
+  animation-name: slideInFromLeft;
+  animation-duration: var(--davinci-animation-duration-default);
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
 }
 .davinci-input__error-message span,
 .davinci-input__hint-message span {
