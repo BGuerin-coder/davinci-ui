@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Input from "./Input.vue";
 
 import InputAllTypes from "./stories/InputAllTypes.vue";
+import InputAllStates from "./stories/InputAllStates.vue";
 
 const meta = {
   title: "Components/Input",
@@ -37,5 +38,13 @@ export const AllTypes: Story = {
   render: () => ({
     components: { InputAllTypes },
     template: "<InputAllTypes />",
+  }),
+};
+
+export const AllStates: Story = {
+  name: "All States",
+  render: () => ({
+    components: { InputAllStates },
+    template: "<InputAllStates />",
   }),
 };
