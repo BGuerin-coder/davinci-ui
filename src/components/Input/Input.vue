@@ -2,7 +2,7 @@
   <div class="davinci-input" :class="`davinci-input--${type}`">
     <label class="davinci-input__label" :for="computedId">
       {{ label }}
-      <span v-if="hasAttributes($attrs, ['optional'])" class="davinci-input__label--optional">(Optional)</span>
+      <span v-if="hasAttributes($attrs, 'optional')" class="davinci-input__label--optional">(Optional)</span>
     </label>
     <input class="davinci-input__field" :class="addStateClasses($attrs)" :type="type" placeholder="Enter text"
       :id="computedId" v-bind="$attrs" @change="handleInput" />
@@ -56,12 +56,12 @@ const addStateClasses = (attrs: Attrs) => {
     'davinci-input__field--invalid': isInvalid.value || props.error,
     'davinci-input__field--success': props.success,
     'davinci-input__field--error': props.error,
-    'davinci-input__field--readonly': hasAttributes(attrs, ['readonly']),
-    'davinci-input__field--disabled': hasAttributes(attrs, ['disabled']),
+    'davinci-input__field--readonly': hasAttributes(attrs, 'readonly'),
+    'davinci-input__field--disabled': hasAttributes(attrs, 'disabled'),
   };
 };
 
-const hasAttributes = (attrs: Attrs, attributeNames: string[]) => {
-  return attributeNames.some(attr => attr in attrs);
+const hasAttributes = (attrs: Attrs, attributeName: string) => {
+  return attributeName in attrs;
 };
 </script>
