@@ -9,6 +9,8 @@
   --davinci-input-border-color: transparent;
   --davinci-input-bg-color: var(--davinci-color-bg-base);
   --davinci-input-color: var(--davinci-color-brand-emphasis);
+  --davinci-input-focus-border-color: var(--davinci-color-brand-default);
+  --davinci-input-focus-ring: var(--davinci-color-stroke-strong);
 
   /* Label */
   --davinci-input-label-size: var(--davinci-text-size-sm);
@@ -40,7 +42,7 @@
     --------------------------------------------- */
 .davinci-input:has(.davinci-input__field--invalid) .davinci-input__field,
 .davinci-input:has(.davinci-input__field--success) .davinci-input__field {
-  border-width: 2px;
+  border-width: var(--davinci-line-weight-strong);
 }
 .davinci-input:has(.davinci-input__field--invalid) .davinci-input__label {
   --davinci-input-label-color: var(--davinci-color-text-danger);
@@ -55,9 +57,12 @@
     Input States (Field State)
     --------------------------------------------- */
 .davinci-input__field:focus {
-  outline: none;
   --davinci-input-border-color: var(--davinci-color-brand-default);
-  box-shadow: 0 0 0 2px var(--davinci-color-brand-light);
+  --davinci-input-ring-color: var(--davinci-color-stroke-strong);
+
+  outline-color: var(--davinci-input-focus-ring);
+  outline-width: var(--davinci-line-weight-strong);
+  outline-style: solid;
 }
 .davinci-input__field:invalid {
   --davinci-input-border-color: var(--davinci-color-bg-danger);
