@@ -352,7 +352,7 @@
   /* Standard border for inputs, cards, and interactive containers.
      The default choice for most bordered components at rest. */
 
-  --davinci-color-stroke-strong: var(--davinci-primitive-brand-base);
+  --davinci-color-stroke-strong: var(--davinci-primitive-brand-darker);
   /* High-visibility borders for focus rings, active states,
      and error outlines. Never use decoratively - this color
      must retain its functional signal value. */
