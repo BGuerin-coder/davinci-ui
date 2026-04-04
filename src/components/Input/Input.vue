@@ -1,67 +1,75 @@
 <template>
-  <div class="davinci-input" :class="`davinci-input--${type}`">
+  <div class="davinci-input" :class="`davinci-input--${type}`" :aria-describedby="hintId || errorId">
     <label class="davinci-input__label" :for="computedId">
       {{ label }}
-      <span v-if="hasAttributes($attrs, 'optional')" class="davinci-input__label--optional">(Optional)</span>
+      <span v-if="isOptional" class="davinci-input__label--optional">
+        (Optional)
+      </span>
     </label>
-    <input class="davinci-input__field" :class="addStateClasses($attrs)" :type="type" placeholder="Enter text"
-      :id="computedId" v-bind="$attrs" @change="handleInput" />
+    <input v-bind="$attrs" :id="computedId" :type="type" :placeholder="props.placeholder" :aria-required="!isOptional"
+      :required="!isOptional" class="davinci-input__field" :class="addStateClasses()" @change="handleInput" />
     <div v-if="isInvalid || error" class="davinci-input__error-message">
       <Icon icon="feather:x-circle" class="davinci-input__error-icon" />
-      <span>{{ error }}</span>
+      <span :id="errorId">{{ error || "This field is required" }}</span>
     </div>
     <div v-else-if="hint" class="davinci-input__hint-message">
       <Icon icon="feather:info" class="davinci-input__hint-icon" />
-      <span>{{ hint }}</span>
+      <span :id="hintId">{{ hint }}</span>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import { computed, ref, useId, type Attrs } from 'vue';
+import { computed, ref, useAttrs, useId } from "vue";
 import "../../css/input.css";
 
 defineOptions({ inheritAttrs: false });
 
 export type InputProps = {
   id?: string;
-  type?: 'text' | 'email' | 'password' | 'search' | 'tel' | 'url';
+  type?: "text" | "email" | "password" | "search" | "tel" | "url";
   label?: string;
   hint?: string;
   error?: string;
   success?: boolean;
+  placeholder?: string;
 };
 
 const props = withDefaults(defineProps<InputProps>(), {
-  type: 'text',
-  label: '',
-  hint: '',
-  error: '',
+  type: "text",
+  label: "",
+  hint: "",
+  error: "",
   success: false,
+  placeholder: "",
 });
 
 const isInvalid = ref(false);
 
 const generatedId = useId();
+
 const computedId = computed(() => props.id ?? generatedId);
+const hintId = computed(() => props.hint ? `hint-${computedId.value}` : undefined);
+const errorId = computed(() => props.error ? `error-${computedId.value}` : undefined);
+
+const attrs = useAttrs();
+const isOptional = computed(() => hasAttributes("optional"));
 
 const handleInput = (event: Event) => {
   const input = event.target as HTMLInputElement;
   isInvalid.value = !input.checkValidity();
 };
 
-const addStateClasses = (attrs: Attrs) => {
+const addStateClasses = () => {
   return {
-    'davinci-input__field--invalid': isInvalid.value || props.error,
-    'davinci-input__field--success': props.success,
-    'davinci-input__field--error': props.error,
-    'davinci-input__field--readonly': hasAttributes(attrs, 'readonly'),
-    'davinci-input__field--disabled': hasAttributes(attrs, 'disabled'),
+    "davinci-input__field--invalid": isInvalid.value || props.error,
+    "davinci-input__field--success": props.success,
+    "davinci-input__field--error": props.error,
+    "davinci-input__field--readonly": hasAttributes("readonly"),
+    "davinci-input__field--disabled": hasAttributes("disabled"),
   };
 };
 
-const hasAttributes = (attrs: Attrs, attributeName: string) => {
-  return attributeName in attrs;
-};
+const hasAttributes = (attributeName: string) => attributeName in attrs;
 </script>
