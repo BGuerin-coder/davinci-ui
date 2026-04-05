@@ -3,6 +3,7 @@ import Input from "./Input.vue";
 
 import InputAllTypes from "./stories/InputAllTypes.vue";
 import InputAllStates from "./stories/InputAllStates.vue";
+import InputWithIcon from "./stories/InputWithIcon.vue";
 
 const meta = {
   title: "Components/Input",
@@ -20,11 +21,22 @@ const meta = {
   },
   args: {
     type: "text",
+    icon: "",
+    iconPosition: "start",
   },
   argTypes: {
     type: {
       control: "select",
       options: ["text", "password", "email", "search", "tel", "url"],
+    },
+    icon: {
+      control: "text",
+      description: "Name of the icon to display (e.g., 'search', 'user').",
+    },
+    iconPosition: {
+      control: "select",
+      options: ["start", "end"],
+      description: "Position of the icon relative to the input field.",
     },
   },
 } satisfies Meta<typeof Input>;
@@ -46,5 +58,13 @@ export const AllStates: Story = {
   render: () => ({
     components: { InputAllStates },
     template: "<InputAllStates />",
+  }),
+};
+
+export const WithIcon: Story = {
+  name: "With Icon",
+  render: () => ({
+    components: { InputWithIcon },
+    template: "<InputWithIcon />",
   }),
 };
