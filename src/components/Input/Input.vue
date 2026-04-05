@@ -77,8 +77,6 @@ const handleInput = (event: Event) => {
 };
 
 const addStateClasses = () => {
-  console.log('🚀 ~ addStateClasses ~ isInvalid.value:', isInvalid.value)
-  console.log('🚀 ~ addStateClasses ~ props.error:', props.error)
   return {
     "davinci-input__field--invalid": isInvalid.value || props.error,
     "davinci-input__field--success": props.success,
