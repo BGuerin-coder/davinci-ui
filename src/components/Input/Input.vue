@@ -6,8 +6,19 @@
         (Optional)
       </span>
     </label>
-    <input v-bind="$attrs" :id="computedId" :type="type" :placeholder="props.placeholder" :aria-required="!isOptional"
-      :required="!isOptional" class="davinci-input__field" :class="addStateClasses()" @change="handleInput" />
+    <!-- Input Wrapper -->
+    <div class="davinci-input__wrapper">
+      <!-- Icon Start -->
+      <Icon v-if="icon && iconPosition === 'start'" :icon="`feather:${icon}`"
+        class="davinci-input__icon davinci-input__icon--start" />
+      <!-- Input Field -->
+      <input v-bind="$attrs" :id="computedId" :type="type" :placeholder="props.placeholder" :aria-invalid="isInvalid"
+        class="davinci-input__field" :class="addStateClasses()" @change="handleInput" />
+      <!-- Icon End -->
+      <Icon v-if="icon && iconPosition === 'end'" :icon="`feather:${icon}`"
+        class="davinci-input__icon davinci-input__icon--end" />
+    </div>
+    <!--  Input Messages -->
     <div v-if="isInvalid || error" class="davinci-input__error-message">
       <Icon icon="feather:x-circle" class="davinci-input__error-icon" />
       <span :id="errorId">{{ error || "This field is required" }}</span>
@@ -34,6 +45,8 @@ export type InputProps = {
   error?: string;
   success?: boolean;
   placeholder?: string;
+  icon?: string;
+  iconPosition?: "start" | "end";
 };
 
 const props = withDefaults(defineProps<InputProps>(), {
@@ -43,6 +56,8 @@ const props = withDefaults(defineProps<InputProps>(), {
   error: "",
   success: false,
   placeholder: "",
+  icon: "",
+  iconPosition: "start",
 });
 
 const isInvalid = ref(false);
@@ -62,6 +77,8 @@ const handleInput = (event: Event) => {
 };
 
 const addStateClasses = () => {
+  console.log('🚀 ~ addStateClasses ~ isInvalid.value:', isInvalid.value)
+  console.log('🚀 ~ addStateClasses ~ props.error:', props.error)
   return {
     "davinci-input__field--invalid": isInvalid.value || props.error,
     "davinci-input__field--success": props.success,
