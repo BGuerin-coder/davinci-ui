@@ -10,21 +10,21 @@
     <div class="davinci-input__wrapper">
       <!-- Icon Start -->
       <Icon v-if="icon && iconPosition === 'start'" :icon="`feather:${icon}`"
-        class="davinci-input__icon davinci-input__icon--start" />
+        class="davinci-input__icon davinci-input__icon--start" aria-hidden="true" />
       <!-- Input Field -->
       <input v-bind="$attrs" :id="computedId" :type="type" :placeholder="props.placeholder" :aria-invalid="isInvalid"
         class="davinci-input__field" :class="addStateClasses()" @change="handleInput" />
       <!-- Icon End -->
       <Icon v-if="icon && iconPosition === 'end'" :icon="`feather:${icon}`"
-        class="davinci-input__icon davinci-input__icon--end" />
+        class="davinci-input__icon davinci-input__icon--end" aria-hidden="true" />
     </div>
     <!--  Input Messages -->
-    <div v-if="isInvalid || error" class="davinci-input__error-message">
-      <Icon icon="feather:x-circle" class="davinci-input__error-icon" />
+    <div v-if="isInvalid || error" class="davinci-input__error-message" role="alert">
+      <Icon icon="feather:x-circle" class="davinci-input__error-icon" aria-hidden="true" />
       <span :id="errorId">{{ error || "This field is required" }}</span>
     </div>
-    <div v-else-if="hint" class="davinci-input__hint-message">
-      <Icon icon="feather:info" class="davinci-input__hint-icon" />
+    <div v-else-if="hint" class="davinci-input__hint-message" aria-live="polite">
+      <Icon icon="feather:info" class="davinci-input__hint-icon" aria-hidden="true" />
       <span :id="hintId">{{ hint }}</span>
     </div>
   </div>
