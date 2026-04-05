@@ -66,9 +66,9 @@ src/
 ### Components • Tier 1
 
 - [x] Button • variants, sizes, loading, disabled
-- [ ] ➡️ Badge / Tag • variants, slots
-- [ ] Input / TextField • label, error, helper, a11y
-- [ ] Typography • heading, body, caption components
+- [x] Badge / Tag • variants, slots
+- [x] Input / TextField • label, error, helper, a11y
+- [ ] ➡️ Typography • heading, body, caption components
 
 ### Components • Tier 2
 
