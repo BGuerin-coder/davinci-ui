@@ -54,7 +54,7 @@
 
 .davinci-btn:not(:disabled):not(.davinci-btn--loading):hover {
   --davinci-btn-bg-color: var(--davinci-color-brand-hover);
-  --davinci-btn-text-color: var(--davinci-color-text-on-brand);
+  --davinci-btn-text-color: var(--davinci-color-brand-default);
 }
 .davinci-btn.danger:not(:disabled):not(.davinci-btn--loading):hover {
   --davinci-btn-bg-color: var(--davinci-color-bg-danger-hover);
