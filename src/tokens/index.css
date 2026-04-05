@@ -478,9 +478,9 @@
 [data-theme="dark"] {
   --davinci-color-brand-background: var(--davinci-primitive-brand-darkest);
   --davinci-color-brand-border: var(--davinci-primitive-brand-darker);
-  --davinci-color-brand-default: var(--davinci-primitive-brand-dark);
-  --davinci-color-brand-hover: var(--davinci-primitive-brand-softdark);
-  --davinci-color-brand-emphasis: var(--davinci-primitive-brand-lighter);
+  --davinci-color-brand-default: var(--davinci-primitive-brand-softdark);
+  --davinci-color-brand-hover: var(--davinci-primitive-brand-lighter);
+  --davinci-color-brand-emphasis: var(--davinci-primitive-brand-lightest);
 
   --davinci-color-text-default: var(--davinci-primitive-neutral-100);
   --davinci-color-text-muted: var(--davinci-primitive-neutral-400);
