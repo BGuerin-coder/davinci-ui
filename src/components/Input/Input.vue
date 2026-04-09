@@ -1,6 +1,6 @@
 <template>
   <div class="davinci-input" :class="`davinci-input--${type}`" :aria-describedby="hintId || errorId">
-    <label class="davinci-input__label" :for="computedId">
+    <label v-if="!hideLabel" class="davinci-input__label" :for="computedId">
       {{ label }}
       <span v-if="isOptional" class="davinci-input__label--optional">
         (Optional)
@@ -41,26 +41,27 @@ import "../../css/input.css";
 defineOptions({ inheritAttrs: false });
 
 export type InputProps = {
+  label: string;
   id?: string;
   type?: "text" | "email" | "password" | "search" | "tel" | "url";
-  label?: string;
   hint?: string;
   error?: string;
   success?: boolean;
   placeholder?: string;
   icon?: string;
   iconPosition?: "start" | "end";
+  hideLabel?: boolean;
 };
 
 const props = withDefaults(defineProps<InputProps>(), {
   type: "text",
-  label: "",
   hint: "",
   error: "",
   success: false,
   placeholder: "",
   icon: "",
   iconPosition: "start",
+  hideLabel: false,
 });
 
 const isInvalid = ref(false);
