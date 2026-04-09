@@ -12,8 +12,9 @@
       <Icon v-if="icon && iconPosition === 'start'" :icon="`feather:${icon}`"
         class="davinci-input__icon davinci-input__icon--start" aria-hidden="true" />
       <!-- Input Field -->
-      <input v-bind="$attrs" :id="computedId" :type="type" :placeholder="props.placeholder" :aria-invalid="isInvalid"
-        class="davinci-input__field" :class="addStateClasses()" @change="handleChange" @input="handleInput" />
+      <input v-bind="$attrs" :id="computedId" :type="type" :value="props.modelValue" :placeholder="props.placeholder"
+        :aria-invalid="isInvalid" class="davinci-input__field" :class="addStateClasses()" @change="handleChange"
+        @input="handleInput" />
       <!-- Icon End -->
       <Icon v-if="icon && iconPosition === 'end'" :icon="`feather:${icon}`"
         class="davinci-input__icon davinci-input__icon--end" aria-hidden="true" />
@@ -42,6 +43,7 @@ defineOptions({ inheritAttrs: false });
 
 export type InputProps = {
   label: string;
+  modelValue?: string;
   id?: string;
   type?: "text" | "email" | "password" | "search" | "tel" | "url";
   hint?: string;
@@ -54,6 +56,7 @@ export type InputProps = {
 };
 
 const props = withDefaults(defineProps<InputProps>(), {
+  modelValue: "",
   type: "text",
   hint: "",
   error: "",
@@ -63,6 +66,10 @@ const props = withDefaults(defineProps<InputProps>(), {
   iconPosition: "start",
   hideLabel: false,
 });
+
+const emit = defineEmits<{
+  "update:modelValue": [value: string];
+}>();
 
 const isInvalid = ref(false);
 const currentLength = ref(0);
@@ -84,6 +91,7 @@ const handleChange = (event: Event) => {
 const handleInput = (event: Event) => {
   const input = event.target as HTMLInputElement;
   currentLength.value = input.value.length;
+  emit("update:modelValue", input.value);
 };
 
 const addStateClasses = () => {
