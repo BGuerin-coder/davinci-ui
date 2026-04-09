@@ -6,6 +6,7 @@ import InputAllStates from "./stories/InputAllStates.vue";
 import InputWithIcon from "./stories/InputWithIcon.vue";
 import InputMaxLength from "./stories/InputMaxLength.vue";
 import InputLabelVariants from "./stories/InputLabelVariants.vue";
+import InputDarkMode from "./stories/InputDarkMode.vue";
 
 const meta = {
   title: "Components/Input",
@@ -85,5 +86,13 @@ export const LabelVariants: Story = {
   render: () => ({
     components: { InputLabelVariants },
     template: "<InputLabelVariants />",
+  }),
+};
+
+export const DarkMode: Story = {
+  name: "Dark Mode",
+  render: () => ({
+    components: { InputDarkMode },
+    template: "<InputDarkMode />",
   }),
 };
