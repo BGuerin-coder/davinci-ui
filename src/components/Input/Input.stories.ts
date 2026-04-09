@@ -4,6 +4,7 @@ import Input from "./Input.vue";
 import InputAllTypes from "./stories/InputAllTypes.vue";
 import InputAllStates from "./stories/InputAllStates.vue";
 import InputWithIcon from "./stories/InputWithIcon.vue";
+import InputMaxLength from "./stories/InputMaxLength.vue";
 
 const meta = {
   title: "Components/Input",
@@ -66,5 +67,13 @@ export const WithIcon: Story = {
   render: () => ({
     components: { InputWithIcon },
     template: "<InputWithIcon />",
+  }),
+};
+
+export const MaxLength: Story = {
+  name: "Max Length",
+  render: () => ({
+    components: { InputMaxLength },
+    template: "<InputMaxLength />",
   }),
 };
