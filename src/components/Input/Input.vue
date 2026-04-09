@@ -13,7 +13,7 @@
         class="davinci-input__icon davinci-input__icon--start" aria-hidden="true" />
       <!-- Input Field -->
       <input v-bind="$attrs" :id="computedId" :type="type" :placeholder="props.placeholder" :aria-invalid="isInvalid"
-        class="davinci-input__field" :class="addStateClasses()" @change="handleInput" />
+        class="davinci-input__field" :class="addStateClasses()" @change="handleChange" @input="handleInput" />
       <!-- Icon End -->
       <Icon v-if="icon && iconPosition === 'end'" :icon="`feather:${icon}`"
         class="davinci-input__icon davinci-input__icon--end" aria-hidden="true" />
@@ -23,9 +23,12 @@
       <Icon icon="feather:x-circle" class="davinci-input__error-icon" aria-hidden="true" />
       <span :id="errorId">{{ error || "This field is required" }}</span>
     </div>
-    <div v-else-if="hint" class="davinci-input__hint-message" aria-live="polite">
-      <Icon icon="feather:info" class="davinci-input__hint-icon" aria-hidden="true" />
+    <div v-else-if="hint || hasAttributes('maxlength')" class="davinci-input__hint-message" aria-live="polite">
+      <Icon v-if="hint" icon="feather:info" class="davinci-input__hint-icon" aria-hidden="true" />
       <span :id="hintId">{{ hint }}</span>
+      <span v-if="hasAttributes('maxlength')" class="davinci-input__hint-message--maxlength" :id="hintId">
+        {{ currentLength }}/{{ $attrs.maxlength }}
+      </span>
     </div>
   </div>
 </template>
@@ -61,6 +64,7 @@ const props = withDefaults(defineProps<InputProps>(), {
 });
 
 const isInvalid = ref(false);
+const currentLength = ref(0);
 
 const generatedId = useId();
 
@@ -71,9 +75,14 @@ const errorId = computed(() => props.error ? `error-${computedId.value}` : undef
 const attrs = useAttrs();
 const isOptional = computed(() => hasAttributes("optional"));
 
-const handleInput = (event: Event) => {
+const handleChange = (event: Event) => {
   const input = event.target as HTMLInputElement;
   isInvalid.value = !input.checkValidity();
+};
+
+const handleInput = (event: Event) => {
+  const input = event.target as HTMLInputElement;
+  currentLength.value = input.value.length;
 };
 
 const addStateClasses = () => {
@@ -83,6 +92,7 @@ const addStateClasses = () => {
     "davinci-input__field--error": props.error,
     "davinci-input__field--readonly": hasAttributes("readonly"),
     "davinci-input__field--disabled": hasAttributes("disabled"),
+    "davinci-input__field--maxlength": hasAttributes("maxlength"),
   };
 };
 
