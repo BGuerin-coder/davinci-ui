@@ -6,7 +6,7 @@
   --davinci-input-gap: var(--davinci-spacing-gap-xs);
   --davinci-input-padding: var(--davinci-spacing-padding-sm);
   --davinci-input-border-radius: var(--davinci-corner-radius-sm);
-  --davinci-input-border-color: transparent;
+  --davinci-input-border-color: var(--davinci-color-text-on-brand);
   --davinci-input-bg-color: var(--davinci-color-bg-base);
   --davinci-input-color: var(--davinci-color-brand-emphasis);
   --davinci-input-focus-border-color: var(--davinci-color-brand-default);
@@ -111,6 +111,10 @@
   outline-width: var(--davinci-line-weight-strong);
   outline-style: solid;
 }
+.davinci-input__field:hover {
+  --davinci-input-border-color: var(--davinci-color-text-on-brand);
+  --davinci-input-bg-color: var(--davinci-color-text-on-brand);
+}
 .davinci-input__field--invalid {
   --davinci-input-border-color: var(--davinci-color-bg-danger);
 }
@@ -125,6 +129,7 @@
   --davinci-input-border-color: var(--davinci-color-bg-muted);
   cursor: not-allowed;
   opacity: 0.7;
+  pointer-events: none
 }
 .davinci-input__field--readonly:focus,
 .davinci-input__field--disabled:focus {
