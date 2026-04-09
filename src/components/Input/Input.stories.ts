@@ -5,6 +5,7 @@ import InputAllTypes from "./stories/InputAllTypes.vue";
 import InputAllStates from "./stories/InputAllStates.vue";
 import InputWithIcon from "./stories/InputWithIcon.vue";
 import InputMaxLength from "./stories/InputMaxLength.vue";
+import InputLabelVariants from "./stories/InputLabelVariants.vue";
 
 const meta = {
   title: "Components/Input",
@@ -21,6 +22,7 @@ const meta = {
     },
   },
   args: {
+    label: "Label",
     type: "text",
     icon: "",
     iconPosition: "start",
@@ -75,5 +77,13 @@ export const MaxLength: Story = {
   render: () => ({
     components: { InputMaxLength },
     template: "<InputMaxLength />",
+  }),
+};
+
+export const LabelVariants: Story = {
+  name: "With and Without Label",
+  render: () => ({
+    components: { InputLabelVariants },
+    template: "<InputLabelVariants />",
   }),
 };
