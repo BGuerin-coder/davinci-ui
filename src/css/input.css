@@ -1,0 +1,210 @@
+/*----------------------------------------------------
+    Common Styles
+    --------------------------------------------- */
+.davinci-input {
+  /* Input */
+  --davinci-input-gap: var(--davinci-spacing-gap-xs);
+  --davinci-input-padding: var(--davinci-spacing-padding-sm);
+  --davinci-input-border-radius: var(--davinci-corner-radius-sm);
+  --davinci-input-border-color: var(--davinci-color-brand-background);
+  --davinci-input-bg-color: var(--davinci-color-bg-base);
+  --davinci-input-color: var(--davinci-color-brand-emphasis);
+  --davinci-input-focus-border-color: var(--davinci-color-brand-default);
+  --davinci-input-focus-ring: var(--davinci-color-stroke-strong);
+
+  /* Label */
+  --davinci-input-label-size: var(--davinci-text-size-sm);
+  --davinci-input-label-weight: var(--davinci-font-weight-medium);
+  --davinci-input-label-color: var(--davinci-color-brand-default);
+  --davinci-input-label-gap: var(--davinci-spacing-gap-xs);
+
+  /* Icon */
+  --davinci-input-icon-size: 1em;
+  --davinci-input-icon-gap: var(--davinci-spacing-gap-sm);
+  --davinci-input-icon-color: var(--davinci-color-brand-default);
+  --davinci-input-icon-offset: var(--davinci-spacing-padding-sm);
+  --davinci-input-icon-padding: calc(var(--davinci-input-icon-size) * 2);
+
+  display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.davinci-input__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.davinci-input__wrapper .davinci-input__field {
+  width: 100%;
+}
+
+.davinci-input__wrapper:has(.davinci-input__icon--start) .davinci-input__field {
+  padding-inline-start: var(--davinci-input-icon-padding);
+}
+.davinci-input__wrapper:has(.davinci-input__icon--end) {
+  justify-content: flex-end;
+}
+.davinci-input__wrapper:has(.davinci-input__icon--end) .davinci-input__field {
+  padding-inline-end: var(--davinci-input-icon-padding);
+}
+.davinci-input__wrapper:has(.davinci-input__icon--start)
+  .davinci-input__field:focus {
+  padding-inline-start: var(--davinci-input-icon-padding);
+  inset-inline-start: var(--davinci-input-icon-offset);
+}
+.davinci-input__wrapper:has(.davinci-input__icon--end)
+  .davinci-input__field:focus {
+  padding-inline-end: var(--davinci-input-icon-padding);
+  inset-inline-end: var(--davinci-input-icon-offset);
+}
+
+.davinci-input__icon {
+  position: absolute;
+  font-size: var(--davinci-input-icon-size);
+  color: var(--davinci-input-icon-color);
+  pointer-events: none;
+}
+
+.davinci-input__icon--start {
+  inset-inline-start: var(--davinci-input-icon-offset);
+}
+.davinci-input__icon--end {
+  inset-inline-end: var(--davinci-input-icon-offset);
+}
+
+.davinci-input__label {
+  color: var(--davinci-input-label-color);
+  font-size: var(--davinci-input-label-size);
+  padding-inline-start: var(--davinci-input-label-gap);
+}
+
+.davinci-input__field {
+  padding: var(--davinci-input-padding);
+  border: 1px solid var(--davinci-input-border-color);
+  border-radius: var(--davinci-input-border-radius);
+  color: var(--davinci-input-color);
+  background-color: var(--davinci-input-bg-color);
+}
+
+/*----------------------------------------------------
+    Input States (Parent State)
+    --------------------------------------------- */
+.davinci-input:has(.davinci-input__field--invalid) .davinci-input__label {
+  --davinci-input-label-color: var(--davinci-color-text-danger);
+  --davinci-input-label-weight: var(--davinci-font-weight-bold);
+}
+.davinci-input:has(.davinci-input__field--success) .davinci-input__label {
+  --davinci-input-label-color: var(--davinci-color-text-success);
+  --davinci-input-label-weight: var(--davinci-font-weight-bold);
+}
+
+/*----------------------------------------------------
+    Input States (Field State)
+    --------------------------------------------- */
+.davinci-input__field:focus {
+  --davinci-input-border-color: var(--davinci-color-brand-default);
+  --davinci-input-focus-ring: var(--davinci-color-brand-default);
+
+  outline-color: var(--davinci-input-focus-ring);
+  outline-width: var(--davinci-line-weight-strong);
+  outline-style: solid;
+}
+.davinci-input__field:hover {
+  --davinci-input-bg-color: var(--davinci-color-brand-background);
+}
+.davinci-input__label:hover
+  + div
+  .davinci-input__field.davinci-input__field--disabled {
+  --davinci-input-bg-color: transparent;
+}
+.davinci-input__field--invalid {
+  --davinci-input-border-color: var(--davinci-color-bg-danger);
+}
+.davinci-input__field--invalid:focus {
+  --davinci-input-border-color: var(--davinci-color-bg-danger);
+}
+.davinci-input__field--readonly {
+  --davinci-input-bg-color: transparent;
+  --davinci-input-color: var(--davinci-color-brand-emphasis);
+}
+.davinci-input__field--disabled {
+  --davinci-input-border-color: var(--davinci-color-bg-muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.davinci-input__field--readonly:focus,
+.davinci-input__field--disabled:focus {
+  --davinci-input-border-color: transparent;
+  --davinci-input-focus-ring: transparent;
+  --davinci-input-bg-color: transparent;
+}
+.davinci-input__field--success {
+  --davinci-input-border-color: var(--davinci-color-bg-success);
+  --davinci-input-color: var(--davinci-color-text-on-success);
+}
+.davinci-input__field--success:hover {
+  --davinci-input-bg-color: var(--davinci-color-bg-success-subtle);
+}
+.davinci-input__field--success:focus {
+  --davinci-input-focus-ring: var(--davinci-color-bg-success);
+}
+.davinci-input__field--error {
+  --davinci-input-border-color: var(--davinci-color-bg-danger);
+  --davinci-input-color: var(--davinci-color-text-on-danger);
+}
+.davinci-input__field--error:hover {
+  --davinci-input-bg-color: var(--davinci-color-bg-danger-subtle);
+}
+.davinci-input__field--error:focus {
+  --davinci-input-focus-ring: var(--davinci-color-bg-danger);
+}
+
+/*----------------------------------------------------
+    Icon Styles
+    --------------------------------------------- */
+.davinci-input__icon {
+  width: var(--davinci-input-icon-size);
+  height: var(--davinci-input-icon-size);
+  color: var(--davinci-input-icon-color);
+}
+.davinci-input__icon--start,
+.davinci-input__icon--end {
+  margin-inline: var(--davinci-input-icon-gap);
+}
+
+/*----------------------------------------------------
+    Error & Hint Messages
+    --------------------------------------------- */
+.davinci-input__error-message,
+.davinci-input__hint-message {
+  display: inline-flex;
+  align-items: center;
+  padding-block-start: var(--davinci-input-gap);
+  gap: var(--davinci-input-gap);
+  font-size: var(--davinci-text-size-sm);
+  padding-inline-start: var(--davinci-input-label-gap);
+
+  animation-name: slideInFromLeft;
+  animation-duration: var(--davinci-animation-duration-default);
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+.davinci-input__error-message span,
+.davinci-input__hint-message span {
+  line-height: 1;
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+.davinci-input__error-message {
+  color: var(--davinci-color-text-danger);
+}
+.davinci-input__hint-message {
+  color: var(--davinci-color-text-muted);
+}

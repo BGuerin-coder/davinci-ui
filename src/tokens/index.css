@@ -142,12 +142,12 @@
   --davinci-primitive-brand-darker: color-mix(
     in oklch,
     var(--davinci-primitive-brand-base),
-    var(--davinci-primitive-neutral-950) 70%
+    var(--davinci-primitive-neutral-950) 60%
   );
   --davinci-primitive-brand-darkest: color-mix(
     in oklch,
     var(--davinci-primitive-brand-base),
-    var(--davinci-primitive-neutral-950) 85%
+    var(--davinci-primitive-neutral-950) 70%
   );
 
   /* --- Danger primitives ---
@@ -179,6 +179,11 @@
     var(--davinci-primitive-danger-default),
     var(--davinci-primitive-neutral-950) 42%
   );
+  --davinci-primitive-danger-darkest: color-mix(
+    in oklch,
+    var(--davinci-primitive-danger-default),
+    var(--davinci-primitive-neutral-950) 70%
+  );
 
   /* --- Warning primitives ---
      Yellow scale for cautionary states and warnings.
@@ -209,6 +214,11 @@
     var(--davinci-primitive-warning-default),
     var(--davinci-primitive-neutral-950) 42%
   );
+  --davinci-primitive-warning-darkest: color-mix(
+    in oklch,
+    var(--davinci-primitive-warning-default),
+    var(--davinci-primitive-neutral-950) 70%
+  );
 
   /* --- Success primitives ---
      Green scale for success states and positive feedback.
@@ -238,6 +248,11 @@
     in oklch,
     var(--davinci-primitive-success-default),
     var(--davinci-primitive-neutral-950) 42%
+  );
+  --davinci-primitive-success-darkest: color-mix(
+    in oklch,
+    var(--davinci-primitive-success-default),
+    var(--davinci-primitive-neutral-950) 70%
   );
 }
 
@@ -352,7 +367,7 @@
   /* Standard border for inputs, cards, and interactive containers.
      The default choice for most bordered components at rest. */
 
-  --davinci-color-stroke-strong: var(--davinci-primitive-brand-base);
+  --davinci-color-stroke-strong: var(--davinci-primitive-brand-darker);
   /* High-visibility borders for focus rings, active states,
      and error outlines. Never use decoratively - this color
      must retain its functional signal value. */
@@ -379,7 +394,7 @@
   /* Main page background. The lowest elevation layer.
      Everything else in the UI sits on top of this surface. */
 
-  --davinci-color-bg-subtle: var(--davinci-primitive-brand-lighter);
+  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-200);
   /* Slightly raised surface for cards, sidebars, secondary panels,
      and alternate table rows. One visual step above bg-base. */
 
@@ -396,6 +411,11 @@
   /* Background for error states, destructive alerts, delete zones.
      Use only when communicating failure or critical risk to the user. */
 
+  --davinci-color-bg-danger-subtle: var(--davinci-primitive-danger-lighter);
+  /* Light danger background for hover states, error highlights,
+       or when a softer tint is needed. Never use at rest - reserved
+       exclusively for hover transitions or accents. */
+
   --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-default);
   /* Hover state for danger backgrounds (e.g. delete button hover).
      Never use at rest - reserved exclusively for hover transitions. */
@@ -404,6 +424,10 @@
   /* Background for cautionary states, warning alerts, risk zones.
       Use only when communicating warnings or important information to the user. */
 
+  --davinci-color-bg-warning-subtle: var(--davinci-primitive-warning-lighter);
+  /* Light warning background for hover states, highlights, or when a softer tint is needed.
+         Never use at rest - reserved exclusively for hover transitions or accents. */
+
   --davinci-color-bg-warning-hover: var(--davinci-primitive-warning-default);
   /* Hover state for warning backgrounds.
       Never use at rest - reserved exclusively for hover transitions. */
@@ -411,6 +435,10 @@
   --davinci-color-bg-success: var(--davinci-primitive-success-soft);
   /* Background for success states, confirmation messages, safe zones.
       Use only when communicating successful outcomes or confirmations. */
+
+  --davinci-color-bg-success-subtle: var(--davinci-primitive-success-lighter);
+  /* Light success background for hover states, highlights, or when a softer tint is needed.
+         Never use at rest - reserved exclusively for hover transitions or accents. */
 
   --davinci-color-bg-success-hover: var(--davinci-primitive-success-default);
   /* Hover state for success backgrounds.
@@ -478,9 +506,9 @@
 [data-theme="dark"] {
   --davinci-color-brand-background: var(--davinci-primitive-brand-darkest);
   --davinci-color-brand-border: var(--davinci-primitive-brand-darker);
-  --davinci-color-brand-default: var(--davinci-primitive-brand-dark);
-  --davinci-color-brand-hover: var(--davinci-primitive-brand-softdark);
-  --davinci-color-brand-emphasis: var(--davinci-primitive-brand-lighter);
+  --davinci-color-brand-default: var(--davinci-primitive-brand-softdark);
+  --davinci-color-brand-hover: var(--davinci-primitive-brand-lighter);
+  --davinci-color-brand-emphasis: var(--davinci-primitive-brand-lightest);
 
   --davinci-color-text-default: var(--davinci-primitive-neutral-100);
   --davinci-color-text-muted: var(--davinci-primitive-neutral-400);
@@ -504,14 +532,17 @@
   --davinci-color-icon-on-brand: var(--davinci-primitive-neutral-50);
 
   --davinci-color-bg-base: var(--davinci-primitive-neutral-950);
-  --davinci-color-bg-subtle: var(--davinci-primitive-brand-dark);
+  --davinci-color-bg-subtle: var(--davinci-primitive-neutral-900);
   --davinci-color-bg-elevated: var(--davinci-primitive-neutral-800);
   --davinci-color-bg-brand: var(--davinci-primitive-brand-soft);
   --davinci-color-bg-danger: var(--davinci-primitive-danger-darker);
+  --davinci-color-bg-danger-subtle: var(--davinci-primitive-danger-darkest);
   --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-default);
   --davinci-color-bg-warning: var(--davinci-primitive-warning-darker);
+  --davinci-color-bg-warning-subtle: var(--davinci-primitive-warning-darkest);
   --davinci-color-bg-warning-hover: var(--davinci-primitive-warning-default);
   --davinci-color-bg-success: var(--davinci-primitive-success-darker);
+  --davinci-color-bg-success-subtle: var(--davinci-primitive-success-darkest);
   --davinci-color-bg-success-hover: var(--davinci-primitive-success-default);
   --davinci-color-bg-neutral: var(--davinci-primitive-neutral-600);
   --davinci-color-bg-neutral-hover: var(--davinci-primitive-neutral-500);
