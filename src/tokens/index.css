@@ -179,6 +179,11 @@
     var(--davinci-primitive-danger-default),
     var(--davinci-primitive-neutral-950) 42%
   );
+  --davinci-primitive-danger-darkest: color-mix(
+    in oklch,
+    var(--davinci-primitive-danger-default),
+    var(--davinci-primitive-neutral-950) 70%
+  );
 
   /* --- Warning primitives ---
      Yellow scale for cautionary states and warnings.
@@ -209,6 +214,11 @@
     var(--davinci-primitive-warning-default),
     var(--davinci-primitive-neutral-950) 42%
   );
+  --davinci-primitive-warning-darkest: color-mix(
+    in oklch,
+    var(--davinci-primitive-warning-default),
+    var(--davinci-primitive-neutral-950) 70%
+  );
 
   /* --- Success primitives ---
      Green scale for success states and positive feedback.
@@ -238,6 +248,11 @@
     in oklch,
     var(--davinci-primitive-success-default),
     var(--davinci-primitive-neutral-950) 42%
+  );
+  --davinci-primitive-success-darkest: color-mix(
+    in oklch,
+    var(--davinci-primitive-success-default),
+    var(--davinci-primitive-neutral-950) 70%
   );
 }
 
@@ -396,6 +411,11 @@
   /* Background for error states, destructive alerts, delete zones.
      Use only when communicating failure or critical risk to the user. */
 
+  --davinci-color-bg-danger-subtle: var(--davinci-primitive-danger-lighter);
+  /* Light danger background for hover states, error highlights,
+       or when a softer tint is needed. Never use at rest - reserved
+       exclusively for hover transitions or accents. */
+
   --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-default);
   /* Hover state for danger backgrounds (e.g. delete button hover).
      Never use at rest - reserved exclusively for hover transitions. */
@@ -404,6 +424,10 @@
   /* Background for cautionary states, warning alerts, risk zones.
       Use only when communicating warnings or important information to the user. */
 
+  --davinci-color-bg-warning-subtle: var(--davinci-primitive-warning-lighter);
+  /* Light warning background for hover states, highlights, or when a softer tint is needed.
+         Never use at rest - reserved exclusively for hover transitions or accents. */
+
   --davinci-color-bg-warning-hover: var(--davinci-primitive-warning-default);
   /* Hover state for warning backgrounds.
       Never use at rest - reserved exclusively for hover transitions. */
@@ -411,6 +435,10 @@
   --davinci-color-bg-success: var(--davinci-primitive-success-soft);
   /* Background for success states, confirmation messages, safe zones.
       Use only when communicating successful outcomes or confirmations. */
+
+  --davinci-color-bg-success-subtle: var(--davinci-primitive-success-lighter);
+  /* Light success background for hover states, highlights, or when a softer tint is needed.
+         Never use at rest - reserved exclusively for hover transitions or accents. */
 
   --davinci-color-bg-success-hover: var(--davinci-primitive-success-default);
   /* Hover state for success backgrounds.
@@ -508,10 +536,13 @@
   --davinci-color-bg-elevated: var(--davinci-primitive-neutral-800);
   --davinci-color-bg-brand: var(--davinci-primitive-brand-soft);
   --davinci-color-bg-danger: var(--davinci-primitive-danger-darker);
+  --davinci-color-bg-danger-subtle: var(--davinci-primitive-danger-darkest);
   --davinci-color-bg-danger-hover: var(--davinci-primitive-danger-default);
   --davinci-color-bg-warning: var(--davinci-primitive-warning-darker);
+  --davinci-color-bg-warning-subtle: var(--davinci-primitive-warning-darkest);
   --davinci-color-bg-warning-hover: var(--davinci-primitive-warning-default);
   --davinci-color-bg-success: var(--davinci-primitive-success-darker);
+  --davinci-color-bg-success-subtle: var(--davinci-primitive-success-darkest);
   --davinci-color-bg-success-hover: var(--davinci-primitive-success-default);
   --davinci-color-bg-neutral: var(--davinci-primitive-neutral-600);
   --davinci-color-bg-neutral-hover: var(--davinci-primitive-neutral-500);

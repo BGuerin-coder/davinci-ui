@@ -145,12 +145,18 @@
   --davinci-input-border-color: var(--davinci-color-bg-success);
   --davinci-input-color: var(--davinci-color-text-on-success);
 }
+.davinci-input__field--success:hover {
+  --davinci-input-bg-color: var(--davinci-color-bg-success-subtle);
+}
 .davinci-input__field--success:focus {
   --davinci-input-focus-ring: var(--davinci-color-bg-success);
 }
 .davinci-input__field--error {
   --davinci-input-border-color: var(--davinci-color-bg-danger);
   --davinci-input-color: var(--davinci-color-text-on-danger);
+}
+.davinci-input__field--error:hover {
+  --davinci-input-bg-color: var(--davinci-color-bg-danger-subtle);
 }
 .davinci-input__field--error:focus {
   --davinci-input-focus-ring: var(--davinci-color-bg-danger);
