@@ -13,8 +13,8 @@
         class="davinci-input__icon davinci-input__icon--start" aria-hidden="true" />
       <!-- Input Field -->
       <input v-bind="$attrs" :id="computedId" :type="type" :value="props.modelValue" :placeholder="props.placeholder"
-        :aria-invalid="isInvalid" class="davinci-input__field" :class="addStateClasses()" @change="handleChange"
-        @input="handleInput" />
+        :aria-invalid="isInvalid || !!props.error" class="davinci-input__field" :class="addStateClasses()"
+        @change="handleChange" @input="handleInput" />
       <!-- Icon End -->
       <Icon v-if="icon && iconPosition === 'end'" :icon="`feather:${icon}`"
         class="davinci-input__icon davinci-input__icon--end" aria-hidden="true" />
