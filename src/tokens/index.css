@@ -615,6 +615,10 @@
      Humanist and highly legible at small sizes across all screens. */
 
   /* Weight */
+  --davinci-text-weight-thin: 300;
+  /* Decorative text, large display titles, or when a delicate touch is needed.
+     Use sparingly - too much thin text can feel insubstantial. */
+
   --davinci-text-weight-regular: 400;
   /* Body text, descriptions, placeholder text, helper messages.
      The default reading weight for anything longer than a label. */
@@ -654,7 +658,7 @@
   /* H2 headings, page section titles.
      Pair with tight letter-spacing when using Poiret One. */
 
-  --davinci-text-size-3xl: 2.5rem;
+  --davinci-text-size-3xl: 3rem;
   /* H1, hero display text, landing page headlines.
      Use sparingly - one instance per view maximum for strong hierarchy. */
 
