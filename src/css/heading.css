@@ -7,20 +7,23 @@ h5,
 h6 {
   --davinci-heading-font-family: var(--davinci-text-font-title), sans-serif;
   --davinci-heading-letter-spacing: var(--davinci-text-letter-spacing-tight);
+  --davinci-heading-wrap: balance;
 
   --davinci-heading-weight: var(--davinci-text-weight-thin);
   --davinci-heading-size: var(--davinci-text-size-3xl);
 
   --davinci-heading-margin-block: 0.67em 0.33em;
+  --davinci-heading-margin-inline: 0;
 
   font-size: var(--davinci-heading-size) !important;
   margin-block: var(--davinci-heading-margin-block);
-  margin-inline: 0;
+  margin-inline: var(--davinci-heading-margin-inline);
 
   font-family: var(--davinci-heading-font-family) !important;
   font-weight: var(--davinci-heading-weight) !important;
 
   letter-spacing: var(--davinci-heading-letter-spacing);
+  text-wrap: var(--davinci-heading-wrap);
 }
 
 .dv-heading--h2,
@@ -64,4 +67,10 @@ h5 {
 h6 {
   --davinci-heading-size: 1em;
   --davinci-heading-margin-block: 1.67em 0.67em;
+}
+
+.dv-heading--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
