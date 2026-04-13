@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import DvHeading from "./DvHeading.vue";
 
 import DvHeadingAllLevels from "./stories/DvHeadingAllLevels.vue";
+import DvHeadingStyling from "./stories/DvHeadingStyling.vue";
 
 const meta = {
   title: "Typography/DvHeading",
@@ -32,6 +33,13 @@ export const AllLevels: StoryObj<typeof DvHeading> = {
   render: () => ({
     components: { DvHeadingAllLevels },
     template: "<DvHeadingAllLevels />",
+  }),
+};
+
+export const Styling: StoryObj<typeof DvHeading> = {
+  render: () => ({
+    components: { DvHeadingStyling },
+    template: "<DvHeadingStyling />",
   }),
 };
 
