@@ -21,20 +21,6 @@ The \`DvHeading\` component is a flexible heading component that renders semanti
 - **h4-h6**: Use for deeper nesting as needed
 - Always maintain a logical, sequential hierarchy (don't skip levels)
 
-## Examples
-\`\`\`html
-<!-- Main page heading -->
-<DvHeading as="h1">Welcome to Our App</DvHeading>
-
-<!-- Section heading -->
-<DvHeading as="h2">Key Features</DvHeading>
-
-<!-- With text truncation -->
-<DvHeading as="h2" :truncate="true">
-  This heading will be truncated with an ellipsis
-</DvHeading>
-\`\`\`
-
 ## Best Practices
 - Always use headings in a logical, sequential order for proper document structure
 - Use only one h1 per page
