@@ -1,0 +1,30 @@
+.dv-body,
+p {
+  --davinci-body-font-family: var(--davinci-text-font-main), sans-serif;
+  --davinci-body-font-weight: var(--davinci-text-weight-regular);
+  --davinci-body-font-size: var(--davinci-text-size-md);
+  --davinci-body-line-height: var(--davinci-text-line-spacing-normal);
+  --davinci-body-letter-spacing: var(--davinci-text-letter-spacing-normal);
+
+  --davinci-body-margin-block: 0.5em 0.5em;
+  --davinci-body-margin-inline: 0;
+  --davinci-body-max-width: 65ch;
+
+  font-family: var(--davinci-body-font-family);
+  font-size: var(--davinci-body-font-size);
+  font-weight: var(--davinci-body-font-weight);
+  line-height: var(--davinci-body-line-height);
+  letter-spacing: var(--davinci-body-letter-spacing);
+
+  margin-block: var(--davinci-body-margin-block);
+  margin-inline: var(--davinci-body-margin-inline);
+
+  color: var(--davinci-semantic-text-primary);
+}
+
+/* Lead paragraph: larger, more prominent opening text */
+.dv-body--lead {
+  --davinci-body-font-size: var(--davinci-text-size-lg);
+  --davinci-body-line-height: var(--davinci-text-line-spacing-loose);
+  --davinci-body-font-weight: var(--davinci-text-weight-medium);
+}
