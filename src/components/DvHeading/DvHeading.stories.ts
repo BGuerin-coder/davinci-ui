@@ -3,6 +3,7 @@ import DvHeading from "./DvHeading.vue";
 
 import DvHeadingAllLevels from "./stories/DvHeadingAllLevels.vue";
 import DvHeadingStyling from "./stories/DvHeadingStyling.vue";
+import DvHeadingTruncate from "./stories/DvHeadingTruncate.vue";
 
 const meta = {
   title: "Typography/DvHeading",
@@ -20,12 +21,15 @@ The \`DvHeading\` component is a flexible heading component that renders semanti
 - **h3**: Use for subheadings within sections
 - **h4-h6**: Use for deeper nesting as needed
 - Always maintain a logical, sequential hierarchy (don't skip levels)
+- Always renders real semantic HTML (\`<h1>\` through \`<h6>\`), never uses \`<div>\`
 
 ## Best Practices
 - Always use headings in a logical, sequential order for proper document structure
 - Use only one h1 per page
 - Avoid using headings for styling purposes; use CSS classes instead
 - Ensure sufficient color contrast for readability
+- **When using \`truncate=true\`**, the full text is automatically exposed via \`title\` attribute for screen readers
+  - Example: \`<DvHeading truncate>Very long heading text...</DvHeading>\`
         `.trim(),
       },
     },
@@ -60,6 +64,13 @@ export const Styling: StoryObj<typeof DvHeading> = {
   render: () => ({
     components: { DvHeadingStyling },
     template: "<DvHeadingStyling />",
+  }),
+};
+
+export const Truncate: StoryObj<typeof DvHeading> = {
+  render: () => ({
+    components: { DvHeadingTruncate },
+    template: "<DvHeadingTruncate />",
   }),
 };
 
