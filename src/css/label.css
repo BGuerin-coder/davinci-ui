@@ -24,6 +24,7 @@ label {
   color: var(--davinci-label-color);
 
   display: inline-block;
+  cursor: pointer;
 }
 
 /* Uppercase tracked labels: section overlines, category markers, and emphasized labels */

@@ -32,6 +32,9 @@ The \`DvLabel\` component is used for form and UI labels including section overl
 - Use \`uppercase\` sparingly for visual emphasis and organization
 - Position labels consistently (above or beside inputs)
 - Ensure sufficient color contrast for accessibility
+- **When \`as="label"\`, always provide the \`for\` attribute** to associate with an input ID for accessibility
+  - Example: \`<DvLabel as="label" for="email-input">Email</DvLabel>\`
+- Use \`as="div"\` or \`as="span"\` for non-form labels (overlines, markers)
         `.trim(),
       },
     },
