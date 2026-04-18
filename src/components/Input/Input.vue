@@ -1,6 +1,12 @@
 <template>
   <div class="davinci-input" :class="`davinci-input--${type}`" :aria-describedby="hintId || errorId">
-    <DvLabel v-if="!hideLabel" as="label" :for="computedId" class="davinci-input__label">
+    <DvLabel 
+      v-if="!hideLabel" 
+      as="label" 
+      :for="computedId" 
+      class="davinci-input__label"
+      :class="{ 'davinci-input__label--disabled': hasAttributes('disabled') }"
+    >
       {{ label }}
       <span v-if="isOptional" class="davinci-input__label--optional">
         (Optional)
