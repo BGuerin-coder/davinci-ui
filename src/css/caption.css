@@ -18,7 +18,7 @@ small {
   margin-block: var(--davinci-caption-margin-block);
   margin-inline: var(--davinci-caption-margin-inline);
 
-  color: var(--davinci-semantic-text-secondary);
+  color: var(--davinci-color-text-default);
 }
 
 /* Fine print: smallest size for less important information */
