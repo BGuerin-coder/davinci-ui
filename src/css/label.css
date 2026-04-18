@@ -1,0 +1,36 @@
+.dv-label,
+label {
+  --davinci-label-font-family: var(--davinci-text-font-main), sans-serif;
+  --davinci-label-font-weight: var(--davinci-font-weight-medium);
+  --davinci-label-font-size: var(--davinci-text-size-sm);
+  --davinci-label-line-height: var(--davinci-text-line-spacing-normal);
+  --davinci-label-letter-spacing: var(--davinci-text-letter-spacing-normal);
+
+  --davinci-label-color: var(--davinci-color-brand-default);
+  --davinci-label-gap: var(--davinci-spacing-gap-xs);
+
+  --davinci-label-margin-block: 0.5em 0.25em;
+  --davinci-label-margin-inline: 0;
+
+  font-family: var(--davinci-label-font-family);
+  font-size: var(--davinci-label-font-size);
+  font-weight: var(--davinci-label-font-weight);
+  line-height: var(--davinci-label-line-height);
+  letter-spacing: var(--davinci-label-letter-spacing);
+
+  margin-block: var(--davinci-label-margin-block);
+  margin-inline: var(--davinci-label-margin-inline);
+
+  color: var(--davinci-label-color);
+
+  display: inline-block;
+}
+
+/* Uppercase tracked labels: section overlines, category markers, and emphasized labels */
+.dv-label--uppercase {
+  --davinci-label-font-size: var(--davinci-text-size-xs);
+  --davinci-label-font-weight: var(--davinci-text-weight-bold);
+  --davinci-label-letter-spacing: var(--davinci-text-letter-spacing-wide);
+
+  text-transform: uppercase;
+}
