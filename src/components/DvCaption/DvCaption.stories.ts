@@ -22,9 +22,12 @@ The \`DvCaption\` component is used for small supporting text including labels, 
 
 ## Best Practices
 - Keep caption text concise and scannable
-- Use secondary color for visual de-emphasis
+- Use for visual de-emphasis of secondary information
 - Never use for critical information that users must read
 - Test readability on smaller screens and devices
+- **When \`as="time"\`, always provide the \`datetime\` attribute** for machine-readable timestamps
+  - Example: \`<DvCaption as="time" datetime="2026-04-18">April 18, 2026</DvCaption>\`
+- Muted text still meets WCAG AA 4.5:1 contrast ratio
         `.trim(),
       },
     },
