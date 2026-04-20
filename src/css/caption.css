@@ -1,0 +1,27 @@
+.dv-caption,
+small {
+  --davinci-caption-font-family: var(--davinci-text-font-main), sans-serif;
+  --davinci-caption-font-weight: var(--davinci-text-weight-regular);
+  --davinci-caption-font-size: var(--davinci-text-size-sm);
+  --davinci-caption-line-height: var(--davinci-text-line-spacing-normal);
+  --davinci-caption-letter-spacing: var(--davinci-text-letter-spacing-normal);
+
+  --davinci-caption-margin-block: 0;
+  --davinci-caption-margin-inline: 0;
+
+  font-family: var(--davinci-caption-font-family);
+  font-size: var(--davinci-caption-font-size);
+  font-weight: var(--davinci-caption-font-weight);
+  line-height: var(--davinci-caption-line-height);
+  letter-spacing: var(--davinci-caption-letter-spacing);
+
+  margin-block: var(--davinci-caption-margin-block);
+  margin-inline: var(--davinci-caption-margin-inline);
+
+  color: var(--davinci-color-text-default);
+}
+
+/* Fine print: smallest size for less important information */
+.dv-caption--fine {
+  --davinci-caption-font-size: var(--davinci-text-size-xs);
+}

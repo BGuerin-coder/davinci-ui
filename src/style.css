@@ -1,4 +1,5 @@
 @import "./tokens/index.css";
+@import "./css/heading.css";
 
 /* =============================================================
    CSS RESET
@@ -16,12 +17,6 @@ html {
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
-}
-
-h1,
-h2,
-h3 {
-  font-family: var(--davinci-text-font-title), sans-serif;
 }
 
 body {

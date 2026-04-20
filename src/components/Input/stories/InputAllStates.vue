@@ -5,9 +5,9 @@
     <Input id="all-states-error-input" type="text" label="Error" aria-label="Error input"
       error="Error message as an example" placeholder="Error input" />
     <Input id="all-states-readonly-input" type="text" label="Read only" aria-label="Read only input" readonly
-      placeholder="Read only input" />
+      placeholder="Read only input" model-value="Read only input" />
     <Input id="all-states-disabled-input" type="text" label="Disabled" aria-label="Disabled input" disabled
-      placeholder="Disabled input" />
+      placeholder="Disabled input" model-value="Disabled input" />
     <Input id="all-states-success-input" type="text" label="Success" aria-label="Success input" success
       placeholder="Success input" />
     <Input id="all-states-default-input" type="text" label="Default" aria-label="Default input" optional

@@ -1,11 +1,17 @@
 <template>
   <div class="davinci-input" :class="`davinci-input--${type}`" :aria-describedby="hintId || errorId">
-    <label v-if="!hideLabel" class="davinci-input__label" :for="computedId">
+    <DvLabel 
+      v-if="!hideLabel" 
+      as="label" 
+      :for="computedId" 
+      class="davinci-input__label"
+      :class="{ 'davinci-input__label--disabled': hasAttributes('disabled') }"
+    >
       {{ label }}
       <span v-if="isOptional" class="davinci-input__label--optional">
         (Optional)
       </span>
-    </label>
+    </DvLabel>
     <!-- Input Wrapper -->
     <div class="davinci-input__wrapper">
       <!-- Icon Start -->
@@ -20,23 +26,27 @@
         class="davinci-input__icon davinci-input__icon--end" aria-hidden="true" />
     </div>
     <!--  Input Messages -->
-    <div v-if="isInvalid || error" class="davinci-input__error-message" role="alert">
+    <DvCaption as="span" v-if="isInvalid || error" class="davinci-input__error-message" role="alert">
       <Icon icon="feather:x-circle" class="davinci-input__error-icon" aria-hidden="true" />
       <span :id="errorId">{{ error || "This field is required" }}</span>
-    </div>
-    <div v-else-if="hint || hasAttributes('maxlength')" class="davinci-input__hint-message" aria-live="polite">
+    </DvCaption>
+    <DvCaption as="span" v-else-if="hint || hasAttributes('maxlength')" class="davinci-input__hint-message"
+      aria-live="polite">
       <Icon v-if="hint" icon="feather:info" class="davinci-input__hint-icon" aria-hidden="true" />
       <span :id="hintId">{{ hint }}</span>
       <span v-if="hasAttributes('maxlength')" class="davinci-input__hint-message--maxlength" :id="hintId">
         {{ currentLength }}/{{ $attrs.maxlength }}
       </span>
-    </div>
+    </DvCaption>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { computed, ref, useAttrs, useId } from "vue";
+import DvLabel from "../DvLabel/DvLabel.vue";
+import DvCaption from '../DvCaption/DvCaption.vue';
+
 import "../../css/input.css";
 
 defineOptions({ inheritAttrs: false });

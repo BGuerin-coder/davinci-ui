@@ -1,0 +1,78 @@
+.dv-heading,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --davinci-heading-font-family: var(--davinci-text-font-title), sans-serif;
+  --davinci-heading-letter-spacing: var(--davinci-text-letter-spacing-tight);
+  --davinci-heading-wrap: balance;
+
+  --davinci-heading-weight: var(--davinci-text-weight-thin);
+  --davinci-heading-size: var(--davinci-text-size-3xl);
+
+  --davinci-heading-margin-block: 0.67em 0.33em;
+  --davinci-heading-margin-inline: 0;
+
+  font-size: var(--davinci-heading-size) !important;
+  margin-block: var(--davinci-heading-margin-block);
+  margin-inline: var(--davinci-heading-margin-inline);
+
+  font-family: var(--davinci-heading-font-family) !important;
+  font-weight: var(--davinci-heading-weight) !important;
+
+  letter-spacing: var(--davinci-heading-letter-spacing);
+  text-wrap: var(--davinci-heading-wrap);
+
+  color: var(--davinci-color-text-default);
+}
+
+.dv-heading--h2,
+h2 {
+  --davinci-heading-size: 2.5em;
+  --davinci-heading-margin-block: 0.75em 0.25em;
+}
+.dv-heading--h3,
+.dv-heading--h4,
+h3,
+h4 {
+  --davinci-heading-letter-spacing: var(--davinci-text-letter-spacing-normal);
+  --davinci-heading-weight: var(--davinci-text-weight-medium);
+}
+.dv-heading--h3,
+h3 {
+  --davinci-heading-size: 2em;
+  --davinci-heading-margin-block: 0.83em 0.17em;
+}
+.dv-heading--h4,
+h4 {
+  --davinci-heading-size: 1.66em;
+  --davinci-heading-margin-block: 1.12em 0.28em;
+}
+
+.dv-heading--h4,
+.dv-heading--h5,
+.dv-heading--h6,
+h4,
+h5,
+h6 {
+  --davinci-heading-letter-spacing: var(--davinci-text-letter-spacing-wide);
+  --davinci-heading-weight: var(--davinci-text-weight-bold);
+}
+.dv-heading--h5,
+h5 {
+  --davinci-heading-size: 1.33em;
+  --davinci-heading-margin-block: 1.5em 0.5em;
+}
+.dv-heading--h6,
+h6 {
+  --davinci-heading-size: 1em;
+  --davinci-heading-margin-block: 1.67em 0.67em;
+}
+
+.dv-heading--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

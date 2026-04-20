@@ -68,7 +68,20 @@ src/
 - [x] Button • variants, sizes, loading, disabled
 - [x] Badge / Tag • variants, slots
 - [x] Input / TextField • label, error, helper, a11y
-- [ ] ➡️ Typography • heading, body, caption components
+- [x] Typography • heading, body, caption components
+
+### Documentation
+
+- [ ] ➡️ Storybook stories for each component
+- [ ] README per component
+- [ ] Contribution guide
+- [ ] Changelog
+
+### Release
+
+- [ ] Deploy Storybook on Chromatic
+- [ ] GitHub Actions CI (lint + test + build)
+- [ ] Publish on npm
 
 ### Components • Tier 2
 
@@ -82,18 +95,6 @@ src/
 - [ ] Tabs • keyboard nav, router-link support
 - [ ] DataTable • sort, pagination, configurable columns
 
-### Documentation
-
-- [ ] Storybook stories for each component
-- [ ] README per component
-- [ ] Contribution guide
-- [ ] Changelog
-
-### Release
-
-- [ ] Deploy Storybook on Chromatic
-- [ ] GitHub Actions CI (lint + test + build)
-- [ ] Publish on npm
 
 ## Author
 
