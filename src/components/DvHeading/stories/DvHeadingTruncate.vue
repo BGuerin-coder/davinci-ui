@@ -1,12 +1,12 @@
 <template>
   <div style="display: flex; flex-direction: column; gap: 2rem;">
     <div>
-      <DvHeading as="h3" style="margin-bottom: 1rem;">Normal Heading</DvHeading>
-      <DvHeading>This is a normal heading without truncation</DvHeading>
+      <DvHeading as="h1" style="margin-bottom: 1rem;">Normal Heading</DvHeading>
+      <DvHeading as="h2">This is a normal heading without truncation</DvHeading>
     </div>
 
     <div>
-      <DvHeading as="h3" style="margin-bottom: 1rem;">Truncated Heading</DvHeading>
+      <DvHeading as="h1" style="margin-bottom: 1rem;">Truncated Heading</DvHeading>
       <p style="margin-bottom: 0.5rem; font-size: 0.875rem; color: var(--davinci-semantic-text-secondary);">
         Try hovering over the heading to see the full text in the title attribute (for screen readers)
       </p>
