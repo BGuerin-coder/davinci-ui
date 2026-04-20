@@ -24,6 +24,8 @@ h6 {
 
   letter-spacing: var(--davinci-heading-letter-spacing);
   text-wrap: var(--davinci-heading-wrap);
+
+  color: var(--davinci-color-text-default);
 }
 
 .dv-heading--h2,

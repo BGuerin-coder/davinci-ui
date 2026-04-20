@@ -19,7 +19,7 @@ p {
   margin-block: var(--davinci-body-margin-block);
   margin-inline: var(--davinci-body-margin-inline);
 
-  color: var(--davinci-semantic-text-primary);
+  color: var(--davinci-color-text-default);
 }
 
 /* Lead paragraph: larger, more prominent opening text */
