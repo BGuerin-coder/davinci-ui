@@ -4,6 +4,7 @@ import DvHeading from "./DvHeading.vue";
 import DvHeadingAllLevels from "./stories/DvHeadingAllLevels.vue";
 import DvHeadingStyling from "./stories/DvHeadingStyling.vue";
 import DvHeadingTruncate from "./stories/DvHeadingTruncate.vue";
+import DvHeadingDarkMode from "./stories/DvHeadingDarkMode.vue";
 
 const meta = {
   title: "Typography/DvHeading",
@@ -71,6 +72,13 @@ export const Truncate: StoryObj<typeof DvHeading> = {
   render: () => ({
     components: { DvHeadingTruncate },
     template: "<DvHeadingTruncate />",
+  }),
+};
+
+export const DarkMode: StoryObj<typeof DvHeading> = {
+  render: () => ({
+    components: { DvHeadingDarkMode },
+    template: "<DvHeadingDarkMode />",
   }),
 };
 

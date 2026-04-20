@@ -3,6 +3,7 @@ import DvBody from "./DvBody.vue";
 
 import DvBodyLongForm from "./stories/DvBodyLongForm.vue";
 import DvBodyVariations from "./stories/DvBodyVariations.vue";
+import DvBodyDarkMode from "./stories/DvBodyDarkMode.vue";
 
 const meta = {
   title: "Typography/DvBody",
@@ -91,6 +92,13 @@ export const Variations: StoryObj<typeof DvBody> = {
   render: () => ({
     components: { DvBodyVariations },
     template: "<DvBodyVariations />",
+  }),
+};
+
+export const DarkMode: StoryObj<typeof DvBody> = {
+  render: () => ({
+    components: { DvBodyDarkMode },
+    template: "<DvBodyDarkMode />",
   }),
 };
 

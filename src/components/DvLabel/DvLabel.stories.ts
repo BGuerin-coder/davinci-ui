@@ -10,6 +10,7 @@ import DvLabelSectionGrouping from "./stories/DvLabelSectionGrouping.vue";
 import DvLabelSectionGroupingSource from "./stories/DvLabelSectionGrouping.vue?raw";
 import DvLabelElements from "./stories/DvLabelElements.vue";
 import DvLabelElementsSource from "./stories/DvLabelElements.vue?raw";
+import DvLabelDarkMode from "./stories/DvLabelDarkMode.vue";
 
 const meta = {
   title: "Typography/DvLabel",
@@ -144,6 +145,13 @@ export const Elements: StoryObj<typeof DvLabel> = {
       },
     },
   },
+};
+
+export const DarkMode: StoryObj<typeof DvLabel> = {
+  render: () => ({
+    components: { DvLabelDarkMode },
+    template: "<DvLabelDarkMode />",
+  }),
 };
 
 export default meta;

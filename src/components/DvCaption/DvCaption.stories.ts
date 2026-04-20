@@ -3,6 +3,7 @@ import DvCaption from "./DvCaption.vue";
 
 import DvCaptionUseCases from "./stories/DvCaptionUseCases.vue";
 import DvCaptionVariations from "./stories/DvCaptionVariations.vue";
+import DvCaptionDarkMode from "./stories/DvCaptionDarkMode.vue";
 
 const meta = {
   title: "Typography/DvCaption",
@@ -86,6 +87,13 @@ export const Variations: StoryObj<typeof DvCaption> = {
   render: () => ({
     components: { DvCaptionVariations },
     template: "<DvCaptionVariations />",
+  }),
+};
+
+export const DarkMode: StoryObj<typeof DvCaption> = {
+  render: () => ({
+    components: { DvCaptionDarkMode },
+    template: "<DvCaptionDarkMode />",
   }),
 };
 
