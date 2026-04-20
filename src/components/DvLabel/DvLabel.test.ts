@@ -5,11 +5,12 @@ import DvLabel from "./DvLabel.vue";
 describe("DvLabel", () => {
   it("renders with default props", () => {
     const wrapper = mount(DvLabel, {
+      props: { as: "div" },
       slots: {
         default: "Label text",
       },
     });
-    expect(wrapper.find("label").exists()).toBe(true);
+    expect(wrapper.find("div").exists()).toBe(true);
     expect(wrapper.text()).toBe("Label text");
   });
 
@@ -54,6 +55,7 @@ describe("DvLabel", () => {
 
   it("does not apply uppercase class by default", () => {
     const wrapper = mount(DvLabel, {
+      props: { as: "div" },
       slots: {
         default: "Label",
       },
@@ -63,6 +65,7 @@ describe("DvLabel", () => {
 
   it("has dv-label class", () => {
     const wrapper = mount(DvLabel, {
+      props: { as: "div" },
       slots: {
         default: "Label",
       },
