@@ -1,4 +1,4 @@
-@layer reset, base, theme;
+@layer base, theme;
 
 @import "./tokens/index.css";
 @import "./css/heading.css" layer(base);
