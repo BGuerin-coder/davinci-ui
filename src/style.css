@@ -1,7 +1,5 @@
-@layer base, theme;
-
 @import "./tokens/index.css";
-@import "./css/heading.css" layer(base);
+@import "./css/heading.css";
 
 /* =============================================================
    CSS RESET
