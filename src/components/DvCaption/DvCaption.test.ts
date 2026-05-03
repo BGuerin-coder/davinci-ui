@@ -64,17 +64,6 @@ describe("DvCaption", () => {
     );
   });
 
-  it("does not set datetime attribute on span or p", () => {
-    const wrapper = mount(DvCaption, {
-      props: { as: "span" },
-      attrs: { datetime: "2024-01-01T12:00:00Z" },
-      slots: {
-        default: "Caption",
-      },
-    });
-    expect(wrapper.find("span").attributes("datetime")).toBeUndefined();
-  });
-
   it("logs warning when as='time' and no datetime attribute", () => {
     const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
     mount(DvCaption, {

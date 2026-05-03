@@ -30,35 +30,35 @@ describe("DvTag", () => {
   });
 
   it("does not render dismiss button when dismissible is false", () => {
-    const wrapper = mount(Tag);
+    const wrapper = mount(DvTag);
     expect(wrapper.find(".davinci-tag--dismiss").exists()).toBe(false);
   });
 
   it("renders dismiss button when dismissible is true", () => {
-    const wrapper = mount(Tag, { props: { dismissible: true } });
+    const wrapper = mount(DvTag, { props: { dismissible: true } });
     expect(wrapper.find(".davinci-tag--dismiss").exists()).toBe(true);
   });
 
   it("emits dismiss when dismiss button is clicked", async () => {
-    const wrapper = mount(Tag, { props: { dismissible: true } });
+    const wrapper = mount(DvTag, { props: { dismissible: true } });
     await wrapper.find(".davinci-tag--dismiss").trigger("click");
     expect(wrapper.emitted("dismiss")).toBeTruthy();
     expect(wrapper.emitted("dismiss")).toHaveLength(1);
   });
 
   it("does not emit dismiss when clicking the tag itself", async () => {
-    const wrapper = mount(Tag, { props: { dismissible: true } });
+    const wrapper = mount(DvTag, { props: { dismissible: true } });
     await wrapper.find(".davinci-tag").trigger("click");
     expect(wrapper.emitted("dismiss")).toBeFalsy();
   });
 
   it("renders icon when icon prop is provided", () => {
-    const wrapper = mount(Tag, { props: { icon: "star" } });
+    const wrapper = mount(DvTag, { props: { icon: "star" } });
     expect(wrapper.find(".davinci-tag--icon").exists()).toBe(true);
   });
 
   it("does not render icon when icon prop is empty", () => {
-    const wrapper = mount(Tag);
+    const wrapper = mount(DvTag);
     expect(wrapper.find(".davinci-tag--icon").exists()).toBe(false);
   });
 });
