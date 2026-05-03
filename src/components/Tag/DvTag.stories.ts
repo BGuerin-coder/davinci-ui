@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { expect, fn, userEvent, within } from "@storybook/test";
-import Tag from "./Tag.vue";
+import DvTag from "./DvTag.vue";
 
 import TagAllVariants from "./stories/TagAllVariants.vue";
 import TagAllSizes from "./stories/TagAllSizes.vue";
@@ -10,14 +10,14 @@ import TagWithIcon from "./stories/TagWithIcon.vue";
 import TagDarkMode from "./stories/TagDarkMode.vue";
 
 const meta = {
-  title: "Components/Tag",
-  component: Tag,
+  title: "Components/DvTag",
+  component: DvTag,
   tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
         component: `
-The \`Tag\` component is used to label, categorize, or organize items using keywords. It supports 4 variants and 3 sizes.
+The \`DvTag\` component is used to label, categorize, or organize items using keywords. It supports 4 variants and 3 sizes.
 
 **Usage rule**: use tags to provide additional context or categorization for items. Avoid using tags for primary actions or navigation, as they are meant for labeling rather than interaction.
         `.trim(),
@@ -57,7 +57,7 @@ The \`Tag\` component is used to label, categorize, or organize items using keyw
         "Emitted when the user clicks the dismiss button. Use this to remove the tag from the list.",
     },
   },
-} satisfies Meta<typeof Tag>;
+} satisfies Meta<typeof DvTag>;
 
 export default meta;
 
