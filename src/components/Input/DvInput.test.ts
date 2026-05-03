@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { mount } from "@vue/test-utils";
-import Input from "./Input.vue";
+import DvInput from "./DvInput.vue";
 
 // @iconify/vue makes fetch requests to the CDN at runtime.
 // Mock it to prevent happy-dom from aborting pending requests during teardown.
@@ -8,9 +8,9 @@ vi.mock("@iconify/vue", () => ({
   Icon: { template: "<span />" },
 }));
 
-describe("Input", () => {
+describe("DvInput", () => {
   it("renders label correctly associated to input", () => {
-    const wrapper = mount(Input, {
+    const wrapper = mount(DvInput, {
       props: { label: "Email address", id: "email-input" },
     });
     const label = wrapper.find("label");
@@ -22,7 +22,7 @@ describe("Input", () => {
   });
 
   it("emits update:modelValue on input", async () => {
-    const wrapper = mount(Input, { props: { label: "Name" } });
+    const wrapper = mount(DvInput, { props: { label: "Name" } });
 
     await wrapper.find("input").setValue("hello");
 
@@ -31,7 +31,7 @@ describe("Input", () => {
   });
 
   it("displays errorMessage when error prop is set", () => {
-    const wrapper = mount(Input, {
+    const wrapper = mount(DvInput, {
       props: { label: "Email", error: "This field is invalid" },
     });
     const errorMessage = wrapper.find(".davinci-input__error-message");
@@ -41,7 +41,7 @@ describe("Input", () => {
   });
 
   it("sets aria-invalid on input when error prop is set", () => {
-    const wrapper = mount(Input, {
+    const wrapper = mount(DvInput, {
       props: { label: "Email", error: "Invalid value" },
     });
 
@@ -49,7 +49,7 @@ describe("Input", () => {
   });
 
   it("disabled attribute is applied and interaction class is set", () => {
-    const wrapper = mount(Input, {
+    const wrapper = mount(DvInput, {
       props: { label: "Name" },
       attrs: { disabled: true },
     });
