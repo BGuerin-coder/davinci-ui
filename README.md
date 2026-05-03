@@ -1,3 +1,5 @@
+![Lint](https://github.com/bguerin-coder/davinci-ui/workflows/Lint/badge.svg) ![Build](https://github.com/bguerin-coder/davinci-ui/workflows/Build/badge.svg) ![Test](https://github.com/bguerin-coder/davinci-ui/workflows/Test/badge.svg)
+
 # 🎨 davinci-ui
 
 > _Where art meets engineering._
@@ -95,9 +97,8 @@ src/
 - [ ] Tabs • keyboard nav, router-link support
 - [ ] DataTable • sort, pagination, configurable columns
 
-
 ## Author
 
 Benjamin Guerin • Tech Lead Frontend & UI/UX • [spateline.fr](https://spateline.fr) • [GitHub](https://github.com/BGuerin-coder)
 
->_"Learning never exhausts the mind." — Leonardo da Vinci_
+> _"Learning never exhausts the mind." — Leonardo da Vinci_
