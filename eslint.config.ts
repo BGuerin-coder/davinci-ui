@@ -6,22 +6,31 @@ import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...pluginVue.configs["flat/essential"],
   {
-    files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
-    languageOptions: { globals: globals.browser },
+    ...js.configs.recommended,
+    files: ["**/*.{js,mjs,cjs}"],
   },
-  {
-    files: ["**/*.vue"],
+  ...tseslint.configs.recommended.map((config) => ({
+    ...config,
+    files: config.files || ["**/*.{ts,mts,cts}"],
+  })),
+  ...pluginVue.configs["flat/essential"].map((config) => ({
+    ...config,
+    files: config.files || ["**/*.vue"],
     languageOptions: {
+      ...config.languageOptions,
       globals: globals.browser,
       parserOptions: { parser: tseslint.parser },
     },
-  },
+  })),
   {
     files: ["**/*.css"],
-    ...css.configs.recommended,
+    language: "css/css",
+    plugins: { css },
+    rules: {
+      ...css.configs.recommended.rules,
+      "css/no-invalid-properties": ["error", { allowUnknownVariables: true }],
+      "css/use-baseline": ["error", { available: "newly" }],
+    },
   },
 ]);
