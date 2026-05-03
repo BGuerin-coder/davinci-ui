@@ -70,18 +70,18 @@ src/
 - [x] Input / TextField • label, error, helper, a11y
 - [x] Typography • heading, body, caption components
 
+### Release
+
+- [x] Deploy Storybook on Chromatic
+- [x] GitHub Actions CI (lint + test + build)
+- [ ] ➡️ Publish on npm
+
 ### Documentation
 
-- [ ] ➡️ Storybook stories for each component
+- [ ] Storybook stories for each component
 - [ ] README per component
 - [ ] Contribution guide
 - [ ] Changelog
-
-### Release
-
-- [ ] Deploy Storybook on Chromatic
-- [ ] GitHub Actions CI (lint + test + build)
-- [ ] Publish on npm
 
 ### Components • Tier 2
 
