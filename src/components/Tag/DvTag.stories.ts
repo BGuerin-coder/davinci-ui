@@ -157,9 +157,9 @@ export const DismissEmitsEvent: Story = {
     appearance: "outline",
   },
   render: (args) => ({
-    components: { Tag },
+    components: { DvTag },
     setup: () => ({ args }),
-    template: `<Tag v-bind="args" @dismiss="args.onDismiss">Feature</Tag>`,
+    template: `<DvTag v-bind="args" @dismiss="args.onDismiss">Feature</DvTag>`,
   }),
   play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
