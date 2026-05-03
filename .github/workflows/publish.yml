@@ -7,7 +7,6 @@ on:
 
 jobs:
   publish:
-    needs: [lint, test, build]
     runs-on: ubuntu-latest
 
     steps:
@@ -41,11 +40,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Download dist artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: dist
-          path: dist/
+      - name: Build
+        run: pnpm build
 
       - name: Publish to npm
         run: npm publish

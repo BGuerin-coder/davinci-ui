@@ -18,9 +18,3 @@ jobs:
 
       - name: Run build
         run: pnpm build
-
-      - name: Upload dist artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: dist
-          path: dist/
