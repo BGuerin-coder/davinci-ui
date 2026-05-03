@@ -1,6 +1,7 @@
 /// <reference types="vitest/config" />
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import dts from "vite-plugin-dts";
 
 // https://vite.dev/config/
 import path from "node:path";
@@ -14,7 +15,31 @@ const dirname =
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    dts({
+      outDirs: "dist",
+      tsconfigPath: "./tsconfig.app.json",
+    }),
+  ],
+
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, "src/index.ts"),
+      name: "DavinciUI",
+      formats: ["es"],
+      fileName: () => "davinci-ui.js",
+    },
+    rollupOptions: {
+      external: ["vue"],
+      output: {
+        globals: {
+          vue: "Vue",
+        },
+      },
+    },
+  },
+
   test: {
     projects: [
       {

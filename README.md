@@ -1,4 +1,4 @@
-![Lint](https://github.com/bguerin-coder/davinci-ui/workflows/Lint/badge.svg) ![Build](https://github.com/bguerin-coder/davinci-ui/workflows/Build/badge.svg) ![Test](https://github.com/bguerin-coder/davinci-ui/workflows/Test/badge.svg)
+![Lint](https://github.com/bguerin-coder/davinci-ui/workflows/Lint/badge.svg) • ![Build](https://github.com/bguerin-coder/davinci-ui/workflows/Build/badge.svg) • ![Test](https://github.com/bguerin-coder/davinci-ui/workflows/Test/badge.svg)
 
 # 🎨 davinci-ui
 
@@ -65,22 +65,22 @@ src/
 - [x] CSS custom properties generation
 - [x] Dark / Light theme switch
 
-### Components • Tier 1
+### ✅ Components • Tier 1
 
 - [x] Button • variants, sizes, loading, disabled
 - [x] Badge / Tag • variants, slots
 - [x] Input / TextField • label, error, helper, a11y
 - [x] Typography • heading, body, caption components
 
-### Release
+### ✅ Release
 
 - [x] Deploy Storybook on Chromatic
 - [x] GitHub Actions CI (lint + test + build)
-- [ ] ➡️ Publish on npm
+- [x] Publish on npm
 
 ### Documentation
 
-- [ ] Storybook stories for each component
+- [ ] ➡️ Storybook stories for each component
 - [ ] README per component
 - [ ] Contribution guide
 - [ ] Changelog
