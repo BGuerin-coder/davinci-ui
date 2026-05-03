@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { mount } from "@vue/test-utils";
-import Tag from "./Tag.vue";
+import DvTag from "./DvTag.vue";
 
 // @iconify/vue makes fetch requests to the CDN at runtime.
 // Mock it to prevent happy-dom from aborting pending requests during teardown.
@@ -8,24 +8,24 @@ vi.mock("@iconify/vue", () => ({
   Icon: { template: "<span />" },
 }));
 
-describe("Tag", () => {
+describe("DvTag", () => {
   it("renders slot content", () => {
-    const wrapper = mount(Tag, { slots: { default: "En cours" } });
+    const wrapper = mount(DvTag, { slots: { default: "En cours" } });
     expect(wrapper.text()).toContain("En cours");
   });
 
   it("applies the variant class", () => {
-    const wrapper = mount(Tag, { props: { variant: "danger" } });
+    const wrapper = mount(DvTag, { props: { variant: "danger" } });
     expect(wrapper.find(".davinci-tag").classes()).toContain("danger");
   });
 
   it("applies the size class", () => {
-    const wrapper = mount(Tag, { props: { size: "small" } });
+    const wrapper = mount(DvTag, { props: { size: "small" } });
     expect(wrapper.find(".davinci-tag").classes()).toContain("small");
   });
 
   it("applies the appearance class", () => {
-    const wrapper = mount(Tag, { props: { appearance: "outline" } });
+    const wrapper = mount(DvTag, { props: { appearance: "outline" } });
     expect(wrapper.find(".davinci-tag").classes()).toContain("outline");
   });
 
