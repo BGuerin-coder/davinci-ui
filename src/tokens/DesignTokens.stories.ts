@@ -8,7 +8,7 @@ const meta = {
     controls: { disable: true },
     docs: { canvas: { sourceState: "hidden" } },
   },
-} satisfies Meta<{}>;
+} satisfies Meta<Record<string, never>>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
