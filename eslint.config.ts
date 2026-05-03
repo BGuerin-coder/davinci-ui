@@ -12,7 +12,7 @@ export default defineConfig([
   },
   ...tseslint.configs.recommended.map((config) => ({
     ...config,
-    files: config.files || ["**/*.{ts,mts,cts}"],
+    files: ["**/*.{ts,mts,cts}"],
   })),
   ...pluginVue.configs["flat/essential"].map((config) => ({
     ...config,
@@ -30,7 +30,13 @@ export default defineConfig([
     rules: {
       ...css.configs.recommended.rules,
       "css/no-invalid-properties": ["error", { allowUnknownVariables: true }],
-      "css/use-baseline": ["error", { available: "newly" }],
+      "css/use-baseline": [
+        "error",
+        {
+          available: "newly",
+          allowProperties: ["text-box", "text-box-trim", "text-box-edge"],
+        },
+      ],
     },
   },
 ]);
