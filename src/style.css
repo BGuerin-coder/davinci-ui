@@ -95,10 +95,13 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Disable animations and transitions for users who prefer reduced motion */
   * {
-    animation-duration: 0 !important;
+    /* eslint-disable css/no-important */
+    animation-duration: 0s !important;
     animation-iteration-count: 0 !important;
-    transition-duration: 0 !important;
+    transition-duration: 0s !important;
     scroll-behavior: auto !important;
+    /* eslint-enable css/no-important */
   }
 }

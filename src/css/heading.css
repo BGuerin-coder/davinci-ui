@@ -15,12 +15,12 @@ h6 {
   --davinci-heading-margin-block: 0.67em 0.33em;
   --davinci-heading-margin-inline: 0;
 
-  font-size: var(--davinci-heading-size) !important;
+  font-size: var(--davinci-heading-size);
   margin-block: var(--davinci-heading-margin-block);
   margin-inline: var(--davinci-heading-margin-inline);
 
-  font-family: var(--davinci-heading-font-family) !important;
-  font-weight: var(--davinci-heading-weight) !important;
+  font-family: var(--davinci-heading-font-family);
+  font-weight: var(--davinci-heading-weight);
 
   letter-spacing: var(--davinci-heading-letter-spacing);
   text-wrap: var(--davinci-heading-wrap);

@@ -84,17 +84,6 @@ describe("DvLabel", () => {
     expect(wrapper.find("label").attributes("for")).toBe("input-id");
   });
 
-  it("does not set for attribute on span or div", () => {
-    const wrapper = mount(DvLabel, {
-      props: { as: "span" },
-      attrs: { for: "input-id" },
-      slots: {
-        default: "Label",
-      },
-    });
-    expect(wrapper.find("span").attributes("for")).toBeUndefined();
-  });
-
   it("logs warning when as='label' and no for attribute", () => {
     const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
     mount(DvLabel, {

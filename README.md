@@ -1,3 +1,5 @@
+![Lint](https://github.com/bguerin-coder/davinci-ui/workflows/Lint/badge.svg) ![Build](https://github.com/bguerin-coder/davinci-ui/workflows/Build/badge.svg) ![Test](https://github.com/bguerin-coder/davinci-ui/workflows/Test/badge.svg)
+
 # 🎨 davinci-ui
 
 > _Where art meets engineering._
@@ -70,18 +72,18 @@ src/
 - [x] Input / TextField • label, error, helper, a11y
 - [x] Typography • heading, body, caption components
 
+### Release
+
+- [x] Deploy Storybook on Chromatic
+- [x] GitHub Actions CI (lint + test + build)
+- [ ] ➡️ Publish on npm
+
 ### Documentation
 
-- [ ] ➡️ Storybook stories for each component
+- [ ] Storybook stories for each component
 - [ ] README per component
 - [ ] Contribution guide
 - [ ] Changelog
-
-### Release
-
-- [ ] Deploy Storybook on Chromatic
-- [ ] GitHub Actions CI (lint + test + build)
-- [ ] Publish on npm
 
 ### Components • Tier 2
 
@@ -95,9 +97,8 @@ src/
 - [ ] Tabs • keyboard nav, router-link support
 - [ ] DataTable • sort, pagination, configurable columns
 
-
 ## Author
 
 Benjamin Guerin • Tech Lead Frontend & UI/UX • [spateline.fr](https://spateline.fr) • [GitHub](https://github.com/BGuerin-coder)
 
->_"Learning never exhausts the mind." — Leonardo da Vinci_
+> _"Learning never exhausts the mind." — Leonardo da Vinci_
