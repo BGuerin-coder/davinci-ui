@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
-import Button from "./Button.vue";
+import DvButton from "./DvButton.vue";
 
 import ButtonAllVariants from "./stories/ButtonAllVariants.vue";
 import ButtonAllSizes from "./stories/ButtonAllSizes.vue";
@@ -9,14 +9,14 @@ import ButtonWithIcons from "./stories/ButtonWithIcons.vue";
 import ButtonTypes from "./stories/ButtonTypes.vue";
 
 const meta = {
-  title: "Components/Button",
-  component: Button,
+  title: "Components/DvButton",
+  component: DvButton,
   tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
         component: `
-The \`Button\` component is the primary action trigger in the interface. It supports 4 variants, 3 sizes, icons, and disabled/loading states.
+The \`DvButton\` component is the primary action trigger in the interface. It supports 4 variants, 3 sizes, icons, and disabled/loading states.
 
 **Usage rule**: only one \`primary\` action per visual group. Other buttons should be \`secondary\` or \`ghost\` to maintain hierarchy.
         `.trim(),
@@ -50,7 +50,7 @@ The \`Button\` component is the primary action trigger in the interface. It supp
     label: { control: "text" },
     icon: { control: "text" },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof DvButton>;
 
 export default meta;
 

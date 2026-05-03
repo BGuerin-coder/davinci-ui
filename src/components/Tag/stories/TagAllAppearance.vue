@@ -1,28 +1,28 @@
 <template>
   <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px;">
     <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-      <Tag appearance="outline" variant="brand">outline</Tag>
-      <Tag appearance="filled" variant="brand">filled</Tag>
+      <DvTag appearance="outline" variant="brand">outline</DvTag>
+      <DvTag appearance="filled" variant="brand">filled</DvTag>
     </div>
     <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-      <Tag appearance="outline" variant="success">outline</Tag>
-      <Tag appearance="filled" variant="success">filled</Tag>
+      <DvTag appearance="outline" variant="success">outline</DvTag>
+      <DvTag appearance="filled" variant="success">filled</DvTag>
     </div>
     <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-      <Tag appearance="outline" variant="danger">outline</Tag>
-      <Tag appearance="filled" variant="danger">filled</Tag>
+      <DvTag appearance="outline" variant="danger">outline</DvTag>
+      <DvTag appearance="filled" variant="danger">filled</DvTag>
     </div>
     <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-      <Tag appearance="outline" variant="warning">outline</Tag>
-      <Tag appearance="filled" variant="warning">filled</Tag>
+      <DvTag appearance="outline" variant="warning">outline</DvTag>
+      <DvTag appearance="filled" variant="warning">filled</DvTag>
     </div>
     <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-      <Tag appearance="outline" variant="neutral">outline</Tag>
-      <Tag appearance="filled" variant="neutral">filled</Tag>
+      <DvTag appearance="outline" variant="neutral">outline</DvTag>
+      <DvTag appearance="filled" variant="neutral">filled</DvTag>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Tag from '../Tag.vue';
+import DvTag from '../DvTag.vue';
 </script>
