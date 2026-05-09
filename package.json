@@ -4,6 +4,7 @@
   "description": "A modern, accessible Vue3 component library inspired by Leonardo da Vinci",
   "author": "Benjamin Guerin",
   "license": "MIT",
+  "homepage": "https://github.com/BGuerin-coder/davinci-ui#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BGuerin-coder/davinci-ui.git"
