@@ -4,7 +4,7 @@ Compact tag/badge component for displaying labels, categories, and status indica
 
 ## Usage
 
-```vue
+```html
 <template>
   <DvTag>Default Tag</DvTag>
   <DvTag variant="success">Approved</DvTag>
@@ -35,7 +35,7 @@ const removeTag = () => console.log('Tag removed')
 
 **Default**: Accepts tag label text.
 
-```vue
+```html
 <DvTag icon="check">
   <strong>Task Complete</strong>
 </DvTag>
@@ -45,7 +45,7 @@ const removeTag = () => console.log('Tag removed')
 
 - `@dismiss` - Emitted when dismiss button is clicked. Use to remove the tag from your list.
 
-```vue
+```html
 <DvTag 
   v-if="showTag"
   dismissible
@@ -82,7 +82,7 @@ Choose variant based on semantic meaning:
 ### Appearance
 
 Combine with variant for emphasis:
-```vue
+```html
 <!-- Subtle outline tag -->
 <DvTag appearance="outline">Label</DvTag>
 
@@ -93,7 +93,7 @@ Combine with variant for emphasis:
 ### Icons
 
 Use Feather icon names:
-```vue
+```html
 <DvTag icon="check" variant="success">Approved</DvTag>
 <DvTag icon="alert-circle" variant="warning">Warning</DvTag>
 <DvTag icon="x-circle" variant="danger">Rejected</DvTag>
@@ -102,13 +102,13 @@ Use Feather icon names:
 ### Dismissible Tags
 
 Use for removable filters or selections:
-```vue
+```html
 <div class="tags">
   <DvTag 
     v-for="tag in activeTags"
     :key="tag"
     dismissible
-    @dismiss="removeTa(tag)"
+    @dismiss="removeTag(tag)"
   >
     {{ tag }}
   </DvTag>
