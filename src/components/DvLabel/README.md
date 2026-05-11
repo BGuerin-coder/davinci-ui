@@ -4,7 +4,7 @@ Label component for form inputs and descriptive text with semantic HTML support 
 
 ## Usage
 
-```vue
+```html
 <template>
   <DvLabel for="email">Email Address</DvLabel>
   <input id="email" type="email" />
@@ -30,7 +30,7 @@ import { DvLabel } from '@bguerin/davinci-ui'
 
 When `as="label"`, use the native `for` attribute to associate with an input:
 
-```vue
+```html
 <DvLabel for="password">Password</DvLabel>
 <input id="password" type="password" />
 ```
@@ -39,7 +39,7 @@ When `as="label"`, use the native `for` attribute to associate with an input:
 
 **Default**: Accepts label text and inline elements.
 
-```vue
+```html
 <DvLabel for="terms">
   I agree to the <a href="/terms">terms and conditions</a>
 </DvLabel>

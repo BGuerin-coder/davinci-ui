@@ -4,7 +4,7 @@ Interactive button component for user actions with multiple variants, sizes, ico
 
 ## Usage
 
-```vue
+```html
 <template>
   <DvButton>Click me</DvButton>
   <DvButton variant="secondary">Secondary</DvButton>
@@ -69,7 +69,7 @@ Standard button events are supported:
 ### Icons
 
 Use Feather icon names (see [Feather Icons](https://feathericons.com/)):
-```vue
+```html
 <DvButton icon="trash-2" label="Delete" />
 <DvButton icon="check-circle" label="Confirm" />
 <DvButton icon="arrow-right" iconPosition="end" label="Next" />
@@ -78,7 +78,7 @@ Use Feather icon names (see [Feather Icons](https://feathericons.com/)):
 ### Loading State
 
 Use the `loading` prop for async operations:
-```vue
+```html
 <DvButton :loading="isSaving" @click="saveForm">
   {{ isSaving ? '' : 'Save' }}
 </DvButton>
@@ -87,7 +87,7 @@ Use the `loading` prop for async operations:
 ### Icon-Only Buttons
 
 For compact UI, use `iconOnly`:
-```vue
+```html
 <DvButton icon="menu" iconOnly aria-label="Open menu" />
 <DvButton icon="x" iconOnly aria-label="Close" />
 ```

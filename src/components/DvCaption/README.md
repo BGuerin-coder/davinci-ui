@@ -4,7 +4,7 @@ Compact typography component for supporting text, metadata, timestamps, and seco
 
 ## Usage
 
-```vue
+```html
 <template>
   <DvCaption>Last updated 2 hours ago</DvCaption>
   <DvCaption as="time" datetime="2026-05-11T14:30:00Z">May 11, 2026</DvCaption>
@@ -26,7 +26,7 @@ import { DvCaption } from '@bguerin/davinci-ui'
 
 When `as="time"`, use the native `datetime` attribute for machine-readable timestamps:
 
-```vue
+```html
 <DvCaption as="time" datetime="2026-05-11T14:30:00Z">May 11, 2026 at 2:30 PM</DvCaption>
 ```
 
@@ -34,7 +34,7 @@ When `as="time"`, use the native `datetime` attribute for machine-readable times
 
 **Default**: Accepts caption text and inline elements.
 
-```vue
+```html
 <DvCaption>
   Posted by <strong>John Doe</strong> • <time datetime="2026-05-11T14:00:00Z">2 hours ago</time>
 </DvCaption>
@@ -57,7 +57,7 @@ When `as="time"`, use the native `datetime` attribute for machine-readable times
 ### Timestamps
 
 Use `as="time"` with `datetime` for search engines and screen readers:
-```vue
+```html
 <!-- ✅ Good: Machine-readable and human-readable -->
 <DvCaption as="time" datetime="2026-05-11T14:30:00Z">May 11, 2026</DvCaption>
 
@@ -68,7 +68,7 @@ Use `as="time"` with `datetime` for search engines and screen readers:
 ### Metadata and Hints
 
 For form hints, error messages, or supporting text:
-```vue
+```html
 <DvCaption>Maximum 50 characters</DvCaption>
 <DvCaption role="alert">Email format invalid</DvCaption>
 <DvCaption>Posted by Sarah • 5 min read</DvCaption>
@@ -77,7 +77,7 @@ For form hints, error messages, or supporting text:
 ### Block vs. Inline
 
 Choose appropriate element for layout:
-```vue
+```html
 <!-- Inline: metadata on same line -->
 <DvCaption>By John Doe • 5 min read</DvCaption>
 

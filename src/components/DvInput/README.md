@@ -4,7 +4,7 @@ Form input component with built-in label, icons, validation, error and hint mess
 
 ## Usage
 
-```vue
+```html
 <template>
   <DvInput 
     v-model="email" 
@@ -64,7 +64,7 @@ const website = ref('')
 
 All native HTML input attributes are supported via `v-bind="$attrs"`:
 
-```vue
+```html
 <DvInput 
   v-model="name" 
   label="Full Name"
@@ -104,7 +104,7 @@ None. Use props for customization.
 ### Validation
 
 Show errors clearly:
-```vue
+```html
 <DvInput 
   v-model="email" 
   label="Email"
@@ -117,7 +117,7 @@ Show errors clearly:
 ### Icons
 
 Use Feather icon names:
-```vue
+```html
 <!-- Search input -->
 <DvInput icon="search" iconPosition="end" label="Search" />
 
@@ -131,7 +131,7 @@ Use Feather icon names:
 ### Help Text
 
 Guide users with hints:
-```vue
+```html
 <DvInput 
   label="Password"
   hint="Minimum 8 characters with numbers and symbols"

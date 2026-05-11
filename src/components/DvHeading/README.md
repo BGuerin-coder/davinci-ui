@@ -4,7 +4,7 @@ Semantic heading component for creating document structure with support for all 
 
 ## Usage
 
-```vue
+```html
 <template>
   <DvHeading level="h1">Main Page Title</DvHeading>
   <DvHeading level="h2">Section Title</DvHeading>
@@ -27,7 +27,7 @@ import { DvHeading } from '@bguerin/davinci-ui'
 
 **Default**: Accepts heading text and inline elements.
 
-```vue
+```html
 <DvHeading level="h2">
   Section Title <span class="subtitle">(with emphasis)</span>
 </DvHeading>
@@ -42,7 +42,7 @@ import { DvHeading } from '@bguerin/davinci-ui'
 
 **Best Practice:** Maintain proper heading hierarchy (h1 → h2 → h3, etc.) for document structure and accessibility.
 
-```vue
+```html
 <!-- ✅ Good: Proper hierarchy -->
 <DvHeading level="h1">Main Title</DvHeading>
 <DvHeading level="h2">Section</DvHeading>
@@ -66,7 +66,7 @@ Always use semantic heading levels:
 ### Truncation
 
 Use `truncate` for constrained layouts:
-```vue
+```html
 <div style="max-width: 300px">
   <DvHeading level="h2" truncate>Very Long Title That Will Be Cut Off</DvHeading>
 </div>
