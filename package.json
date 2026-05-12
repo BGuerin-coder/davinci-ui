@@ -20,7 +20,7 @@
       "import": "./dist/davinci-ui.js",
       "types": "./dist/davinci-ui.d.ts"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/davinci-ui.css"
   },
   "keywords": [
     "vue3",
