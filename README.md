@@ -242,16 +242,16 @@ src/
 - [x] GitHub Actions CI (lint + test + build)
 - [x] Publish on npm
 
-### Documentation
+### ✅ Documentation
 
-- [ ] ➡️ Storybook stories for each component
-- [ ] README per component
-- [ ] Contribution guide
-- [ ] Changelog
+- [x] Storybook stories for each component
+- [x] README per component
+- [x] Contribution guide
+- [x] Changelog
 
 ### Components • Tier 2
 
-- [ ] Modal / Dialog • focus trap, Escape, aria-modal
+- [ ] ➡️ Modal / Dialog • focus trap, Escape, aria-modal
 - [ ] Toast • queue, auto-dismiss, useToast() composable
 - [ ] Dropdown / Select • keyboard nav, custom styling
 - [ ] Card • header, body, footer, image slots, skeleton
