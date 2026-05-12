@@ -51,7 +51,7 @@ import "../../css/input.css";
 
 defineOptions({ inheritAttrs: false });
 
-export type InputProps = {
+export type DvInputProps = {
   label: string;
   modelValue?: string;
   id?: string;
@@ -65,7 +65,7 @@ export type InputProps = {
   hideLabel?: boolean;
 };
 
-const props = withDefaults(defineProps<InputProps>(), {
+const props = withDefaults(defineProps<DvInputProps>(), {
   modelValue: "",
   type: "text",
   hint: "",

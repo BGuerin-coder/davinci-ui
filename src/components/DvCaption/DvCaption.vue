@@ -8,11 +8,11 @@
 import "../../css/caption.css";
 import { useAttrs } from 'vue';
 
-interface CaptionProps {
+export interface DvCaptionProps {
   as?: 'span' | 'p' | 'time';
 }
 
-const props = withDefaults(defineProps<CaptionProps>(), {
+const props = withDefaults(defineProps<DvCaptionProps>(), {
   as: 'span',
 });
 

@@ -16,7 +16,7 @@
 import { Icon } from "@iconify/vue";
 import "../../css/tag.css";
 
-export interface TagProps {
+export export interface DvTagProps {
   variant?: "brand" | "success" | "danger" | "warning" | "neutral";
   size?: "small" | "medium";
   appearance?: "outline" | "filled";
@@ -24,7 +24,7 @@ export interface TagProps {
   icon?: string;
 }
 
-const props = withDefaults(defineProps<TagProps>(), {
+const props = withDefaults(defineProps<DvTagProps>(), {
   variant: "neutral",
   size: "medium",
   appearance: "filled",

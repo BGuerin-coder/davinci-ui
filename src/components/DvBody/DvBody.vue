@@ -7,12 +7,12 @@
 <script setup lang="ts">
 import "../../css/body.css";
 
-interface BodyProps {
+export interface DvBodyProps {
   as?: 'p' | 'div' | 'span';
   lead?: boolean;
 }
 
-withDefaults(defineProps<BodyProps>(), {
+withDefaults(defineProps<DvBodyProps>(), {
   as: 'p',
   lead: false,
 });

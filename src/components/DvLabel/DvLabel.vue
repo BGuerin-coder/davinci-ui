@@ -9,12 +9,12 @@
 import "../../css/label.css";
 import { useAttrs } from 'vue';
 
-interface LabelProps {
+export interface DvLabelProps {
   as?: 'label' | 'span' | 'div';
   uppercase?: boolean;
 }
 
-const props = withDefaults(defineProps<LabelProps>(), {
+const props = withDefaults(defineProps<DvLabelProps>(), {
   as: 'label',
   uppercase: false,
 });
