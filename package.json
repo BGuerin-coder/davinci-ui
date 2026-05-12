@@ -1,6 +1,6 @@
 {
   "name": "@bguerin/davinci-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A modern, accessible Vue3 component library inspired by Leonardo da Vinci",
   "author": "Benjamin Guerin",
   "license": "MIT",
@@ -20,7 +20,7 @@
       "import": "./dist/davinci-ui.js",
       "types": "./dist/davinci-ui.d.ts"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/davinci-ui.css"
   },
   "keywords": [
     "vue3",

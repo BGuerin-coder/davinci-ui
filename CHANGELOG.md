@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.2] - 2026-05-12
+
+### Fixed
+- Fixed CSS export path in package.json (style.css → davinci-ui.css)
+- Fixed component exports to use named exports (DvButton, DvBody, etc.)
+
+### Added
+- GitHub Packages publishing in release workflow
+
 ## [0.1.1] - 2026-05-12
 
 ### Fixed
@@ -10,7 +19,6 @@
 - Complete component documentation for all 7 components
 - Installation and usage guide for library consumers
 - CONTRIBUTING.md with comprehensive development guidelines
-- .pnpmrc for graceful build script error handling
 
 ### Changed
 - Standardized component README format and structure
