@@ -36,14 +36,6 @@ pnpm build        # Build library
 | Vitest            | Unit testing  |
 | ESLint + Prettier | Code quality  |
 
-## Contributing
-
-Want to help build davinci-ui? See our [**Contributing Guide**](./CONTRIBUTING.md) for:
-- Development setup
-- Component creation guidelines
-- Testing & accessibility requirements
-- Git workflow and PR process
-
 ## Project Structure
 
 ```bash
@@ -108,5 +100,13 @@ src/
 ## Author
 
 Benjamin Guerin • Tech Lead Frontend & UI/UX • [spateline.fr](https://spateline.fr) • [GitHub](https://github.com/BGuerin-coder)
+
+## Contributing
+
+Want to help build davinci-ui? See our [**Contributing Guide**](./CONTRIBUTING.md) for:
+- Development setup
+- Component creation guidelines
+- Testing & accessibility requirements
+- Git workflow and PR process
 
 > _"Learning never exhausts the mind." — Leonardo da Vinci_
