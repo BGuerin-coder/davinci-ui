@@ -1,3 +1,5 @@
+import './style.css'
+
 export { default as DvButton } from "./components/DvButton/DvButton.vue";
 export { default as DvBody } from "./components/DvBody/DvBody.vue";
 export { default as DvCaption } from "./components/DvCaption/DvCaption.vue";
