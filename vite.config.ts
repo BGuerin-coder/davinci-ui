@@ -20,6 +20,14 @@ export default defineConfig({
     dts({
       outDirs: "dist",
       tsconfigPath: "./tsconfig.app.json",
+      beforeWriteFile: (filePath, content) => {
+        if (filePath.endsWith("index.d.ts")) {
+          return {
+            filePath: filePath.replace("index.d.ts", "davinci-ui.d.ts"),
+            content,
+          };
+        }
+      },
     }),
   ],
 
