@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.3] - 2026-05-14
+
+### Fixed
+- Fixed missing import for style.css in index.ts
+
+### Changed
+- Renamed interface types for consistency across components
+- Removed GitHub Packages publishing steps from workflow
+
 ## [0.1.2] - 2026-05-12
 
 ### Fixed

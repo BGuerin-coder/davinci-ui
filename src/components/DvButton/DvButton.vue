@@ -16,7 +16,7 @@
 import { Icon } from "@iconify/vue";
 import "../../css/button.css";
 
-export interface ButtonProps {
+export interface DvButtonProps {
   disabled?: boolean;
   icon?: string;
   iconOnly?: boolean;
@@ -28,7 +28,7 @@ export interface ButtonProps {
   variant?: "primary" | "secondary" | "danger" | "ghost";
 }
 
-withDefaults(defineProps<ButtonProps>(), {
+withDefaults(defineProps<DvButtonProps>(), {
   disabled: false,
   icon: '',
   iconOnly: false,

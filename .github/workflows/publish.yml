@@ -72,11 +72,3 @@ jobs:
 
       - name: Publish to npm
         run: npm publish --access public
-
-      - name: Setup GitHub Packages credentials
-        run: |
-          echo "@bguerin:registry=https://npm.pkg.github.com" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
-
-      - name: Publish to GitHub Packages
-        run: npm publish --registry https://npm.pkg.github.com
