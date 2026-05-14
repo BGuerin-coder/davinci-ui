@@ -16,7 +16,7 @@
 import { Icon } from "@iconify/vue";
 import "../../css/tag.css";
 
-export export interface DvTagProps {
+export interface DvTagProps {
   variant?: "brand" | "success" | "danger" | "warning" | "neutral";
   size?: "small" | "medium";
   appearance?: "outline" | "filled";
