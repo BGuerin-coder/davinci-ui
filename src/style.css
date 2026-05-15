@@ -5,6 +5,7 @@
 @import "./css/caption.css";
 @import "./css/label.css";
 @import "./css/tag.css";
+/* Input styles needs to be imported after label and tag styles */
 @import "./css/input.css";
 
 /* =============================================================
