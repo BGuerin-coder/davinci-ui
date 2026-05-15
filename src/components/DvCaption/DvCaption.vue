@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import "../../css/caption.css";
 import { useAttrs } from 'vue';
 
 export interface DvCaptionProps {

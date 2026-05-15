@@ -14,7 +14,6 @@
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import "../../css/button.css";
 
 export interface DvButtonProps {
   disabled?: boolean;

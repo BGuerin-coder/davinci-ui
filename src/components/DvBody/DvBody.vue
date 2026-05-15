@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import "../../css/body.css";
 
 export interface DvBodyProps {
   as?: 'p' | 'div' | 'span';

@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.4] - 2026-05-15
+
+### Changed
+- Moved Vue from dependencies to peerDependencies (library best practice)
+- Vue now in devDependencies for local development
+- Centralized component CSS imports into src/style.css
+- Removed individual CSS imports from component files
+
+### Fixed
+- Fixed peer dependency resolution for better library integration
+- Fixed component styling issues in consuming applications
+
 ## [0.1.3] - 2026-05-14
 
 ### Fixed

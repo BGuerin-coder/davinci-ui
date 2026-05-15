@@ -14,7 +14,6 @@
 
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-import "../../css/tag.css";
 
 export interface DvTagProps {
   variant?: "brand" | "success" | "danger" | "warning" | "neutral";
