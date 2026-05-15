@@ -47,8 +47,6 @@ import { computed, ref, useAttrs, useId } from "vue";
 import DvLabel from "../DvLabel/DvLabel.vue";
 import DvCaption from '../DvCaption/DvCaption.vue';
 
-import "../../css/input.css";
-
 defineOptions({ inheritAttrs: false });
 
 export type DvInputProps = {

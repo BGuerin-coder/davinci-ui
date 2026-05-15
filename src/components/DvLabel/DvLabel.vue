@@ -6,7 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import "../../css/label.css";
 import { useAttrs } from 'vue';
 
 export interface DvLabelProps {

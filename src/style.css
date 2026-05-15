@@ -1,5 +1,11 @@
 @import "./tokens/index.css";
 @import "./css/heading.css";
+@import "./css/button.css";
+@import "./css/body.css";
+@import "./css/caption.css";
+@import "./css/input.css";
+@import "./css/label.css";
+@import "./css/tag.css";
 
 /* =============================================================
    CSS RESET
